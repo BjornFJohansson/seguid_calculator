@@ -1,11 +1,14 @@
 language: python
 python:
   - "2.7"
+before_install:
+  - pip install --upgrade pip 
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq python-wxgtk3.0 
 install:
   - pip install -e .
 before_script:
-  - sudo apt-get install -y python-wxgtk3.0
-  - pip install --upgrade pip
   - pip install -r requirements.txt
   - pip install coveralls
+
 sudo: required
