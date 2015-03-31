@@ -1,0 +1,33 @@
+Metadata-Version: 1.1
+Name: seguid-calculator
+Version: 0.5.0
+Summary: Calculate SEGUID & cSEGUID of biological sequences
+Home-page: http://pypi.python.org/pypi/seguid_calculator
+Author: Björn Johansson
+Author-email: bjorn_johansson@bio.uminho.pt
+License: LICENSE.txt
+Description: =================
+        seguid-calculator
+        =================
+        
+            
+        
+        This is a small application to calculate the SEGUID and cSEGUID checksums for a biological sequences such as DNA, RNA or proteins.
+        
+        Seguid-calculator is written in python and uses wxPython for the GUI.
+        
+        Seguid-calculator is available as source code, a windows executable made with Pyinstaller 
+        and a Jython/Swing version that should work on any platform with a Java runtime environment.
+        
+        Visit Björn Johansson's group at CBMA for more information.
+        
+Keywords: bioinformatics
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Education
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics

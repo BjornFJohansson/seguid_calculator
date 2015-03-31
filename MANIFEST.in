@@ -1,0 +1,19 @@
+# MANIFEST.in
+# This tells distutils what files to distribute.
+
+include LICENSE.txt
+include README.rst
+include MANIFEST.in
+include setup.py
+include requirements.txt
+include calculator.png
+include SEGUID_calculator.desktop
+include calc.ico
+include seguid.spec
+
+recursive-include tests *
+recursive-include docs *
+recursive-include scripts *
+global-exclude *.pyc
+global-exclude *~
+

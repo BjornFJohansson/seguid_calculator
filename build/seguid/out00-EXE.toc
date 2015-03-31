@@ -1,0 +1,9 @@
+('/home/bjorn/python_packages/seguid_calculator/dist/seguid',
+ False,
+ False,
+ 'calc.ico',
+ None,
+ [],
+ None,
+ False,
+ 1427793931)

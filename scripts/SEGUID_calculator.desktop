@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=/home/bjorn/python_packages/seguid_calculator/calculator.png
+Exec=/home/bjorn/anaconda/envs/seguid/bin/seguid_calculator                                                                              
+Name[en_US]=SEGUID calculator
+Comment[en_US]=SEGUID calculator
+Name=SEGUID calculator
+Comment=SEGUID calculator
+Categories=Science;
