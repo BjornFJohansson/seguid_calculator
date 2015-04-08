@@ -1,6 +1,6 @@
 # -*- mode: python -*-
-a = Analysis(['./seguid_calculator/seguid.py'],
-             pathex=['/home/bjorn/python_packages/seguid_calculator'],
+a = Analysis(['seguid_calculator/seguid.py'],
+             pathex=['Z:\\home\\bjorn\\python_packages\\seguid_calculator'],
              hiddenimports=[],
              hookspath=None,
              runtime_hooks=None)
@@ -10,7 +10,7 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='seguid',
+          name='seguid.exe',
           debug=False,
           strip=None,
           upx=True,

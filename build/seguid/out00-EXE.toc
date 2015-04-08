@@ -1,4 +1,4 @@
-('/home/bjorn/python_packages/seguid_calculator/dist/seguid',
+('Z:\\home\\bjorn\\python_packages\\seguid_calculator\\dist\\seguid.exe',
  False,
  False,
  'calc.ico',
@@ -6,4 +6,4 @@
  [],
  None,
  False,
- 1427793931)
+ 1428486753L)
