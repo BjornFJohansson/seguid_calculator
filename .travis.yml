@@ -20,6 +20,9 @@ before_install:
 install:
   - pip install -e .
 script:
+  - nosetests -v -w tests
+
+
 
 #!/bin/bash
 #pyinstaller --noconsole --icon=calc.ico --onefile ./seguid_calculator/seguid.py
@@ -28,8 +31,6 @@ script:
 #!/bin/bash
 #wine C:/Python27/python.exe pyinstaller/pyinstaller.py --noconsole --icon=calc.ico --onefile SEGUID_calculator_current.py
 #read -p "Press [Enter] key..."
-
-
 
 # - sudo add-apt-repository ppa:ubuntu-wine/ppa -y
 # - sudo apt-get update -qq
