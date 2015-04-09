@@ -13,6 +13,8 @@ before_install:
   - wine c:\\Python27\\python.exe ~/.wine/drive_c/Python27/Scripts/pywin32_postinstall.py -install
   - wine c:\\Python27\\python.exe -m pip install pyinstaller
   - wget http://downloads.sourceforge.net/wxpython/wxPython3.0-win64-3.0.2.0-py27.exe --output-document=wxpython.exe
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
   - wine wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES
   - wine pyinstaller --noconsole --icon=calc.ico --onefile seguid_calculator/seguid.py
 install:
