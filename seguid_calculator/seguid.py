@@ -3,9 +3,14 @@
 '''
 SEGUID calculator
 '''
+
 import calc_icon_file
 import wx
 import string
+
+from ._version import get_versions
+__version__      = get_versions()['version'][:5]
+del get_versions
 
 def seguid(seq):
     import hashlib
@@ -185,7 +190,7 @@ class MyFrame(wx.Frame):
 
     def __set_properties(self):
         # begin wxGlade: MyFrame.__set_properties
-        self.SetTitle("SEGUID checksum calculator")
+        self.SetTitle("SEGUID checksum calculator {}".format(__version__))
         _icon = calc_icon_file.calc.getIcon()
         #_icon = wx.EmptyIcon()
         #_icon.CopyFromBitmap(wx.Bitmap(os.path.join(os.path.dirname(__file__),"calc.ico"), wx.BITMAP_TYPE_ANY))
