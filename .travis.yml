@@ -24,6 +24,7 @@ install:
 script:
 - nosetests -v -w tests
 deploy:
+  skip_cleanup: true
   provider: releases
   api_key:
     secure: b/FLCiwaTt+egDwahvIDRqnAZ3KtXPBOSfNiQSKaGNKsU4dmG5dZpLKOVVeBTSC1mz/F1kxfu/JFfzboBwcHG+h9G4/EDhy3CGKhcK5RZNF1NihrHexSu0UpXSAj59aTa1i9e7DAsECUQROMCRW0W1x4zxEm5ubZXR9aKBPlvO8=
