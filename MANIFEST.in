@@ -10,7 +10,6 @@ include pywin32-219-cp27-none-win_amd64.whl
 include README.rst
 include seguid.spec
 include setup.py
-include seguid_calculator.desktop
 
 recursive-include tests *
 recursive-include docs *

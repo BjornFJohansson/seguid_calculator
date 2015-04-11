@@ -8,7 +8,7 @@ import calc_icon_file
 import wx
 import string
 
-from ._version import get_versions
+from _version import get_versions
 __version__      = get_versions()['version'][:5]
 del get_versions
 

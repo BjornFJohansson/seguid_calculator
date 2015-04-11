@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 __author__      ="Björn Johansson"
 __date__        ="March 31, 2015"
 __copyright__   = "Copyright 2013, 2014, 2015 Björn Johansson"
@@ -14,9 +13,6 @@ from ._version import get_versions
 __version__      = get_versions()['version'][:5]
 __long_version__ = get_versions()['version']
 del get_versions
-
-
-print __version__
 
 from seguid import main
 
