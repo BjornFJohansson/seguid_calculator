@@ -1,4 +1,4 @@
-#![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/calculator.png "seguid_calculator") seguid-calculator
+#![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/calculator.png "seguid_calculator") seguid_calculator
 
 Is a small GUI application to calculate the SEGUID and cSEGUID checksums for a biological sequence (DNA, RNA or protein). 
 The SEGUID checksum is the [SHA-1](http://en.wikipedia.org/wiki/SHA-1) cryptographic hash of the primary biological 
@@ -11,7 +11,7 @@ of a sequence or the reverse complement of the sequence. The cSEGUID provide a u
 circular sequence, such as [plasmids](http://en.wikipedia.org/wiki/Plasmid).
 
 
-Seguid-calculator is written in python 2.7 with wxPython 3.0.2. Seguid-calculator is available as source code, a windows 
+seguid_calculator is written in python 2.7 with wxPython 3.0.2. seguid_calculator is available as source code, a windows 
 executable made with Pyinstaller and an old Jython/Swing version that should work on any platform with a Java runtime 
 environment.
 
