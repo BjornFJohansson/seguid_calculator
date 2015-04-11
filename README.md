@@ -10,8 +10,7 @@ cSEGUID is the SEGUID for circular sequences. cSEGUID is the SEGUID of the
 of a sequence or the reverse complement of the sequence. The cSEGUID provide a unique and stable identifier for 
 circular sequence, such as [plasmids](http://en.wikipedia.org/wiki/Plasmid).
 
-
-seguid_calculator is written in python 2.7 with wxPython 3.0.2. seguid_calculator is available as source code, a windows 
+Seguid_calculator is written in python 2.7 with wxPython 3.0.2. seguid_calculator is available as source code, a windows 
 executable made with Pyinstaller and an old Jython/Swing version that should work on any platform with a Java runtime 
 environment.
 
