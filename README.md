@@ -14,5 +14,7 @@ Seguid_calculator is written in python 2.7 with wxPython 3.0.2. seguid_calculato
 executable made with Pyinstaller and an old Jython/Swing version that should work on any platform with a Java runtime 
 environment.
 
+The windows executables can be downloaded [here](https://github.com/BjornFJohansson/seguid_calculator/releases)
+
 Visit the website [Björn Johansson's group at CBMA](https://sites.google.com/site/metabolicengineeringgroup/) for more
  information.
