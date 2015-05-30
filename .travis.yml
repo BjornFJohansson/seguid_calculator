@@ -34,7 +34,7 @@ deploy:
     - "dist/seguid.zip"
     - "dist/hw"
   on:
-    tags: true
+    tags: false #true
     all_branches: true
     repo: BjornFJohansson/seguid_calculator
 
