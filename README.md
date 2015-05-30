@@ -2,7 +2,7 @@
 
 Is a small GUI application to calculate the SEGUID and cSEGUID checksums for a biological sequence (DNA, RNA or protein). 
 The SEGUID checksum is the [SHA-1](http://en.wikipedia.org/wiki/SHA-1) cryptographic hash of the primary biological 
-sequence in uppercase. SEGUID was developed by [Babnigg and Giometti ](http://www.ncbi.nlm.nih.gov/pubmed/16858731) 
+sequence in uppercase. SEGUID was suggested by [Babnigg and Giometti ](http://www.ncbi.nlm.nih.gov/pubmed/16858731) 
 to provide stable identifiers of protein sequences in databases for cross referencing.
 
 cSEGUID is the SEGUID for circular sequences. cSEGUID is the SEGUID of the 
