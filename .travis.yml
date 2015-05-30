@@ -28,7 +28,7 @@ deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: MF00EsmiZujwu3DeuH4aijaADvdnZGW1Hkocs1es+ut8aFMEdTRDDUrTSJqTRef+JF5c2Ye56NafRZqU00aXmXevbOiTWMZd9mLmoDa12btri1mQFqFTMthv4guS+qS+qfZrSxfG+d/gKUHQDWXr49H9LoRqZtqWDrJpufavJC4=
+    secure: b/FLCiwaTt+egDwahvIDRqnAZ3KtXPBOSfNiQSKaGNKsU4dmG5dZpLKOVVeBTSC1mz/F1kxfu/JFfzboBwcHG+h9G4/EDhy3CGKhcK5RZNF1NihrHexSu0UpXSAj59aTa1i9e7DAsECUQROMCRW0W1x4zxEm5ubZXR9aKBPlvO8=
   file:
     - "dist/seguid.dmg"
     - "dist/seguid.zip"
