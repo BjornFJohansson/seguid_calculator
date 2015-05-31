@@ -32,7 +32,8 @@ deploy:
   file:
     - "dist/seguid.dmg"
     - "dist/seguid.zip"
-    - "dist/hw"
+    - "dist/seguid.app"
+    - "dist/seguid"
   on:
     tags: true
     all_branches: true
