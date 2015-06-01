@@ -7,7 +7,7 @@ include embed-icon.sh
 include LICENSE.txt
 include MANIFEST.in
 include pywin32-219-cp27-none-win_amd64.whl
-include README.rst
+include README.md
 include seguid.spec
 include setup.py
 
