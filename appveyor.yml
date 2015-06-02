@@ -36,7 +36,7 @@ install:
   # target Python version and architecture
   - appveyor DownloadFile http://downloads.sourceforge.net//wxpython//wxPython3.0-win64-3.0.2.0-py27.exe -FileName wxpython.exe
   - wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES
-  - appveyor DownloadFile http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe -FileName pywin.exe
+  - appveyor DownloadFile http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe/download -FileName pywin.exe
   - pywin.exe
   - "%CMD_IN_ENV% pip install pyinstaller" 
   - "%CMD_IN_ENV% pip install -e ."
