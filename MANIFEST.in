@@ -10,8 +10,6 @@ include README.md
 include seguid.spec
 include setup.py
 
-recursive-include tests *
-recursive-include docs *
 recursive-include scripts *
 global-exclude *.pyc
 global-exclude *~
