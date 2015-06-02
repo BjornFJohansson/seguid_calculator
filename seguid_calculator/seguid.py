@@ -424,7 +424,7 @@ def SmallestRotation(s):
     raise Exception("Reached end of factorization with no shortest rotation")
 
 def cseguid(seq):
-    return seguid( min( SmallestRotation(str(seq)), SmallestRotation(str(rc(seq)))))
+    return seguid( min( SmallestRotation(str(seq).upper() ), SmallestRotation(str(rc(seq)).upper())))
 
 
 class MyFrame(wx.Frame):
