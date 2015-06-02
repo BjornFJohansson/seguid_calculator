@@ -36,7 +36,7 @@ install:
   # target Python version and architecture
   - appveyor DownloadFile http://downloads.sourceforge.net//wxpython//wxPython3.0-win64-3.0.2.0-py27.exe -FileName wxpython.exe
   #- "%CMD_IN_ENV% pip install pywin32-219-cp27-none-win_amd64.whl
-  - (New-Object System.Net.WebClient).DownloadFile('http://downloads.sourceforge.net//wxpython//wxPython3.0-win64-3.0.2.0-py27.exe', 'wxpython.exe')
+  #- (New-Object System.Net.WebClient).DownloadFile('http://downloads.sourceforge.net//wxpython//wxPython3.0-win64-3.0.2.0-py27.exe', 'wxpython.exe')
   - wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES
   - "%CMD_IN_ENV% pip install -e ."
 
