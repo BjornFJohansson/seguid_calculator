@@ -1,9 +1,0 @@
-('Z:\\home\\bjorn\\python_packages\\seguid_calculator\\dist\\seguid.exe',
- False,
- False,
- 'calc.ico',
- None,
- [],
- None,
- False,
- 1428644653L)
