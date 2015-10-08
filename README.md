@@ -2,9 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/0bd4f7fi3g0m0itp?svg=true)](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator)
 
-
-[![Build status](https://travis-ci.org/BjornFJohansson/pydna.svg)](https://travis-ci.org/BjornFJohansson/pydna) 
-
+[![Build Status](https://travis-ci.org/BjornFJohansson/seguid_calculator.svg?branch=master)](https://travis-ci.org/BjornFJohansson/seguid_calculator)
 
 [![Build Status](https://drone.io/github.com/BjornFJohansson/seguid_calculator/status.png)](https://drone.io/github.com/BjornFJohansson/seguid_calculator/latest)
 
@@ -25,11 +23,11 @@ Mac OS executables built on Travis ci and as a [.deb package]() built on Drone.i
 using [stdeb](https://pypi.python.org/pypi/stdeb)
 
 
-Windows executables can be downloaded [here]
+Windows executables can be downloaded [here] Not ready yet..!
 
 MacOS executables can be downloaded [here](https://github.com/BjornFJohansson/seguid_calculator/releases)
 
-Linux .deb package can be found [here]() 
+Linux .deb package can be found [here]() Not ready yet..!
 
 Visit the website [Björn Johansson's group at CBMA](https://sites.google.com/site/metabolicengineeringgroup/) for more
  information.
