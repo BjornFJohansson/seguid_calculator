@@ -1,41 +1,56 @@
-language: objective-c
+sudo: required
+language: python
 python:
 - '2.7'
 before_install:
-- which python
-- brew install python --universal --framework
-- brew install wget
-- which python
-- export VERSIONER_PYTHON_PREFER_32_BIT=yes
-- defaults write com.apple.versioner.python Prefer-32-Bit -bool yes
-- which python
-- python --version
-- mkdir dl
-- cd dl
-- wget http://downloads.sourceforge.net/wxpython/wxPython3.0-osx-3.0.2.0-cocoa-py2.7.dmg
-- ls
-- cd ..
-- sudo ./packages.sh
-- arch -i386 python -c "import wx; print wx.__version__"
-- arch -i386 pip install pyinstaller
-- arch -i386 pyinstaller --noconsole --onefile --icon=calc.ico seguid_calculator/seguid.py
-- ls
-- hdiutil create dist/seguid.dmg -srcfolder dist/ -ov
-- zip -r dist/seguid.zip dist/seguid.app
-- ls dist/
-install: true
+- pip install --upgrade pip
+- sudo add-apt-repository ppa:ubuntu-wine/ppa -y
+- sudo apt-get update -qq
+- sudo apt-get install -qq wine
+- wget https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi --output-document=python.msi
+- wine msiexec /i python.msi /qn
+- wine c:\\Python27\\python.exe -m pip install pywin32-219-cp27-none-win_amd64.whl
+- wine c:\\Python27\\python.exe ~/.wine/drive_c/Python27/Scripts/pywin32_postinstall.py -install
+- wine c:\\Python27\\python.exe -m pip install pyinstaller
+- wget http://downloads.sourceforge.net/wxpython/wxPython3.0-win64-3.0.2.0-py27.exe
+  --output-document=wxpython.exe
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- wine wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES
+- wine c:\\Python27\\Scripts\\pyinstaller --noconsole --icon=calc.ico --onefile seguid_calculator/seguid.py
+install:
+- pip install -e .
+script:
+- nosetests -v -w tests
 deploy:
-  provider: releases
   skip_cleanup: true
+  provider: releases
   api_key:
     secure: b/FLCiwaTt+egDwahvIDRqnAZ3KtXPBOSfNiQSKaGNKsU4dmG5dZpLKOVVeBTSC1mz/F1kxfu/JFfzboBwcHG+h9G4/EDhy3CGKhcK5RZNF1NihrHexSu0UpXSAj59aTa1i9e7DAsECUQROMCRW0W1x4zxEm5ubZXR9aKBPlvO8=
-  file:
-    - "dist/seguid.dmg"
-    - "dist/seguid.zip"
-    - "dist/seguid.app"
-    - "dist/seguid"
+  file: dist/seguid.exe
   on:
     tags: true
     all_branches: true
     repo: BjornFJohansson/seguid_calculator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

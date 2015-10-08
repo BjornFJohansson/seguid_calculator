@@ -6,11 +6,10 @@ calc.ico
 calculator.png
 seguid.spec
 seguid_calculator.desktop
-setup.cfg
 setup.py
 versioneer.py
-scripts/SEGUID_calculator_jython.py
-scripts/SEGUID_calculator_v007.2.wxg
+scripts/SEGUID_calculator_jython_old.py
+scripts/SEGUID_calculator_old_wxglade_file.wxg
 scripts/embed-icon.sh
 scripts/remove_git_tags.sh
 seguid_calculator/__init__.py

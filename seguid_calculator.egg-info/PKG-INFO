@@ -1,7 +1,7 @@
 Metadata-Version: 1.1
 Name: seguid-calculator
 Version: 0.9.0
-Summary: Calculate seguid & cseguid checksums for biological sequences
+Summary: Calculates seguid & cseguid checksums for biological sequences
 Home-page: http://pypi.python.org/pypi/seguid_calculator
 Author: Björn Johansson
 Author-email: bjorn_johansson@bio.uminho.pt

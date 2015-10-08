@@ -8,6 +8,9 @@ versioneer.versionfile_build = 'seguid_calculator/_version.py'
 versioneer.tag_prefix = '' # tags are like 1.2.0
 versioneer.parentdir_prefix = '' # dirname like 'myproject-1.2.0'
 
+#import sys
+#sys.executable = '/bin/custom_python'
+
 # Read author etc..
 for line in open('seguid_calculator/__init__.py'):
     if line.startswith('__') and not line.startswith('__version') and not line.startswith('__long'):
@@ -24,7 +27,7 @@ setup(  name='seguid_calculator',
         entry_points = { 'console_scripts': [ 'seguid_calculator = seguid_calculator.seguid:main' ]},
         url='http://pypi.python.org/pypi/seguid_calculator',
         license='LICENSE.txt',
-        description='''Calculate seguid & cseguid checksums for biological sequences''',
+        description='''Calculates seguid & cseguid checksums for biological sequences''',
         long_description=open('README.md').read(),
         install_requires =[],
         test_suite="run_tests.load_my_tests",
