@@ -35,7 +35,7 @@ install:
   # pip will build them from source using the MSVC compiler matching the
   # target Python version and architecture
 
-  - appveyor DownloadFile http://downloads.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe -FileName pywin.exe                           
+  - appveyor DownloadFile http://skylink.dl.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe -FileName pywin.exe                           
   - pywin.exe
 
   - appveyor DownloadFile http://downloads.sourceforge.net//wxpython//wxPython3.0-win64-3.0.2.0-py27.exe -FileName wxpython.exe
