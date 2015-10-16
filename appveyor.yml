@@ -41,9 +41,16 @@ install:
   # target Python version and architecture
 
   #- "appveyor DownloadFile http://downloads.sourceforge.net//project//pywin32//pywin32//Build0219//pywin32-219.win-amd64-py2.7.exe -FileName pywin.exe"                           
-  #- pywin.exe                
+  #- pywin.exe 
 
-  - appveyor DownloadFile %WXP% -FileName wxpython.exe
+  - 'ECHO Downloading %WXP%'
+  - ps: (new-object net.webclient).DownloadFile("$env:PYWIN_DL", 'C:/wxp.exe')
+  - "%PYTHON%/Scripts/easy_install.exe C:/wxp.exe"
+
+
+              
+
+  #- appveyor DownloadFile %WXP% -FileName wxpython.exe
   - wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES
   - "python -c \"import wx; print(wx.__version__)\""
 
