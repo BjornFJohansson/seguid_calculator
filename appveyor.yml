@@ -6,8 +6,13 @@ environment:
     CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
 
   matrix:
+    - PYTHON: "C:\\Python27"
+      PYTHON_VERSION: "2.7"
+      PYTHON_ARCH: "32"
+      PYWIN_DL: "https://downloads.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win32-py2.7.exe"
+
     - PYTHON: "C:\\Python27-x64"
-      PYTHON_VERSION: "2.7.8"
+      PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "64"
       PYWIN_DL: "https://downloads.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe"
 
@@ -59,7 +64,7 @@ after_test:
   # If tests are successful, create a whl package for the project.
   #- "%CMD_IN_ENV% pip install wheel"
   #- "%CMD_IN_ENV% python setup.py bdist_wheel bdist_wininst"
-  - pyinstaller --noconsole --icon=calc.ico --onefile seguid_calculator/seguid.py
+  - pyinstaller --noconsole --icon=calc.ico --onefile seguid_calculator/seguid.py --name seguid_calculator
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
