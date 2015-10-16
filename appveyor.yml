@@ -44,7 +44,7 @@ install:
   #- pywin.exe 
 
   - 'ECHO Downloading %WXP%'
-  - ps: (new-object net.webclient).DownloadFile("$env:WXP", 'C:/wxpython.exe')
+  #- ps: (new-object net.webclient).DownloadFile("$env:WXP", 'C:/wxpython.exe')
   #- "%PYTHON%/Scripts/easy_install.exe C:/wxp.exe"
 
 	                                                                                                                     
