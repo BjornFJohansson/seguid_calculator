@@ -47,11 +47,12 @@ install:
   - ps: (new-object net.webclient).DownloadFile("$env:WXP", 'C:/wxpython.exe')
   #- "%PYTHON%/Scripts/easy_install.exe C:/wxp.exe"
 
-
-              
+	                                                                                                                     
+  - "%CMD_IN_ENV% pip install --upgrade --trusted-host wxpython.org --pre -vv http://wxpython.org/Phoenix/snapshot-builds/wxPython_Phoenix-3.0.3.dev1830+0b5f910-cp27-none-win32.whl"
+         
 
   #- appveyor DownloadFile %WXP% -FileName wxpython.exe
-  - "%CMD_IN_ENV% C:/wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES"
+  #- "%CMD_IN_ENV% C:/wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES"
   - "%CMD_IN_ENV% python -c \"import wx; print(wx.__version__)\""
 
   #- "%CMD_IN_ENV% pip install pyinstaller"
