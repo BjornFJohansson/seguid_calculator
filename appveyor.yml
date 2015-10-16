@@ -44,14 +44,14 @@ install:
   #- pywin.exe 
 
   - 'ECHO Downloading %WXP%'
-  - ps: (new-object net.webclient).DownloadFile("$env:PYWIN_DL", 'C:/wxpython.exe')
+  - ps: (new-object net.webclient).DownloadFile("$env:WXP", 'C:/wxpython.exe')
   #- "%PYTHON%/Scripts/easy_install.exe C:/wxp.exe"
 
 
               
 
   #- appveyor DownloadFile %WXP% -FileName wxpython.exe
-  - "%CMD_IN_ENV% wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES"
+  - "%CMD_IN_ENV% C:/wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES"
   - "python -c \"import wx; print(wx.__version__)\""
 
   #- "%CMD_IN_ENV% pip install pyinstaller"
