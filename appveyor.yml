@@ -11,7 +11,6 @@ environment:
       PYTHON_ARCH: "32"
       PYWIN_DL: "https://downloads.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win32-py2.7.exe"
 	  WXP: "http://downloads.sourceforge.net/wxpython/wxPython3.0-win32-3.0.2.0-py27.exe"
-
     - PYTHON: "C:\\Python27-x64"
       PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "64"
