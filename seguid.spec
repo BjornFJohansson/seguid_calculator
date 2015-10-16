@@ -10,8 +10,16 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='seguid',
+          name='seguid_calculator',
           debug=False,
           strip=None,
           upx=True,
-          console=False , icon='calc.ico')
+          console=False,
+		  icon='calc.ico')
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=None,
+               upx=True,
+               name='seguid_calculator')
