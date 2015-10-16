@@ -34,11 +34,14 @@ install:
   # compiled extensions and are not provided as pre-built wheel packages,
   # pip will build them from source using the MSVC compiler matching the
   # target Python version and architecture
+
+  - appveyor DownloadFile http://downloads.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe -FileName pywin.exe                           
+  - pywin.exe
+
   - appveyor DownloadFile http://downloads.sourceforge.net//wxpython//wxPython3.0-win64-3.0.2.0-py27.exe -FileName wxpython.exe
   - wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES
-  - appveyor DownloadFile https://downloads.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe -FileName pywin.exe                           
-  - pywin.exe
-  - "%CMD_IN_ENV% pip install pyinstaller" 
+
+  - "%CMD_IN_ENV% pip install pyinstaller"
   #- "%CMD_IN_ENV% pip install -e ."
   - "%CMD_IN_ENV% python setup.py version"
 
