@@ -52,7 +52,7 @@ install:
 
   #- appveyor DownloadFile %WXP% -FileName wxpython.exe
   - "%CMD_IN_ENV% C:/wxpython.exe /sp- /verysilent /norestart /SUPPRESSMSGBOXES"
-  - "%PYTHON% -c \"import wx; print(wx.__version__)\""
+  - "%CMD_IN_ENV% python -c \"import wx; print(wx.__version__)\""
 
   #- "%CMD_IN_ENV% pip install pyinstaller"
   #- "%CMD_IN_ENV% pip install -e ."
