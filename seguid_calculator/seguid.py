@@ -6,6 +6,8 @@ SEGUID calculator
 
 import wx
 import string
+import hashlib
+import base64
 
 from _version import get_versions
 __version__      = get_versions()['version'][:5]
@@ -348,14 +350,7 @@ calcicon = PyEmbeddedImage(
     "eLLwdVFPlIqWpEhgJifgRMlduna9vIN///CXuHd/bfPdf3jtqRHexrcMcPjwdVHtgdOKqmy+"
     "efXVp054G/8H47hlMPNtUfAAAAAASUVORK5CYII=")
 
-
-
-
-
-
 def seguid(seq):
-    import hashlib
-    import base64
     m = hashlib.sha1()
     m.update(seq.upper())
     return base64.urlsafe_b64encode( m.digest() ).rstrip("=")
@@ -431,7 +426,7 @@ class MyFrame(wx.Frame):
         kwds["style"] = wx.DEFAULT_FRAME_STYLE
         wx.Frame.__init__(self, *args, **kwds)
         self.panel_1 = wx.Panel(self, -1)
-        self.label_2 = wx.StaticText(self.panel_1, -1, "Biological sequences only. All except ABCDEFGHIJKLMNOPQRSTUVWXYZ and lowercased will be ignored")
+        self.label_2 = wx.StaticText(self.panel_1, -1, "Biological sequences in raw format only. All except ABCDEFGHIJKLMNOPQRSTUVWXYZ and lowercased will be ignored")
         self.seguid = wx.StaticText(self.panel_1, -1, "SEGUID for sequence")
         self.cseguid = wx.StaticText(self.panel_1, -1, "cSEGUID for sequence")
         self.size = wx.StaticText(self.panel_1, -1, "Size (nucleotides or aa)")

@@ -72,10 +72,57 @@ after_test:
   #- "%CMD_IN_ENV% pip install wheel"
   #- "%CMD_IN_ENV% python setup.py bdist_wheel bdist_wininst"
 
-  - pyinstaller --icon=calc.ico --onefile seguid.py --name seguid_calculator
+  - pyinstaller --noconsole --icon=calc.ico --onefile seguid.py --name seguid_calculator
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
   - path: build\lib\seguid_calculator\dist\*
   #- path: dist\*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #- ECHO "Filesystem root:"
+  #- ps: "ls \"C:/\""
+
+  #- ECHO "Installed SDKs:"
+  #- ps: "ls \"C:/Program Files/Microsoft SDKs/Windows\""
+
+  # Install Python (from the official .msi of http://python.org) and pip when
+  # not already installed.
+  #- "powershell ./appveyor/install.ps1"
+
+
+  #- 'ECHO Downloading %WXP%'
+  #- ps: (new-object net.webclient).DownloadFile("$env:WXP", 'C:/wxpython.exe')
+  #- "%PYTHON%/Scripts/easy_install.exe C:/wxp.exe"
+
+
+
+  #- pyinstaller seguid_calculator/seguid.py --noconsole --icon=calc.ico --onefile --name seguid_calculator
+
+
+
+
+
+
+
 
