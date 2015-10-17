@@ -532,7 +532,7 @@ class MyFrame(wx.Frame):
     def __set_properties(self):
         # begin wxGlade: MyFrame.__set_properties
         self.SetTitle("SEGUID checksum calculator {}".format(__version__))
-        _icon = calcicon.getIcon()
+        _icon = calcicon.GetIcon()
         #_icon = wx.EmptyIcon()
         #_icon.CopyFromBitmap(wx.Bitmap(os.path.join(os.path.dirname(__file__),"calc.ico"), wx.BITMAP_TYPE_ANY))
         self.SetIcon(_icon)
