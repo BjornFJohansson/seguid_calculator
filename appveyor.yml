@@ -72,7 +72,7 @@ after_test:
   #- "%CMD_IN_ENV% pip install wheel"
   #- "%CMD_IN_ENV% python setup.py bdist_wheel bdist_wininst"
 
-  - pyinstaller --noconsole --icon=calc.ico --onefile seguid.py --name seguid_calculator
+  - pyinstaller --icon=calc.ico --onefile seguid.py --name seguid_calculator
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
