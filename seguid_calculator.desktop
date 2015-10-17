@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Terminal=false
-Icon=/usr/share/seguid_calculator/calculator.png
-Exec=seguid_calculator                                                                            
-Comment=calculates (c)seguid checksum for biological sequences
-Name=seguid calculator
-Categories=Science;
