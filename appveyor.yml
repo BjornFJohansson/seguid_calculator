@@ -10,12 +10,12 @@ environment:
       PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "32"
       PYWIN_DL: "https://downloads.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win32-py2.7.exe"
-      WXP: "http://downloads.sourceforge.net/wxpython/wxPython3.0-win32-3.0.2.0-py27.exe"
+      WXP: "http://wxpython.org/Phoenix/snapshot-builds/wxPython_Phoenix-3.0.3.dev1830+0b5f910-cp27-none-win32.whl"
     - PYTHON: "C:\\Python27-x64"
       PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "64"
       PYWIN_DL: "https://downloads.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe"
-      WXP: "http://downloads.sourceforge.net/wxpython/wxPython3.0-win64-3.0.2.0-py27.exe"
+      WXP: "http://wxpython.org/Phoenix/snapshot-builds/wxPython_Phoenix-3.0.3.dev1830+0b5f910-cp27-none-win_amd64.whl"
 
 
 install:
@@ -52,7 +52,7 @@ install:
   - "%CMD_IN_ENV% python setup.py version"
   - "%CMD_IN_ENV% python setup.py build"
   - "%CMD_IN_ENV% cd build//lib//seguid_calculator"
-  - "%CMD_IN_ENV% ls
+  - "%CMD_IN_ENV% ls"
 
 build: false  # Not a C# project, build stuff at the test step instead.
 
