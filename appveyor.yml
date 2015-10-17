@@ -58,7 +58,6 @@ build: false  # Not a C# project, build stuff at the test step instead.
 matrix:
   fast_finish: true
 
-
 test_script: true
   # Build the compiled extension and run the project tests
   #- "%CMD_IN_ENV% pip install nose"
