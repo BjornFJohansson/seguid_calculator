@@ -51,6 +51,7 @@ install:
   #- "%CMD_IN_ENV% pip install -e ."
   - "%CMD_IN_ENV% python setup.py version"
   - "%CMD_IN_ENV% python setup.py build"
+  - ps: Copy-Item calc.ico build\lib\seguid_calculator
   - ps: cd build//lib//seguid_calculator
   - ps: ls
 
