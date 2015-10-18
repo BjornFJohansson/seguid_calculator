@@ -3,8 +3,10 @@ Seguid calculator is a small GUI application for calculating the SEGUID and cSEG
 
 The SEGUID checksum is defined as the [SHA-1](http://en.wikipedia.org/wiki/SHA-1) cryptographic hash of a primary biological sequence in uppercase. SEGUID was suggested by [Babnigg and Giometti ](http://www.ncbi.nlm.nih.gov/pubmed/16858731) as a way to provide stable identifiers of protein sequences in databases for cross referencing.
 
-There are several implementations available. such as the [Biopython](http://biopython.org/wiki/Main_Page) module
-[Bio.SeqUtils.CheckSum](http://biopython.org/DIST/docs/api/Bio.SeqUtils.CheckSum-module.html)
+There are several implementations of SEGUID calculation available, such as the [Biopython](http://biopython.org/wiki/Main_Page) module
+[Bio.SeqUtils.CheckSum](http://biopython.org/DIST/docs/api/Bio.SeqUtils.CheckSum-module.html). See [slides](http://precedings.nature.com/documents/278/version/1) and from the Biopython [wiki](http://www.biopython.org/wiki/SeqIO#Using_the_SEGUID_checksum). See also a blog [post](http://wiki.christophchamp.com/index.php/SEGUID) on the subject.
+
+
 
 Circular SEGUID or cSEGUID is the SEGUID checksum for circular (DNA) sequences. As there are many circular permutations of a circular sequence, the use of the SEGUID checksum directly is impractical as there would be many checksums for the same sequence.The cSEGUID is the SEGUID of the [lexicographically minimal string rotation](http://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation) of a sequence or its reverse complement (whichever is [   lexicographically](https://en.wikipedia.org/wiki/Lexicographical_order) smaller). The cSEGUID provide a unique and stable identifier for circular sequence, such as [plasmids](http://en.wikipedia.org/wiki/Plasmid).
 
