@@ -1,5 +1,4 @@
-# ![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/calculator.png "seguid_calculator") seguid_calculator
-
+# seguid_calculator
 Seguid calculator is a small GUI application for calculating the SEGUID and cSEGUID checksums for a biological sequence (DNA, RNA or protein). It is available as executables for Windows, MacOSX and Linux (see below).
 
 The SEGUID checksum is defined as the [SHA-1](http://en.wikipedia.org/wiki/SHA-1) cryptographic hash of a primary biological sequence in uppercase. SEGUID was suggested by [Babnigg and Giometti ](http://www.ncbi.nlm.nih.gov/pubmed/16858731) as a way to provide stable identifiers of protein sequences in databases for cross referencing.
@@ -22,6 +21,8 @@ Both sequences are the same size and claim to describe the same vector, although
 Seguid_calculator is written in python 2.7 with wxPython 3. Development happens on [Github](https://github.com/BjornFJohansson/seguid_calculator) where source code is available.
 
 ## Executables
+
+![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/calculator.png "seguid_calculator")
 
 Windows executable for 32 bits is available [here](https://ci.appveyor.com/api/buildjobs/mlp0bbvqsnhg382c/artifacts/build/lib/seguid_calculator/dist/seguid_calculator.exe).
 
