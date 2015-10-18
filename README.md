@@ -32,9 +32,8 @@ Linux executable for 64 bits is available [here]().
 
 Visit the website [Björn Johansson's group at CBMA](https://sites.google.com/site/metabolicengineeringgroup/) for more
  information.
- 
- ## Automatic build status
- 
+
+## Automatic build status
  [![Build status](https://ci.appveyor.com/api/projects/status/0bd4f7fi3g0m0itp?svg=true)](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator)
 [![Build Status](https://travis-ci.org/BjornFJohansson/seguid_calculator.svg?branch=master)](https://travis-ci.org/BjornFJohansson/seguid_calculator)
 [![Build Status](https://drone.io/github.com/BjornFJohansson/seguid_calculator/status.png)](https://drone.io/github.com/BjornFJohansson/seguid_calculator/latest)
