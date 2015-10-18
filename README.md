@@ -1,4 +1,4 @@
-#![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/calculator.png "seguid_calculator") seguid_calculator
+# ![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/calculator.png "seguid_calculator") seguid_calculator
 
 [![Build status](https://ci.appveyor.com/api/projects/status/0bd4f7fi3g0m0itp?svg=true)](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator)
 
@@ -29,5 +29,5 @@ MacOS executables can be downloaded [here](https://github.com/BjornFJohansson/se
 
 Linux .deb package can be found [here]() Not ready yet..!
 
-Visit the website [Björn Johansson's group at CBMA](https://sites.google.com/site/metabolicengineeringgroup/) for more
+Visit the website [BjC6rn Johansson's group at CBMA](https://sites.google.com/site/metabolicengineeringgroup/) for more
  information.
