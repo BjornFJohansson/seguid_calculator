@@ -6,7 +6,7 @@ The SEGUID checksum is defined as the [SHA-1](http://en.wikipedia.org/wiki/SHA-1
 Circular SEGUID or cSEGUID is the SEGUID checksum for circular (DNA) sequences. As there are many circular permutations of a circular sequence, the use of the SEGUID checksum directly is impractical as there would be many checksums for the same sequence.The cSEGUID is the SEGUID of the [lexicographically minimal string rotation](http://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation) of a sequence or its reverse complement (whichever is [   lexicographically](https://en.wikipedia.org/wiki/Lexicographical_order) smaller). The cSEGUID provide a unique and stable identifier for circular sequence, such as [plasmids](http://en.wikipedia.org/wiki/Plasmid).
 
 ## Example
-The cSEGUID checksum can be useful to quickly determin if two sequences refer to the same vector. The sequence of the plasmid pFA6a-GFPS65T-kanMX6 is available from [Genbank](http://www.ncbi.nlm.nih.gov/nuccore/AJ002682) and from other sources such as the [Forsburg lab](http://www-bcf.usc.edu/~forsburg/), sequence [here](http://www-bcf.usc.edu/~forsburg/GFPS65T.html).
+The cSEGUID checksum can be useful to quickly determin if two sequences refer to the same vector. The sequence of the plasmid pFA6a-GFPS65T-kanMX6 is available from [Genbank](http://www.ncbi.nlm.nih.gov/nuccore/AJ002682) and from other sources such as the [Forsburg lab](http://www-bcf.usc.edu/~forsburg/), sequence [here](http://www-bcf.usc.edu/~forsburg/GFPS65T.html) or [here](https://gist.github.com/BjornFJohansson/d394362134338d5f1ff0).
 
 Both sequences are the same size and claim to describe the same vector, although the origins seems to be set differently. Analysis of both sequences in seguid_calculator proves that both sequences are in fact representations of the same sequence by their identical cSEGUIDs:
 
@@ -17,11 +17,9 @@ Both sequences are the same size and claim to describe the same vector, although
 ![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/forsburg.png "seguid_calculator")
 
 ## Implementation
-
 Seguid_calculator is written in python 2.7 with wxPython 3. Development happens on [Github](https://github.com/BjornFJohansson/seguid_calculator) where source code is available.
 
 ## Executables
-
 ![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/calculator.png "seguid_calculator")
 
 Windows executable for 32 bits is available [here](https://ci.appveyor.com/api/buildjobs/mlp0bbvqsnhg382c/artifacts/build/lib/seguid_calculator/dist/seguid_calculator.exe).
