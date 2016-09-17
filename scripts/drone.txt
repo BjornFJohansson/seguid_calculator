@@ -1,0 +1,16 @@
+wget -q https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O Miniconda_latest.sh
+bash Miniconda_latest.sh -b -p $HOME/miniconda
+export PATH="$HOME/miniconda/bin:$PATH"
+conda update --yes -q conda
+
+conda install -c https://conda.anaconda.org/aaren wxpython
+sudo apt-get install upx
+pip install git+https://github.com/pyinstaller/pyinstaller
+
+python setup.py build
+cd build/lib/seguid_calculator/
+pyinstaller --noconsole --onefile seguid.py --name seguid_calculator
+
+cd dist
+ls
+wc -c seguid_calculator 
