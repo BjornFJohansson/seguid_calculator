@@ -1,26 +1,8 @@
 language: objective-c
 before_install:
-- which python
-- brew install python --universal --framework
-- brew install wget
-- which python
-- export VERSIONER_PYTHON_PREFER_32_BIT=yes
-- defaults write com.apple.versioner.python Prefer-32-Bit -bool yes
-- which python
-- python --version
-- mkdir dl
-- cd dl
-- wget http://downloads.sourceforge.net/wxpython/wxPython3.0-osx-3.0.2.0-cocoa-py2.7.dmg
-- ls
-- cd ..
-- sudo ./packages.sh
-- arch -i386 python -c "import wx; print wx.__version__"
-- arch -i386 pip install pyinstaller
-- arch -i386 pyinstaller --noconsole --onefile --icon=calc.ico seguid_calculator/seguid.py
-- ls
-- hdiutil create dist/seguid.dmg -srcfolder dist/ -ov
-- zip -r dist/seguid.zip dist/seguid.app
-- ls dist/
+ - wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
+ - bash ~/miniconda.sh -b -p $HOME/miniconda
+ - export PATH="$HOME/miniconda/bin:$PATH"
 install: true
 deploy:
   provider: releases
