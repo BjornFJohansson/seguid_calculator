@@ -419,6 +419,9 @@ def SmallestRotation(s):
 def cseguid(seq):
     return seguid( min( SmallestRotation(str(seq).upper() ), SmallestRotation(str(rc(seq)).upper())))
 
+def lseguid(seq):
+    return seguid( min( str(seq).upper(), str(rc(seq)).upper() ) )
+
 
 class MyFrame(wx.Frame):
     def __init__(self, *args, **kwds):
@@ -427,12 +430,14 @@ class MyFrame(wx.Frame):
         wx.Frame.__init__(self, *args, **kwds)
         self.panel_1 = wx.Panel(self, -1)
         self.label_2 = wx.StaticText(self.panel_1, -1, "Biological sequences in raw format only. All except ABCDEFGHIJKLMNOPQRSTUVWXYZ and lowercased will be ignored")
-        self.seguid = wx.StaticText(self.panel_1, -1, "SEGUID for sequence")
+        self.seguid  = wx.StaticText(self.panel_1, -1, "SEGUID for sequence")
+        self.lseguid = wx.StaticText(self.panel_1, -1, "lSEGUID for sequence")
         self.cseguid = wx.StaticText(self.panel_1, -1, "cSEGUID for sequence")
         self.size = wx.StaticText(self.panel_1, -1, "Size (nucleotides or aa)")
         self.characters = wx.StaticText(self.panel_1, -1, "Characters")
 
-        self.text_ctrl_seguid = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
+        self.text_ctrl_seguid  = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
+        self.text_ctrl_lseguid = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_cseguid = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_size = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_characters = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
@@ -457,12 +462,14 @@ class MyFrame(wx.Frame):
         seq=self.text_ctrl_seq.GetValue()
         filtered_seq="".join([base for base in seq if base in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
         self.text_ctrl_seguid.Clear()
+        self.text_ctrl_lseguid.Clear()
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue( seguid(filtered_seq.encode()) )
-	    self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq.encode()) )
+            self.text_ctrl_seguid.SetValue(  seguid( filtered_seq.encode()) )
+            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq.encode()) )            
+            self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq.encode()) )
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
             self.text_ctrl_characters.SetValue(" ".join(sorted(set(filtered_seq.upper()))))
             self.text_ctrl_seq.SetValue(filtered_seq)
@@ -472,11 +479,13 @@ class MyFrame(wx.Frame):
         filtered_seq="".join([base for base in seq if base in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
         filtered_seq= rc(filtered_seq.encode())
         self.text_ctrl_seguid.Clear()
+        self.text_ctrl_lseguid.Clear()
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
             self.text_ctrl_seguid.SetValue( seguid(filtered_seq.encode()) )
+            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq.encode()) )       
             self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq.encode()) )
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
             self.text_ctrl_characters.SetValue(" ".join(sorted(set(filtered_seq.upper()))))
@@ -488,11 +497,13 @@ class MyFrame(wx.Frame):
         filtered_seq="".join([base for base in seq if base in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
         filtered_seq= rc(filtered_seq.encode())[::-1]
         self.text_ctrl_seguid.Clear()
+        self.text_ctrl_lseguid.Clear()        
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue( seguid(filtered_seq.encode()) )
+            self.text_ctrl_seguid.SetValue(  seguid( filtered_seq.encode()) )
+            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq.encode()) )
             self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq.encode()) )
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
             self.text_ctrl_characters.SetValue(" ".join(sorted(set(filtered_seq.upper()))))
@@ -504,11 +515,13 @@ class MyFrame(wx.Frame):
         filtered_seq="".join([base for base in seq if base in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
         filtered_seq= filtered_seq.encode()[::-1]
         self.text_ctrl_seguid.Clear()
+        self.text_ctrl_lseguid.Clear()        
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue( seguid(filtered_seq.encode()) )
+            self.text_ctrl_seguid.SetValue(  seguid( filtered_seq.encode()) )
+            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq.encode()) )
             self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq.encode()) )
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
             self.text_ctrl_characters.SetValue(" ".join(sorted(set(filtered_seq.upper()))))
@@ -544,11 +557,13 @@ class MyFrame(wx.Frame):
         sizer_4 = wx.BoxSizer(wx.VERTICAL)
         sizer_2.Add(self.label_2, 0, wx.ALL, 5)
         sizer_4.Add(self.seguid, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 10)
+        sizer_4.Add(self.lseguid, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 10)
         sizer_4.Add(self.cseguid, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 10)
         sizer_4.Add(self.size, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 10)
         sizer_4.Add(self.characters, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 10)
         sizer_3.Add(sizer_4, 0, wx.EXPAND, 0)
         sizer_5.Add(self.text_ctrl_seguid, 0, wx.ALL | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 5)
+        sizer_5.Add(self.text_ctrl_lseguid, 0, wx.ALL | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 5)
         sizer_5.Add(self.text_ctrl_cseguid, 0, wx.ALL | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 5)
         sizer_5.Add(self.text_ctrl_size, 0, wx.ALL | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 5)
         sizer_5.Add(self.text_ctrl_characters, 0, wx.ALL | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 5)
