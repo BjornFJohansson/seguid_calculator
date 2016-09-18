@@ -10,6 +10,10 @@ before_install:
  - python setup.py build
  - cd build/lib/seguid_calculator/
  - pyinstaller --noconsole --onefile seguid.py --name seguid_calculator
+ - cd dist
+ - ls
+ - wc -c seguid_calculator 
+
 install: true
 deploy:
   provider: releases

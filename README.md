@@ -39,6 +39,23 @@ Visit the website [Björn Johansson's group at CBMA](https://sites.google.com/sit
  information.
 
 ## Automatic build status
- [![Build status](https://ci.appveyor.com/api/projects/status/0bd4f7fi3g0m0itp?svg=true)](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator)
+
+[![Build status](https://ci.appveyor.com/api/projects/status/0bd4f7fi3g0m0itp?svg=true)](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator)
+
+Standalone executables (32 and 64 bit) are built on AppVeyor using pyinstaller and the [Python for Windows extension](https://sourceforge.net/projects/pywin32/?source=navbar) 
+AppVeyor
+
 [![Build Status](https://travis-ci.org/BjornFJohansson/seguid_calculator.svg?branch=master)](https://travis-ci.org/BjornFJohansson/seguid_calculator)
+
+
+
+
+
 [![Build Status](https://drone.io/github.com/BjornFJohansson/seguid_calculator/status.png)](https://drone.io/github.com/BjornFJohansson/seguid_calculator/latest)
+
+
+
+
+
+
+
