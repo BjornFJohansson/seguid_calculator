@@ -7,6 +7,9 @@ before_install:
  - conda install --yes -c https://conda.anaconda.org/aaren wxpython
  - brew install upx
  - pip install git+https://github.com/pyinstaller/pyinstaller
+ - python setup.py build
+ - cd build/lib/seguid_calculator/
+ - pyinstaller --noconsole --onefile seguid.py --name seguid_calculator
 install: true
 deploy:
   provider: releases
