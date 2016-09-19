@@ -1,33 +1,25 @@
 language: objective-c
 before_install:
- - wget http://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
- - bash ~/miniconda.sh -b -p $HOME/miniconda
- - export PATH="$HOME/miniconda/bin:$PATH"
- - conda update --yes -q conda
- - conda install --yes -c https://conda.anaconda.org/aaren wxpython
- - brew install upx
- - pip install git+https://github.com/pyinstaller/pyinstaller
- - python setup.py build
- - pyinstaller --noconsole --onefile --icon=calc.ico --name seguid_calculator build/lib/seguid_calculator/seguid.py
- - cd dist
- - ls
- - wc -c seguid_calculator
-
+- wget http://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+- bash ~/miniconda.sh -b -p $HOME/miniconda
+- export PATH="$HOME/miniconda/bin:$PATH"
+- conda update --yes -q conda
+- conda install --yes -c https://conda.anaconda.org/aaren wxpython
+- brew install upx
+- pip install git+https://github.com/pyinstaller/pyinstaller
+- python setup.py build
+- pyinstaller --noconsole --onefile --icon=calc.ico --name seguid_calculator build/lib/seguid_calculator/seguid.py
+- cd dist
+- ls
+- wc -c seguid_calculator
 install: true
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: b/FLCiwaTt+egDwahvIDRqnAZ3KtXPBOSfNiQSKaGNKsU4dmG5dZpLKOVVeBTSC1mz/F1kxfu/JFfzboBwcHG+h9G4/EDhy3CGKhcK5RZNF1NihrHexSu0UpXSAj59aTa1i9e7DAsECUQROMCRW0W1x4zxEm5ubZXR9aKBPlvO8=
-  file:
-    - "dist/seguid.app"
-    - "dist/seguid"
-  on:
-    tags: true
-    all_branches: true
-    repo: BjornFJohansson/seguid_calculator
-
+    secure: dSK2zOaGfKqo33Ov5mlEv4H1tMsEo6eurhsLkgOWzfA/vB9uBfSJE7rokG5QTrb6Wsc8Dmeqq3rXZMRM1ArblyXkxlKuN0WuJSmJSkEE6DX37YJmWOQzP+xwXN/aQNCDGuv8jYlSbRxmFZX3k9bw9Ylh8/oJi08sC9iyrEy/QbI=
+  file: dist/seguid_calculator.app
 
 cache:
- - wget
- - pip
+- wget
+- pip
