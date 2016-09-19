@@ -29,6 +29,5 @@ deploy:
 
 
 cache:
-  wget: true
-  pip: true
-  apt: true
+ - wget
+ - pip
