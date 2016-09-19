@@ -76,6 +76,7 @@ after_test:
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
+  #- path: C:\projects\seguid-calculator\build\lib\seguid_calculator\dist\*
   - path: build\lib\seguid_calculator\dist\*
   #- path: dist\*
 

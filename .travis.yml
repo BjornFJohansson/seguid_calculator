@@ -9,7 +9,7 @@ before_install:
  - pip install git+https://github.com/pyinstaller/pyinstaller
  - python setup.py build
  - cd build/lib/seguid_calculator/
- - pyinstaller --noconsole --onefile seguid.py --name seguid_calculator
+ - pyinstaller --noconsole --onefile --icon=calc.ico seguid.py
  - cd dist
  - ls
  - wc -c seguid_calculator 

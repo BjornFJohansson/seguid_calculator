@@ -4,12 +4,14 @@ README.md
 README.rst
 calc.ico
 calculator.png
-seguid.spec
 seguid_calculator.desktop
+seguid_calculator.png
 setup.py
 versioneer.py
 scripts/SEGUID_calculator_jython_old.py
 scripts/SEGUID_calculator_old_wxglade_file.wxg
+scripts/drone (copy).txt
+scripts/drone.txt
 scripts/embed-icon.sh
 scripts/remove_git_tags.sh
 seguid_calculator/__init__.py

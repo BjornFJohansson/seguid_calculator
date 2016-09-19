@@ -1,1 +1,1 @@
-python-wxgtk2.8
+python-wxgtk3.0

@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sun, 18 Sep 2016 21:37:47 +0100
+Source: seguid-calculator
+Binary: python-seguid-calculator
+Architecture: source
+Version: 0.9.0-1
+Distribution: vivid
+Urgency: low
+Maintainer: Björn Johansson <bjorn_johansson@bio.uminho.pt>
+Changed-By: Björn Johansson <bjorn_johansson@bio.uminho.pt>
+Description:
+ python-seguid-calculator - Calculates seguid, lseguid & cseguid checksums for biologica
+Changes:
+ seguid-calculator (0.9.0-1) vivid; urgency=low
+ .
+   * source package automatically created by stdeb 0.8.5
+Checksums-Sha1:
+ 7f28d346276dc0a695545f29a107233d8884c1c2 949 seguid-calculator_0.9.0-1.dsc
+ a135c8f40b3d4a5a85db91788c7a12d791b303f5 109639 seguid-calculator_0.9.0.orig.tar.gz
+ f04041d6e555e4e2e6f1debfd9461c9c57eccaf9 2168 seguid-calculator_0.9.0-1.debian.tar.xz
+Checksums-Sha256:
+ 6af1fe3073afccb57b0dae8397529b711163b5a02ac5ddf0b15844be78943df3 949 seguid-calculator_0.9.0-1.dsc
+ 12f5a66e93087f54f7ecea0713c4910ac7a1ac6e3359c0df032b10222c16fdfe 109639 seguid-calculator_0.9.0.orig.tar.gz
+ da103492aecef4d608a3b4dd67c2ee15bfadc61df97e2a404f34ff8dc7e23e04 2168 seguid-calculator_0.9.0-1.debian.tar.xz
+Files:
+ bf1993fc5e517ae1a58200db03581116 949 python optional seguid-calculator_0.9.0-1.dsc
+ 1a5240e96cf4a8d464c1a0cb52ff0952 109639 python optional seguid-calculator_0.9.0.orig.tar.gz
+ 2373de840b5ca76296a3c83e0fd37bc9 2168 python optional seguid-calculator_0.9.0-1.debian.tar.xz
