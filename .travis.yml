@@ -8,11 +8,11 @@ before_install:
  - brew install upx
  - pip install git+https://github.com/pyinstaller/pyinstaller
  - python setup.py build
- - cd build/lib/seguid_calculator/
- - pyinstaller --noconsole --onefile --icon=calc.ico seguid.py
+ - pyinstaller --noconsole --onefile --icon=calc.ico build/lib/seguid_calculator/seguid.py
  - cd dist
  - ls
- - wc -c seguid_calculator 
+ - wc -c seguid
+ - wc -c seguid.app
 
 install: true
 deploy:
@@ -21,8 +21,6 @@ deploy:
   api_key:
     secure: b/FLCiwaTt+egDwahvIDRqnAZ3KtXPBOSfNiQSKaGNKsU4dmG5dZpLKOVVeBTSC1mz/F1kxfu/JFfzboBwcHG+h9G4/EDhy3CGKhcK5RZNF1NihrHexSu0UpXSAj59aTa1i9e7DAsECUQROMCRW0W1x4zxEm5ubZXR9aKBPlvO8=
   file:
-    - "dist/seguid.dmg"
-    - "dist/seguid.zip"
     - "dist/seguid.app"
     - "dist/seguid"
   on:
@@ -30,3 +28,8 @@ deploy:
     all_branches: true
     repo: BjornFJohansson/seguid_calculator
 
+
+cache:
+  wget: true
+  pip: true
+  apt: true
