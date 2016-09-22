@@ -49,9 +49,7 @@ AppVeyor.
 
 Standalone executables (64 bit) are built on [TravisCI](https://travis-ci.org/BjornFJohansson/seguid_calculator) using pyinstaller and [Miniconda](http://conda.pydata.org/miniconda.html).
  
-[![Build Status](https://drone.io/github.com/BjornFJohansson/seguid_calculator/status.png)](https://drone.io/github.com/BjornFJohansson/seguid_calculator/latest)
-
-A debian package file is built on [drone.io]() 
+A debian package file is built offline on Ubuntu 16.04. This will install system shorcuts as well. 
 
 
 

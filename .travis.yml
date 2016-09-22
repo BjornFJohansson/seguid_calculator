@@ -14,6 +14,7 @@ before_install:
 - brew install upx
 - pip install git+https://github.com/pyinstaller/pyinstaller
 - python setup.py build
+- cd build/lib/seguid_calculator
 - pyinstaller --noconsole --onefile --icon=calc.ico --name seguid_calculator build/lib/seguid_calculator/seguid.py
 - cd dist
 - ls
