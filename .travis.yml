@@ -29,5 +29,7 @@ deploy:
     - "dist/seguid_calculator.dmg"
     - "dist/seguid_calculator.zip"
     - "dist/seguid_calculator"
+  on:
+    tags: true
 
 
