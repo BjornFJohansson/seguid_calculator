@@ -21,6 +21,7 @@ before_install:
 #- wc -c seguid_calculator
 install: true
 deploy:
+  draft: true
   provider: releases
   skip_cleanup: true
   api_key:
