@@ -59,7 +59,7 @@ Visit the website [Bjorn Johansson's group at CBMA](https://sites.google.com/sit
 
 [![Build status](https://ci.appveyor.com/api/projects/status/0bd4f7fi3g0m0itp?svg=true)](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator)
 
-Standalone executables (32 and 64 bit) are built on [AppVeyor](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator) using miniconda and pyinstaller.
+Standalone executables (32 and 64 bit) are built on [AppVeyor](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator) using pyinstaller and [Miniconda](http://conda.pydata.org/miniconda.html).
 
 [![Build Status](https://travis-ci.org/BjornFJohansson/seguid_calculator.svg?branch=master)](https://travis-ci.org/BjornFJohansson/seguid_calculator)
 
