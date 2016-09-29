@@ -15,9 +15,9 @@ before_install:
 - pip install git+https://github.com/pyinstaller/pyinstaller
 - python setup.py build
 - pyinstaller --noconsole --onefile --icon=calc.ico --name seguid_calculator build/lib/seguid_calculator/seguid.py
-- cd dist
-- ls
-- wc -c seguid_calculator
+- hdiutil create dist/hw.dmg -srcfolder dist/ -ov
+- ls dist/
+#- wc -c seguid_calculator
 install: true
 deploy:
   provider: releases
