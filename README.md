@@ -45,12 +45,9 @@ Seguid_calculator is written in python 2.7 with wxPython 3. Development happens 
 
 Executables are available for
 
-* Windows 32 bits is available
-
-* Windows 64 bits is available
-
-* Mac OS dmg and a zip file containing an app
-
+* Windows 32 bit
+* Windows 64 bit
+* Mac OSX dmg and a zip file containing an app
 * Linux deb package compiled on Ubuntu 16.04
 
 The executables can be downloaded from the button at the top of this page called [releases](https://github.com/BjornFJohansson/seguid_calculator/releases).
