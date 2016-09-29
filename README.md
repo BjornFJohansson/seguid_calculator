@@ -1,5 +1,5 @@
 # seguid_calculator
-Seguid calculator is a small GUI application for calculating the SEGUID, lSEGUID and cSEGUID checksums for a 
+![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/calculator.png "seguid_calculator")Seguid calculator is a small GUI application for calculating the SEGUID, lSEGUID and cSEGUID checksums for a 
 biological sequence (DNA, RNA or protein). 
 It is available as executables for Windows, MacOSX and Linux (see below).
 
@@ -42,15 +42,15 @@ by their identical cSEGUIDs:
 Seguid_calculator is written in python 2.7 with wxPython 3. Development happens on [Github](https://github.com/BjornFJohansson/seguid_calculator) where source code is available.
 
 ## Executables
-![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/calculator.png "seguid_calculator")
 
-Windows executable for 32 bits is available [here](https://ci.appveyor.com/api/buildjobs/mlp0bbvqsnhg382c/artifacts/build/lib/seguid_calculator/dist/seguid_calculator.exe).
+Executables are available for
 
-Windows executable for 64 bits is available [here](https://ci.appveyor.com/api/buildjobs/johw573mecp7utc9/artifacts/build/lib/seguid_calculator/dist/seguid_calculator.exe).
+* Windows 32 bit
+* Windows 64 bit
+* Mac OSX dmg and a zip file containing an app
+* Linux deb package compiled on Ubuntu 16.04
 
-Mac OS executables executable for 64 bits is available [here]().
-
-Linux executable for 64 bits is available [here]().
+The executables can be downloaded from the button at the top of this page called [releases](https://github.com/BjornFJohansson/seguid_calculator/releases).
 
 Visit the website [Bjorn Johansson's group at CBMA](https://sites.google.com/site/metabolicengineeringgroup/) for more
  information.
@@ -59,15 +59,14 @@ Visit the website [Bjorn Johansson's group at CBMA](https://sites.google.com/sit
 
 [![Build status](https://ci.appveyor.com/api/projects/status/0bd4f7fi3g0m0itp?svg=true)](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator)
 
-Standalone executables (32 and 64 bit) are built on [AppVeyor](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator) using pyinstaller and the [Python for Windows extension](https://sourceforge.net/projects/pywin32/?source=navbar) 
-AppVeyor.
+Standalone executables (32 and 64 bit) are built on [AppVeyor](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator) using pyinstaller and [Miniconda](http://conda.pydata.org/miniconda.html).
 
 [![Build Status](https://travis-ci.org/BjornFJohansson/seguid_calculator.svg?branch=master)](https://travis-ci.org/BjornFJohansson/seguid_calculator)
 
-Standalone executables (64 bit) are built on [TravisCI](https://travis-ci.org/BjornFJohansson/seguid_calculator) using pyinstaller and [Miniconda](http://conda.pydata.org/miniconda.html).
+Standalone executables (64 bit) for MacOSX are built on [TravisCI](https://travis-ci.org/BjornFJohansson/seguid_calculator) using pyinstaller and [Miniconda](http://conda.pydata.org/miniconda.html).
  
 A debian package file is built offline, currently on Ubuntu 16.04. 
-This will install system shorcuts as well. 
+This installs system shorcuts as well.
 
 
 
