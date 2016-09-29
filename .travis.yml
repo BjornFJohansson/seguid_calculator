@@ -15,7 +15,8 @@ before_install:
 - pip install git+https://github.com/pyinstaller/pyinstaller
 - python setup.py build
 - pyinstaller --noconsole --onefile --icon=calc.ico --name seguid_calculator build/lib/seguid_calculator/seguid.py
-- hdiutil create dist/hw.dmg -srcfolder dist/ -ov
+- hdiutil create dist/seguid_calculator.dmg -srcfolder dist/ -ov
+- zip -r dist/seguid_calculator.zip dist/seguid_calculator.app
 - ls dist/
 #- wc -c seguid_calculator
 install: true
@@ -24,6 +25,9 @@ deploy:
   skip_cleanup: true
   api_key:
     secure: dSK2zOaGfKqo33Ov5mlEv4H1tMsEo6eurhsLkgOWzfA/vB9uBfSJE7rokG5QTrb6Wsc8Dmeqq3rXZMRM1ArblyXkxlKuN0WuJSmJSkEE6DX37YJmWOQzP+xwXN/aQNCDGuv8jYlSbRxmFZX3k9bw9Ylh8/oJi08sC9iyrEy/QbI=
-  file: seguid_calculator
+  file:
+    - "dist/seguid_calculator.dmg"
+    - "dist/seguid_calculator.zip"
+    - "dist/seguid_calculator"
 
 
