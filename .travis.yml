@@ -29,7 +29,7 @@ before_install:
 - ls dist/
 - wc -c dist/seguid_calculator.zip
 - wc -c dist/seguid_calculator.dmg
-- ./dist/seguid_calculator.dmg
+- sudo ./dist/seguid_calculator.dmg
 
 install: true
 deploy:
