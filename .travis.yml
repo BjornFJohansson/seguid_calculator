@@ -39,8 +39,8 @@ install: true
 
 
 deploy:
-  draft: true
   provider: releases
+  draft: true
   skip_cleanup: true
   api_key:
     secure: dSK2zOaGfKqo33Ov5mlEv4H1tMsEo6eurhsLkgOWzfA/vB9uBfSJE7rokG5QTrb6Wsc8Dmeqq3rXZMRM1ArblyXkxlKuN0WuJSmJSkEE6DX37YJmWOQzP+xwXN/aQNCDGuv8jYlSbRxmFZX3k9bw9Ylh8/oJi08sC9iyrEy/QbI=
@@ -53,11 +53,7 @@ deploy:
     branch: master
 deploy:
   provider: script
+  skip_cleanup: true
   script: python deploy_to_dropbox.py
   on:
-    branch: py2dev
-  provider: releases
-
-
-
-
+   branch: py2dev
