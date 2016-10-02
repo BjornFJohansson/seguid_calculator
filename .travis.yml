@@ -30,10 +30,12 @@ before_install:
 - ls dist/
 - wc -c dist/seguid_calculator.zip
 - wc -c dist/seguid_calculator.dmg
-- chmod +x dist/seguid_calculator.dmg
-- ./dist/seguid_calculator.dmg
+#- chmod +x dist/seguid_calculator.dmg
+#- ./dist/seguid_calculator.dmg
 
 install: true
+
+
 deploy:
   draft: true
   provider: releases
@@ -46,5 +48,13 @@ deploy:
     - "dist/seguid_calculator"
   on:
     tags: true
+    branch: releases
+
+  provider: releases
+  on:
+    tags: false
+    branch: master
+
+
 
 
