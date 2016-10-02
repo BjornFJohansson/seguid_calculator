@@ -1,5 +1,7 @@
 os:
   - osx
+git:
+  depth: 3
 
 env:
   - DISPLAY=:99.0
@@ -48,12 +50,13 @@ deploy:
     - "dist/seguid_calculator"
   on:
     tags: true
-    branch: releases
-
-  provider: releases
-  on:
-    tags: false
     branch: master
+deploy:
+  provider: script
+  script: python deploy_to_dropbox.py
+  on:
+    branch: py2dev
+  provider: releases
 
 
 
