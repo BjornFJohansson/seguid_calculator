@@ -1,4 +1,5 @@
-language: objective-c
+os:
+  - osx
 
 env:
   - DISPLAY=:99.0
@@ -29,7 +30,6 @@ before_install:
 - ls dist/
 - wc -c dist/seguid_calculator.zip
 - wc -c dist/seguid_calculator.dmg
-- sudo ./dist/seguid_calculator.dmg
 
 install: true
 deploy:
