@@ -17,7 +17,7 @@ before_install:
 - conda install --yes -c conda-forge pyinstaller=3.2
 - python setup.py build
 - pyinstaller --noconsole --onefile --icon=calc.ico --name seguid_calculator build/lib/seguid_calculator/seguid.py
-- cat cat build/seguid_calculator/warnseguid_calculator.txt
+- cat build/seguid_calculator/warnseguid_calculator.txt
 - hdiutil create dist/seguid_calculator.dmg -srcfolder dist/ -ov
 - zip -r dist/seguid_calculator.zip dist/seguid_calculator.app
 - ls dist/
