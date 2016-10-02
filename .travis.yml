@@ -4,6 +4,7 @@ cache:
  - wget
  - pip
  - brew
+ - conda
 
 before_install:
 - wget http://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
@@ -19,7 +20,8 @@ before_install:
 - hdiutil create dist/seguid_calculator.dmg -srcfolder dist/ -ov
 - zip -r dist/seguid_calculator.zip dist/seguid_calculator.app
 - ls dist/
-#- wc -c seguid_calculator
+- wc -c dist/seguid_calculator.zip
+- wc -c dist/seguid_calculator.dmg
 install: true
 deploy:
   draft: true
