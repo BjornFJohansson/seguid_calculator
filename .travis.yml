@@ -1,5 +1,10 @@
 language: objective-c
 
+env:
+  - DISPLAY=:99.0
+before_install:
+  - sh -e /etc/init.d/xvfb start
+
 cache:
  - wget
  - pip
@@ -16,6 +21,7 @@ before_install:
 #- pip install git+https://github.com/pyinstaller/pyinstaller
 - conda install --yes -c conda-forge pyinstaller=3.2
 - python setup.py build
+- cat build/lib/seguid_calculator/_version.py
 - pyinstaller --noconsole --onefile --icon=calc.ico --name seguid_calculator build/lib/seguid_calculator/seguid.py
 - cat build/seguid_calculator/warnseguid_calculator.txt
 - hdiutil create dist/seguid_calculator.dmg -srcfolder dist/ -ov
