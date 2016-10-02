@@ -1,7 +1,7 @@
 os:
   - osx
 git:
-  depth: 3
+  depth: 10
 
 env:
   - DISPLAY=:99.0
