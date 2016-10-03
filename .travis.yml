@@ -39,7 +39,7 @@ install: true
 
 
 deploy:
-  provider: releases
+- provider: releases
   draft: true
   skip_cleanup: true
   api_key:
@@ -51,8 +51,7 @@ deploy:
   on:
     tags: true
     branch: master
-deploy:
-  provider: script
+- provider: script
   skip_cleanup: true
   script: python deploy_to_dropbox.py
   on:
