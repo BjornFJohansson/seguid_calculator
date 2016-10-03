@@ -46,8 +46,8 @@ deploy:
     on:
       tags: true
       branch: master
-  - provider: script
-    skip_cleanup: true
-    script: python deploy_to_dropbox.py
-    on:
-      branch: py2dev
+#  - provider: script
+#    skip_cleanup: true
+#    script: python deploy_to_dropbox.py
+#    on:
+#      branch: py2dev
