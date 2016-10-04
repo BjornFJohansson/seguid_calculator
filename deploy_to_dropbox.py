@@ -2,8 +2,13 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-import pathlib
 import dropbox
+
+try:
+    import pathlib
+except ImportError:
+    import pathlib2 as pathlib
+
    
 def upload(pth, parent=pathlib.Path("/Public")):
     np = parent.joinpath(pth)
