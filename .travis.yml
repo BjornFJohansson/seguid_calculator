@@ -42,5 +42,5 @@ deploy:
     skip_cleanup: true
     script: python deploy_to_dropbox.py
     on:
-      tags: true
+      tags: false
       branch: py2dev
