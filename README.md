@@ -57,15 +57,15 @@ Visit the website [Bjorn Johansson's group at CBMA](https://sites.google.com/sit
 
 ## Automatic build status
 
+Windows standalone executables (32 and 64 bit) are built on [AppVeyor](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator) using [pyinstaller](http://www.pyinstaller.org/) and [Miniconda](http://conda.pydata.org/miniconda.html).
+
 [![Build status](https://ci.appveyor.com/api/projects/status/0bd4f7fi3g0m0itp?svg=true)](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator)
 
-Standalone executables (32 and 64 bit) are built on [AppVeyor](https://ci.appveyor.com/project/BjornFJohansson/seguid-calculator) using pyinstaller and [Miniconda](http://conda.pydata.org/miniconda.html).
-
+Standalone executables (64 bit) for MacOSX are built on [TravisCI](https://travis-ci.org/BjornFJohansson/seguid_calculator) using [pyinstaller](http://www.pyinstaller.org/) and [Miniconda](http://conda.pydata.org/miniconda.html).
+ 
 [![Build Status](https://travis-ci.org/BjornFJohansson/seguid_calculator.svg?branch=master)](https://travis-ci.org/BjornFJohansson/seguid_calculator)
 
-Standalone executables (64 bit) for MacOSX are built on [TravisCI](https://travis-ci.org/BjornFJohansson/seguid_calculator) using pyinstaller and [Miniconda](http://conda.pydata.org/miniconda.html).
- 
-A debian package file is built offline, currently on Ubuntu 16.04. 
+A debian package (.deb) is built offline, currently on Ubuntu 16.04 using [stdeb](https://github.com/astraw/stdeb). Look at the script "run_this_scritp_to_create_deb_package.sh". 
 This installs system shorcuts as well.
 
 
