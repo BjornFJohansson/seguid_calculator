@@ -10,12 +10,12 @@ environment:
       PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "32"
       PYWIN_DL: "https://downloads.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win32-py2.7.exe"
-      WXP: "http://wxpython.org/Phoenix/snapshot-builds/wxPython_Phoenix-3.0.3.dev2567+1fe2585-cp35-cp35m-win32.whl"
+      WXP: "http://wxpython.org/Phoenix/snapshot-builds/wxPython_Phoenix-3.0.3.dev2567+1fe2585-cp27-cp27m-win32.whl"
     - PYTHON: "C:\\Python27-x64"
       PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "64"
       PYWIN_DL: "https://downloads.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe"
-      WXP: "http://wxpython.org/Phoenix/snapshot-builds/wxPython_Phoenix-3.0.3.dev2567+1fe2585-cp35-cp35m-win_amd64.whl"
+      WXP: "http://wxpython.org/Phoenix/snapshot-builds/wxPython_Phoenix-3.0.3.dev2567+1fe2585-cp27-cp27m-win_amd64.whl"
 
 
 install:
