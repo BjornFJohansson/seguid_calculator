@@ -9,11 +9,11 @@ Build-Depends: python-setuptools (>= 0.6b3), python-all (>= 2.6.6-3), debhelper 
 Package-List:
  python-seguid-calculator deb python optional arch=all
 Checksums-Sha1:
- e80ed3f52509f17f62623c3add7d5a5ba54e2c78 110368 seguid-calculator_1.0.0.orig.tar.gz
- 3b84b4f1efc35fc23b5221743896b980df12c98a 1500 seguid-calculator_1.0.0-1.debian.tar.xz
+ a1c080c775b678bd80553e3c8dee599d0a9a247a 136504 seguid-calculator_1.0.0.orig.tar.gz
+ 225d208c37927449903daa722887fffb5095a8b1 1504 seguid-calculator_1.0.0-1.debian.tar.xz
 Checksums-Sha256:
- a10758ff60b30342e3b99119f3def6c70c572e44b35ec52c4ad5da49d72647e7 110368 seguid-calculator_1.0.0.orig.tar.gz
- c7a027399440708b683b15d724649b6dcd33b49c7cc9276b039dcc5dec7cc37d 1500 seguid-calculator_1.0.0-1.debian.tar.xz
+ b4606817533f2b736191d00e52b4f83b9b1fd4ce96bae5d95370e0928eef7dc2 136504 seguid-calculator_1.0.0.orig.tar.gz
+ 49ec6646d4a92402cf050733eb55456d15df8308d425886451f6023752129e1e 1504 seguid-calculator_1.0.0-1.debian.tar.xz
 Files:
- c5e112e8b85371f62ed374c9b9911008 110368 seguid-calculator_1.0.0.orig.tar.gz
- 3c1e33bbf99cc07cf0cb6b36590cf364 1500 seguid-calculator_1.0.0-1.debian.tar.xz
+ c739b276d39fe0ee478e380f853146ab 136504 seguid-calculator_1.0.0.orig.tar.gz
+ 10c878f934f390fef22013a8648adec7 1504 seguid-calculator_1.0.0-1.debian.tar.xz

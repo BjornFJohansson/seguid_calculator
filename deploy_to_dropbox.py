@@ -28,7 +28,7 @@ def upload(pth, parent=pathlib.Path("/Public")):
                 sys.exit()
 
 dbx = dropbox.Dropbox( os.environ["DROPBOXTOKEN"] )
- 
+
 try:
     dbx.users_get_current_account()
 except dropbox.exceptions.AuthError as err:

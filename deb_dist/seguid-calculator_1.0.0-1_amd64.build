@@ -34,7 +34,6 @@ dh build --with python2 --buildsystem=python_distutils
 make[1]: Entering directory '/home/bjorn/python_packages/seguid_calculator/deb_dist/seguid-calculator-1.0.0'
 python setup.py build --force
 running build
-got version from file /home/bjorn/python_packages/seguid_calculator/deb_dist/seguid-calculator-1.0.0/seguid_calculator/_version.py {'version': '1.0.0-8-g31ac90a-dirty', 'full': '31ac90a29ba803e67f0f5a382e6569ea1eaecf10-dirty'}
 running build_py
 creating build
 creating build/lib.linux-x86_64-2.7
@@ -43,6 +42,7 @@ copying seguid_calculator/_version.py -> build/lib.linux-x86_64-2.7/seguid_calcu
 copying seguid_calculator/__init__.py -> build/lib.linux-x86_64-2.7/seguid_calculator
 copying seguid_calculator/seguid.py -> build/lib.linux-x86_64-2.7/seguid_calculator
 UPDATING build/lib.linux-x86_64-2.7/seguid_calculator/_version.py
+set build/lib.linux-x86_64-2.7/seguid_calculator/_version.py to '1.0.0+0.gc35dc9c.dirty'
 make[1]: Leaving directory '/home/bjorn/python_packages/seguid_calculator/deb_dist/seguid-calculator-1.0.0'
    dh_auto_test -O--buildsystem=python_distutils
  fakeroot debian/rules binary
@@ -51,12 +51,12 @@ dh binary-indep
    dh_prep -i
    debian/rules override_dh_auto_install
 make[1]: Entering directory '/home/bjorn/python_packages/seguid_calculator/deb_dist/seguid-calculator-1.0.0'
-python setup.py install --force --root=debian/python-seguid-calculator --no-compile -O0 --install-layout=deb  
+python setup.py install --force --root=debian/python-seguid-calculator --no-compile -O0 --install-layout=deb --prefix=/usr 
 running install
 running build
-got version from file /home/bjorn/python_packages/seguid_calculator/deb_dist/seguid-calculator-1.0.0/seguid_calculator/_version.py {'version': '1.0.0-8-g31ac90a-dirty', 'full': '31ac90a29ba803e67f0f5a382e6569ea1eaecf10-dirty'}
 running build_py
 UPDATING build/lib.linux-x86_64-2.7/seguid_calculator/_version.py
+set build/lib.linux-x86_64-2.7/seguid_calculator/_version.py to '1.0.0+0.gc35dc9c.dirty'
 running install_lib
 creating debian/python-seguid-calculator
 creating debian/python-seguid-calculator/usr
@@ -73,15 +73,14 @@ creating debian/python-seguid-calculator/usr/share/icons
 copying seguid_calculator.png -> debian/python-seguid-calculator/usr/share/icons
 running install_egg_info
 running egg_info
-creating seguid_calculator.egg-info
 writing seguid_calculator.egg-info/PKG-INFO
 writing top-level names to seguid_calculator.egg-info/top_level.txt
 writing dependency_links to seguid_calculator.egg-info/dependency_links.txt
 writing entry points to seguid_calculator.egg-info/entry_points.txt
-writing manifest file 'seguid_calculator.egg-info/SOURCES.txt'
 reading manifest file 'seguid_calculator.egg-info/SOURCES.txt'
 reading manifest template 'MANIFEST.in'
 warning: no files found matching 'embed-icon.sh'
+warning: no files found matching 'seguid.spec'
 warning: no previously-included files matching '*.pyc' found anywhere in distribution
 warning: no previously-included files matching '*~' found anywhere in distribution
 writing manifest file 'seguid_calculator.egg-info/SOURCES.txt'
@@ -126,7 +125,14 @@ W: python-seguid-calculator: extended-description-line-too-long
 W: python-seguid-calculator: extended-description-line-too-long
 W: python-seguid-calculator: extended-description-line-too-long
 W: python-seguid-calculator: binary-without-manpage usr/bin/seguid_calculator
-E: python-seguid-calculator: python-script-but-no-python-dep usr/bin/seguid_calculator
+W: python-seguid-calculator: interpreter-not-absolute usr/bin/seguid_calculator #!"/usr/bin/env
+W: python-seguid-calculator: unusual-interpreter usr/bin/seguid_calculator #!"/usr/bin/env
 W: python-seguid-calculator: script-not-executable usr/share/applications/seguid_calculator.desktop
 W: python-seguid-calculator: unusual-interpreter usr/share/applications/seguid_calculator.desktop #!xdg-open
+W: python-seguid-calculator: executable-not-elf-or-script usr/lib/python2.7/dist-packages/seguid_calculator-1.0.0-py2.7.egg-info/dependency_links.txt
+W: python-seguid-calculator: executable-not-elf-or-script usr/lib/python2.7/dist-packages/seguid_calculator-1.0.0-py2.7.egg-info/not-zip-safe
+W: python-seguid-calculator: executable-not-elf-or-script usr/lib/python2.7/dist-packages/seguid_calculator-1.0.0-py2.7.egg-info/SOURCES.txt
+W: python-seguid-calculator: executable-not-elf-or-script usr/lib/python2.7/dist-packages/seguid_calculator-1.0.0-py2.7.egg-info/PKG-INFO
+W: python-seguid-calculator: executable-not-elf-or-script usr/lib/python2.7/dist-packages/seguid_calculator-1.0.0-py2.7.egg-info/top_level.txt
+W: python-seguid-calculator: executable-not-elf-or-script usr/lib/python2.7/dist-packages/seguid_calculator-1.0.0-py2.7.egg-info/entry_points.txt
 Finished running lintian.

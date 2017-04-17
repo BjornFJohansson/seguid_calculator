@@ -3,7 +3,7 @@ Source: seguid-calculator
 Version: 1.0.0-1
 Architecture: all
 Maintainer: Björn Johansson <bjorn_johansson@bio.uminho.pt>
-Installed-Size: 87
+Installed-Size: 88
 Depends: python-wxgtk3.0
 Section: python
 Priority: optional

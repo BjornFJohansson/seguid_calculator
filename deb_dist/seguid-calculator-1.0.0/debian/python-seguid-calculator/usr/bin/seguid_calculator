@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!"/usr/bin/env python"
 # EASY-INSTALL-ENTRY-SCRIPT: 'seguid-calculator==1.0.0','console_scripts','seguid_calculator'
 __requires__ = 'seguid-calculator==1.0.0'
 import sys

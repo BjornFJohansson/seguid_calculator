@@ -24,7 +24,8 @@ before_install:
 - wc -c dist/seguid_calculator.zip
 - wc -c dist/seguid_calculator.dmg
 install:
-- pip install dropbox pathlib2
+- pip install pathlib2
+- pip install -I dropbox==6.9.0
 
 deploy:
   - provider: releases
@@ -45,3 +46,6 @@ deploy:
     on:
       tags: false
       branch: py2dev
+
+notifications:
+  email: false

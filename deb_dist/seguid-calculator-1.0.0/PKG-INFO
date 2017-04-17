@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: seguid_calculator
-Version: 1.0.0-8-g31ac90a-dirty
+Version: 1.0.0+0.gc35dc9c.dirty
 Summary: Calculates seguid, lseguid & cseguid checksums
 Home-page: http://pypi.python.org/pypi/seguid_calculator
 Author: Björn Johansson

@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Thu, 29 Sep 2016 13:53:10 +0100
+Date: Thu, 06 Oct 2016 11:05:45 +0100
 Source: seguid-calculator
 Binary: python-seguid-calculator
 Architecture: source
@@ -15,14 +15,14 @@ Changes:
  .
    * source package automatically created by stdeb 0.8.5
 Checksums-Sha1:
- 6396ee5fa52b56932946ed6616c8980e9ade0177 949 seguid-calculator_1.0.0-1.dsc
- e80ed3f52509f17f62623c3add7d5a5ba54e2c78 110368 seguid-calculator_1.0.0.orig.tar.gz
- aceb5e8976e0490c416715f861658699f559358d 1500 seguid-calculator_1.0.0-1.debian.tar.xz
+ beeef1fda21f352f5a134a664d3509f06bb5fcdd 949 seguid-calculator_1.0.0-1.dsc
+ a1c080c775b678bd80553e3c8dee599d0a9a247a 136504 seguid-calculator_1.0.0.orig.tar.gz
+ bf27a7a3071df13dac7556c236f8734da631398c 1508 seguid-calculator_1.0.0-1.debian.tar.xz
 Checksums-Sha256:
- 8d04a549115c999e522f0a5657086ccdde11bea2faf18b08afc074ce776e2cc7 949 seguid-calculator_1.0.0-1.dsc
- a10758ff60b30342e3b99119f3def6c70c572e44b35ec52c4ad5da49d72647e7 110368 seguid-calculator_1.0.0.orig.tar.gz
- 25dfa4bbce41465f05cc52ceb1773d61b3440c30ce633abc96179a1939a783fc 1500 seguid-calculator_1.0.0-1.debian.tar.xz
+ 6389bb9f8ea5540afe26fc2f4592aee0a8b7b98e830452b7ba952ddb0a3715ef 949 seguid-calculator_1.0.0-1.dsc
+ b4606817533f2b736191d00e52b4f83b9b1fd4ce96bae5d95370e0928eef7dc2 136504 seguid-calculator_1.0.0.orig.tar.gz
+ 8bdd41b45549db52ce6b4b56e51ae69fcbfc91f6701da31380dc255aef6d804e 1508 seguid-calculator_1.0.0-1.debian.tar.xz
 Files:
- db8ed9c813656695ebd0b3552d0217ba 949 python optional seguid-calculator_1.0.0-1.dsc
- c5e112e8b85371f62ed374c9b9911008 110368 python optional seguid-calculator_1.0.0.orig.tar.gz
- 42f12d79ad326ce907f4640d11e39435 1500 python optional seguid-calculator_1.0.0-1.debian.tar.xz
+ c977c6d96c3f181b11fe22ee4157d665 949 python optional seguid-calculator_1.0.0-1.dsc
+ c739b276d39fe0ee478e380f853146ab 136504 python optional seguid-calculator_1.0.0.orig.tar.gz
+ 471418221f6eca13d9bf5834367e63c5 1508 python optional seguid-calculator_1.0.0-1.debian.tar.xz

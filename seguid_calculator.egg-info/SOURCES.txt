@@ -1,12 +1,11 @@
 LICENSE.txt
 MANIFEST.in
 README.md
-README.rst
 calc.ico
 calculator.png
-seguid.spec
 seguid_calculator.desktop
 seguid_calculator.png
+setup.cfg
 setup.py
 setup_deb.py
 versioneer.py
