@@ -5,7 +5,7 @@ SEGUID calculator
 '''
 
 import wx
-import string
+#import string
 import hashlib
 import base64
 from wx.lib.embeddedimage import PyEmbeddedImage
@@ -354,10 +354,10 @@ calcicon = PyEmbeddedImage(
 
 def seguid(seq):
     m = hashlib.sha1()
-    m.update(seq.upper())
-    return base64.urlsafe_b64encode( m.digest() ).rstrip("=")
+    m.update(seq.upper().encode())
+    return base64.urlsafe_b64encode( m.digest() ).decode().rstrip("=")
 
-tab = string.maketrans("GATCRYWSMKHBVDNgatcrywsmkhbvdn","CTAGYRWSKMDVBHNctagyrwskmdvbhn")
+tab = str.maketrans("GATCRYWSMKHBVDNgatcrywsmkhbvdn","CTAGYRWSKMDVBHNctagyrwskmdvbhn")
 
 def rc(s):
     return s.translate(tab)[::-1]
@@ -462,33 +462,33 @@ class MyFrame(wx.Frame):
 
     def OnCalc(self, event):
         seq=self.text_ctrl_seq.GetValue()
-        filtered_seq="".join([base for base in seq if base in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
+        filtered_seq="".join( b for b in seq if b in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" )
         self.text_ctrl_seguid.Clear()
         self.text_ctrl_lseguid.Clear()
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue(  seguid( filtered_seq.encode()) )
-            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq.encode()) )            
-            self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq.encode()) )
+            self.text_ctrl_seguid.SetValue(  seguid( filtered_seq ))
+            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq ))            
+            self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq ))
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
             self.text_ctrl_characters.SetValue(" ".join(sorted(set(filtered_seq.upper()))))
             self.text_ctrl_seq.SetValue(filtered_seq)
 
     def OnRevComp(self, event):
         seq=self.text_ctrl_seq.GetValue()
-        filtered_seq="".join([base for base in seq if base in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
-        filtered_seq= rc(filtered_seq.encode())
+        filtered_seq="".join([b for b in seq if b in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
+        filtered_seq= rc(filtered_seq)
         self.text_ctrl_seguid.Clear()
         self.text_ctrl_lseguid.Clear()
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue( seguid(filtered_seq.encode()) )
-            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq.encode()) )       
-            self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq.encode()) )
+            self.text_ctrl_seguid.SetValue( seguid(   filtered_seq  ))
+            self.text_ctrl_lseguid.SetValue( lseguid( filtered_seq  ))       
+            self.text_ctrl_cseguid.SetValue( cseguid( filtered_seq  ))
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
             self.text_ctrl_characters.SetValue(" ".join(sorted(set(filtered_seq.upper()))))
             self.text_ctrl_seq.SetValue(filtered_seq)
@@ -496,17 +496,17 @@ class MyFrame(wx.Frame):
 
     def OnCompl(self, event):
         seq=self.text_ctrl_seq.GetValue()
-        filtered_seq="".join([base for base in seq if base in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
-        filtered_seq= rc(filtered_seq.encode())[::-1]
+        filtered_seq="".join([b for b in seq if b in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
+        filtered_seq= rc(filtered_seq )[::-1]
         self.text_ctrl_seguid.Clear()
         self.text_ctrl_lseguid.Clear()        
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue(  seguid( filtered_seq.encode()) )
-            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq.encode()) )
-            self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq.encode()) )
+            self.text_ctrl_seguid.SetValue(  seguid( filtered_seq ))
+            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq ))
+            self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq ))
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
             self.text_ctrl_characters.SetValue(" ".join(sorted(set(filtered_seq.upper()))))
             self.text_ctrl_seq.SetValue(filtered_seq)
@@ -515,16 +515,16 @@ class MyFrame(wx.Frame):
     def OnRev(self, event):
         seq=self.text_ctrl_seq.GetValue()
         filtered_seq="".join([base for base in seq if base in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
-        filtered_seq= filtered_seq.encode()[::-1]
+        filtered_seq= filtered_seq[::-1]
         self.text_ctrl_seguid.Clear()
         self.text_ctrl_lseguid.Clear()        
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue(  seguid( filtered_seq.encode()) )
-            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq.encode()) )
-            self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq.encode()) )
+            self.text_ctrl_seguid.SetValue(  seguid( filtered_seq) )
+            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq) )
+            self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq) )
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
             self.text_ctrl_characters.SetValue(" ".join(sorted(set(filtered_seq.upper()))))
             self.text_ctrl_seq.SetValue(filtered_seq)

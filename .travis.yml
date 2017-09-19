@@ -5,14 +5,15 @@ cache:
  - brew
  - conda
 before_install:
-- wget http://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+- wget http://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
 - bash ~/miniconda.sh -b -p $HOME/miniconda
 - export PATH="$HOME/miniconda/bin:$PATH"
 - conda update --yes -q conda
-- conda install --yes -c aaren wxpython
+- conda install -c gsecars wxpython
 - brew install upx
 #- pip install git+https://github.com/pyinstaller/pyinstaller
-- conda install --yes -c conda-forge pyinstaller=3.2
+- conda install --yes -c conda-forge pyinstaller
+- conda install -c conda-forge pypandoc
 - python setup.py build
 - cat build/lib/seguid_calculator/_version.py
 #- pyinstaller --noconsole --onefile --icon=calc.ico --name seguid_calculator build/lib/seguid_calculator/seguid.py
@@ -24,7 +25,7 @@ before_install:
 - wc -c dist/seguid_calculator.zip
 - wc -c dist/seguid_calculator.dmg
 install:
-- pip install pathlib2
+#- pip install pathlib2
 - pip install -I dropbox==6.9.0
 
 deploy:
@@ -45,7 +46,7 @@ deploy:
     script: python deploy_to_dropbox.py
     on:
       tags: false
-      branch: py2dev
+      branch: master
 
 notifications:
   email: false

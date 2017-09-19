@@ -9,9 +9,9 @@ __maintainer__  = "Björn Johansson"
 __email__       = "bjorn_johansson@bio.uminho.pt"
 __status__      = "Production"
 
-from _version import get_versions
+from ._version import get_versions
 __version__      = get_versions()['version'][:5]
 __long_version__ = get_versions()['version']
 del get_versions
 
-from seguid import main
+from .seguid import main
