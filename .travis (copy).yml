@@ -1,0 +1,52 @@
+language: objective-c
+cache:
+ - wget
+ - pip
+ - brew
+ - conda
+before_install:
+- wget http://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+- bash ~/miniconda.sh -b -p $HOME/miniconda
+- export PATH="$HOME/miniconda/bin:$PATH"
+- conda update --yes -q conda
+- conda install -c gsecars wxpython
+- brew install upx
+#- pip install git+https://github.com/pyinstaller/pyinstaller
+- conda install --yes -c conda-forge pyinstaller
+- conda install -c conda-forge pypandoc
+- python setup.py build
+- cat build/lib/seguid_calculator/_version.py
+#- pyinstaller --noconsole --onefile --icon=calc.ico --name seguid_calculator build/lib/seguid_calculator/seguid.py
+- pyinstaller --onefile --windowed seguid_calculator.spec
+- cat build/seguid_calculator/warnseguid_calculator.txt
+- hdiutil create dist/seguid_calculator.dmg -srcfolder dist/ -ov
+- zip -r dist/seguid_calculator.zip dist/seguid_calculator.app
+- ls dist/
+- wc -c dist/seguid_calculator.zip
+- wc -c dist/seguid_calculator.dmg
+install:
+#- pip install pathlib2
+- pip install -I dropbox==6.9.0
+
+deploy:
+  - provider: releases
+    draft: true
+    skip_cleanup: true
+    api_key:
+      secure: dSK2zOaGfKqo33Ov5mlEv4H1tMsEo6eurhsLkgOWzfA/vB9uBfSJE7rokG5QTrb6Wsc8Dmeqq3rXZMRM1ArblyXkxlKuN0WuJSmJSkEE6DX37YJmWOQzP+xwXN/aQNCDGuv8jYlSbRxmFZX3k9bw9Ylh8/oJi08sC9iyrEy/QbI=
+    file:
+      - "dist/seguid_calculator.dmg"
+      - "dist/seguid_calculator.zip"
+      - "dist/seguid_calculator"
+    on:
+      tags: true
+      branch: master
+  - provider: script
+    skip_cleanup: true
+    script: python deploy_to_dropbox.py
+    on:
+      tags: false
+      branch: master
+
+notifications:
+  email: false
