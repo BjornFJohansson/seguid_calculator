@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-wget http://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+wget http://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh --quiet
 bash ~/miniconda.sh -b -p $HOME/miniconda
 export PATH="$HOME/miniconda/bin:$PATH"
 conda update --yes -q conda
 conda create -yq -n pydnacondabuild35 python=3.5
 source activate pydnacondabuild35
-conda install -c conda-forge wxpython
+conda install -c conda-forge wxpython=4.0.0a3
 brew install upx
 conda install --yes -c conda-forge pyinstaller
 conda install -c conda-forge pypandoc
