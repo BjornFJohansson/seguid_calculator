@@ -5,7 +5,7 @@ export PATH="$HOME/miniconda/bin:$PATH"
 conda update --yes -q conda
 conda create -yq -n pydnacondabuild35 python=3.5
 source activate pydnacondabuild35
-conda install -c gsecars wxpython
+conda install -c conda-forge wxpython
 brew install upx
 conda install --yes -c conda-forge pyinstaller
 conda install -c conda-forge pypandoc
