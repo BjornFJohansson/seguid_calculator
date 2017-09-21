@@ -19,5 +19,5 @@ zip -r dist/seguid_calculator.zip dist/seguid_calculator.app
 ls dist/
 wc -c dist/seguid_calculator.zip
 wc -c dist/seguid_calculator.dmg
-pip install -I dropbox==6.9.0
+pip install -I dropbox
 python deploy_to_dropbox.py
