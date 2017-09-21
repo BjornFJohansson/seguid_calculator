@@ -15,7 +15,7 @@ def upload(pth, parent=pathlib.Path("/Public")):
     print("uploading", pth, "to", np)
     with pth.open('rb') as f:
         try:
-            dbx.files_upload(f, str(np), mode=dropbox.files.WriteMode('overwrite'))
+            dbx.files_upload(f.read(), str(np), mode=dropbox.files.WriteMode('overwrite'))
         except dropbox.exceptions.ApiError as err:
             if (err.error.is_path() and
                     err.error.get_path().error.is_insufficient_space()):
