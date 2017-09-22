@@ -20,11 +20,4 @@ deploy:
     on:
       tags: true
       branch: master
-  - provider: script
-    skip_cleanup: true
-    script: python deploy_to_dropbox.py
-    on:
-      tags: false
-      branch: master
-notifications:
   email: false
