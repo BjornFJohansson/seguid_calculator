@@ -20,4 +20,4 @@ ls dist/
 wc -c dist/seguid_calculator.zip
 wc -c dist/seguid_calculator.dmg
 pip install -I dropbox
-python deploy_to_dropbox.py
+python send_to_dropbox.py
