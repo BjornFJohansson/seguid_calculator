@@ -7,17 +7,5 @@ cache:
  - conda
 script:
  - bash ci.sh
-deploy:
-  - provider: releases
-    draft: true
-    skip_cleanup: true
-    api_key:
-      secure: dSK2zOaGfKqo33Ov5mlEv4H1tMsEo6eurhsLkgOWzfA/vB9uBfSJE7rokG5QTrb6Wsc8Dmeqq3rXZMRM1ArblyXkxlKuN0WuJSmJSkEE6DX37YJmWOQzP+xwXN/aQNCDGuv8jYlSbRxmFZX3k9bw9Ylh8/oJi08sC9iyrEy/QbI=
-    file:
-      - "dist/seguid_calculator.dmg"
-      - "dist/seguid_calculator.zip"
-      - "dist/seguid_calculator"
-    on:
-      tags: true
-      branch: master
+notifications:
   email: false
