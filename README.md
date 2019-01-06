@@ -15,7 +15,7 @@ See also this blog [post](http://wiki.christophchamp.com/index.php/SEGUID) on th
 
 The lSEGUID is the SEGUID of the lexocographically smallest of the sense or antisense strands of a double stranded DNA sequence. This means
 that if a sequence and its reverse compliment have the same lSEGUIDs. This can be useful to identify double stranded DNA sequences, 
-regardles of the form they are presented. 
+regardless of the form they are presented. 
 
 Circular SEGUID or cSEGUID is the SEGUID checksum for circular (DNA) sequences. As there are many circular permutations 
 of a circular sequence, the use of the SEGUID checksum directly is impractical as there would be many checksums for the 
@@ -45,12 +45,12 @@ Seguid_calculator is written in python 2.7 with wxPython 3. Development happens 
 
 Executables are available for
 
-* Windows 32 bit
 * Windows 64 bit
 * Mac OSX dmg and a zip file containing an app
-* Linux deb package compiled on Ubuntu 16.04
+* Linux deb package
 
-The executables can be downloaded from the button at the top of this page called [releases](https://github.com/BjornFJohansson/seguid_calculator/releases).
+The executables can be downloaded from the button at the top of this page 
+called [releases](https://github.com/BjornFJohansson/seguid_calculator/releases).
 
 Visit the website [Bjorn Johansson's group at CBMA](https://sites.google.com/site/metabolicengineeringgroup/) for more
  information.
