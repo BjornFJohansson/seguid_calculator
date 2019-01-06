@@ -10,7 +10,7 @@ import hashlib
 import base64
 from wx.lib.embeddedimage import PyEmbeddedImage
 
-from _version import get_versions
+from ._version import get_versions
 __version__      = get_versions()['version'][:5]
 del get_versions
 
@@ -438,11 +438,14 @@ class MyFrame(wx.Frame):
         self.size = wx.StaticText(self.panel_1, -1, "Size (nucleotides or aa)")
         self.characters = wx.StaticText(self.panel_1, -1, "Characters")
 
+        font = wx.Font(20, wx.MODERN, wx.NORMAL, wx.NORMAL, False, u'Inconsolata')
+    
         self.text_ctrl_seguid  = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_lseguid = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_cseguid = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_size = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_characters = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
+        
         self.Calc       = wx.Button(self.panel_1, -1, "Calc")
         self.Rev        = wx.Button(self.panel_1, -1, "Reverse")
         self.Complement = wx.Button(self.panel_1, -1, "Complement")
@@ -450,16 +453,31 @@ class MyFrame(wx.Frame):
         self.Clear      = wx.Button(self.panel_1, -1, "Clear")
         self.text_ctrl_seq = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_MULTILINE)
 
+        self.text_ctrl_seguid.SetFont(font)
+        self.text_ctrl_lseguid.SetFont(font)
+        self.text_ctrl_cseguid.SetFont(font)
+        self.text_ctrl_size.SetFont(font)
+        self.text_ctrl_characters.SetFont(font)
+        self.text_ctrl_seq.SetFont(font)
+
         self.Bind(wx.EVT_BUTTON, self.OnCalc,    self.Calc)
         self.Bind(wx.EVT_BUTTON, self.OnRevComp, self.rev_comp)
         self.Bind(wx.EVT_BUTTON, self.OnCompl,   self.Complement)
         self.Bind(wx.EVT_BUTTON, self.OnRev,     self.Rev)
         self.Bind(wx.EVT_BUTTON, self.OnClear,   self.Clear)
+        
+        self.text_ctrl_seguid.Bind(wx.EVT_SET_FOCUS, self.OnClick)
 
         self.__set_properties()
         self.__do_layout()
+        
+        
         # end wxGlade
-
+        
+    def OnClick(self,event):        
+        self.text_ctrl_seguid.SetSelection(-1,-1)
+        self.text_ctrl_seguid.SetFocus()
+        
     def OnCalc(self, event):
         seq=self.text_ctrl_seq.GetValue()
         filtered_seq="".join( b for b in seq if b in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" )
