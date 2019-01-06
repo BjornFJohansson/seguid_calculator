@@ -64,3 +64,4 @@ else
     tagged_commit=false
 
 unset VIRTUAL_ENV
+fi
