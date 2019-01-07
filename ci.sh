@@ -14,7 +14,3 @@ python setup.py build
 cat build/lib/seguid_calculator/_version.py
 pyinstaller --onefile --windowed seguid_calculator/seguid.py
 ls dist/
-wc -c dist/seguid_calculator.exe
-wc -c dist/seguid_calculator.dmg
-pip install -I dropbox
-python send_to_dropbox.py
