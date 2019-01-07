@@ -14,3 +14,4 @@ python setup.py build
 cat build/lib/seguid_calculator/_version.py
 pyinstaller --onefile --windowed seguid_calculator/seguid.py
 ls dist/
+wc -c dist/seguid.exe
