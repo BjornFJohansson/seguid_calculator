@@ -34,8 +34,11 @@ try:
 except dropbox.exceptions.AuthError as err:
     sys.exit("ERROR: Invalid access token; try re-generating an access token from the app console on the web.")
 
-npths = (pathlib.Path(p) for p in ("dist/seguid_calculator.zip", 
+npths = (pathlib.Path(p) for p in ("dist/seguid_calculator.exe", 
                                    "dist/seguid_calculator.dmg"))
     
 for pth in npths:
-    upload(pth, pathlib.Path("/Public/TESTRELEASES/seguid_calculator"))
+    try: 
+        upload(pth, pathlib.Path("/Public/TESTRELEASES/seguid_calculator"))
+    except FileNotFoundError:
+        print(pth, "not found.")
