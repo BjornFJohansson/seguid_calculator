@@ -2,16 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import versioneer
-versioneer.VCS = 'git'
-versioneer.versionfile_source = 'seguid_calculator/_version.py'
-versioneer.versionfile_build = 'seguid_calculator/_version.py'
-versioneer.tag_prefix = '' # tags are like 1.2.0
-versioneer.parentdir_prefix = '' # dirname like 'myproject-1.2.0'
 
-#import sys
-#sys.executable = '/bin/custom_python'
-
-# Read author etc..
 for line in open('seguid_calculator/__init__.py'):
     if line.startswith('__') and not line.startswith('__version') and not line.startswith('__long'):
         exec(line.strip())
