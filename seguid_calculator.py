@@ -436,7 +436,7 @@ class MyFrame(wx.Frame):
         self.size = wx.StaticText(self.panel_1, -1, "Size (nucleotides or aa)")
         self.characters = wx.StaticText(self.panel_1, -1, "Characters")
 
-        font = wx.Font(20, wx.MODERN, wx.NORMAL, wx.NORMAL, False, u'Inconsolata')
+        font = wx.Font(18, wx.MODERN, wx.NORMAL, wx.NORMAL, False, u'Inconsolata')
     
         self.text_ctrl_seguid  = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_lseguid = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
@@ -552,8 +552,6 @@ class MyFrame(wx.Frame):
 
 
     def OnClear(self, event):
-        #self.text_ctrl_seguid.Clear()
-        #self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         self.text_ctrl_characters.Clear()
