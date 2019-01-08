@@ -132,33 +132,42 @@ fi
 
 set -x
 
+
+
+echo "build conda package and setuptools package(s)"
+conda install -yq -c anaconda conda-build
+conda install -yq -c anaconda conda-verify
+echo "conda-build version used:"
+conda-build -V
+conda create -yq -n build35 python=3.5 anaconda-client pypandoc pandoc nbval urllib3
+conda create -yq -n build36 python=3.6 anaconda-client pypandoc pandoc nbval
+conda create -yq -n build37 python=3.7 anaconda-client pypandoc pandoc nbval
+conda create -yq -n twine python=3.5 twine pyOpenSSL ndg-httpsclient pyasn1
+
+rm -rf dist
+rm -rf build
+rm -rf tests/htmlcov
+pth1="$(conda build . --output --py 3.5)"
+pth2="$(conda build . --output --py 3.6)"
+pth3="$(conda build . --output --py 3.7)"
+echo $pth1
+echo $pth2
+echo $pth3
+source activate build35
+conda build --python 3.5 --no-include-recipe --dirty .
+conda upgrade -yq pip
+python setup.py sdist --formats=zip
+source activate build36
+conda build --python 3.6 --no-include-recipe --dirty .
+conda upgrade -yq pip
+python setup.py sdist --formats=zip
+source activate build37
+conda build --python 3.7 --no-include-recipe --dirty .
+conda upgrade -yq pip
+python setup.py sdist --formats=zip
+
 if [[ $tagged_commit = true ]]
 then
-    echo "build conda package and setuptools package(s)"
-    conda install -yq -c anaconda conda-build
-    conda install -yq -c anaconda conda-verify
-    echo "conda-build version used:"
-    conda-build -V
-    conda create -yq -n build35 python=3.5 anaconda-client pypandoc pandoc nbval urllib3
-    conda create -yq -n build36 python=3.6 anaconda-client pypandoc pandoc nbval
-    conda create -yq -n build37 python=3.7 anaconda-client pypandoc pandoc nbval
-    conda create -yq -n twine python=3.5 twine pyOpenSSL ndg-httpsclient pyasn1
-
-    rm -rf dist
-    rm -rf build
-    rm -rf tests/htmlcov
-    pth1="$(conda build . --output --py 3.5)"
-    pth2="$(conda build . --output --py 3.6)"
-    pth3="$(conda build . --output --py 3.7)"
-    echo $pth1
-    echo $pth2
-    echo $pth3
-    source activate build35
-    conda build --python 3.5 --no-include-recipe --dirty .
-    source activate build36
-    conda build --python 3.6 --no-include-recipe --dirty .
-    source activate build37
-    conda build --python 3.7 --no-include-recipe --dirty .
     if [[ $CI = true ]]||[[ $CI = True ]]
     then
         set +x
@@ -171,81 +180,8 @@ then
         anaconda upload $pth2 --label $condalabel --force
         anaconda upload $pth3 --label $condalabel --force
     fi
-
-    if [[ $TRAVIS = true ]] # MacOSX on Travis
-    then
-        brew update
-        source activate build35
-        conda upgrade -yq pip
-        python setup.py build bdist_wheel bdist_egg
-        source activate build36
-        conda upgrade -yq pip
-        source activate build37
-        conda upgrade -yq pip
-        python setup.py build bdist_wheel bdist_egg
-        if [[ $condalabel = "main" ]] # bdist_egg, bdist_wheel do not handle alpha versions, so no upload unless final release.
-        then
-            source activate twine
-            twine upload -r $pypiserver dist/*.whl --skip-existing
-            twine upload -r $pypiserver dist/*.egg --skip-existing
-        else
-            echo "pre release, no upload to pypi."
-        fi
-    elif [[ $APPVEYOR = true ]]||[[ $APPVEYOR = True ]] # Windows on appveyor
-    then
-        source activate build35
-        conda upgrade -yq pip
-        python setup.py build bdist_wheel bdist_egg
-        source activate build36
-        conda upgrade -yq pip
-        source activate build37
-        conda upgrade -yq pip
-        python setup.py build bdist_wheel bdist_egg
-        if [[ $condalabel = "main" ]] # bdist_wininst does not handle alpha versions, so no upload unless final release.
-        then
-            source activate twine
-            twine upload -r $pypiserver dist/pygenome*.whl --skip-existing
-            twine upload -r $pypiserver dist/pygenome*.egg --skip-existing
-        else
-            echo "pre release, no upload to pypi."
-        fi
-        appveyor PushArtifact dist/*        
-    elif [[ $CI_NAME = codeship ]]  # Linux on codeship
-    then
-        source activate build35
-        conda upgrade -yq pip
-        python setup.py sdist --formats=zip
-        source activate build36
-        conda upgrade -yq pip
-        python setup.py sdist --formats=zip
-        source activate build37
-        conda upgrade -yq pip
-        python setup.py sdist --formats=zip
-        source activate twine       
-        twine upload -r $pypiserver dist/*.zip --skip-existing
-    elif [[ $local_computer = true ]]
-    then
-        echo "Local linux: python setup.py sdist --formats=zip bdist_wheel"
-        source activate build35
-        conda upgrade -yq pip
-        python setup.py sdist --formats=zip bdist_wheel
-        source activate build36
-        conda upgrade -yq pip
-        python setup.py sdist --formats=zip bdist_wheel
-        source activate build37
-        conda upgrade -yq pip
-        python setup.py sdist --formats=zip bdist_wheel
-        source activate twine
-        twine upload -r $pypiserver dist/*.zip --skip-existing
-        twine upload -r $pypiserver dist/*.whl --skip-existing
-    else
-        echo "Running on CI server but none of the expected environment variables are set to true"
-        echo "CI       = $CI"
-        echo "TRAVIS   = $TRAVIS"
-        echo "APPVEYOR = $APPVEYOR"
-        echo "CIRCLECI = $CIRCLECI"
-        exit 1
-    fi
+    source activate twine       
+    twine upload -r $pypiserver dist/*.zip --skip-existing
 else
     echo "Do nothing."
 fi
