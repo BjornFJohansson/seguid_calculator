@@ -248,5 +248,4 @@ then
     fi
 else
     echo "Do nothing."
-    fi
 fi

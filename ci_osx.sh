@@ -14,4 +14,4 @@ cd dist
 zip -r seguid_calculator_for_mac.zip seguid_calculator.app
 wc -c seguid_calculator_for_mac.zip
 pip install dropbox
-python send_to_dropbox.py
+python ../send_to_dropbox.py
