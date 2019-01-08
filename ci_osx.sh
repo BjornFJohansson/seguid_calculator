@@ -12,3 +12,5 @@ source activate seguidcondabuild36
 pyinstaller --onefile --windowed --icon=calc.ico seguid_calculator.py
 zip -r seguid_calculator_for_mac.zip dist/seguid_calculator.app 
 wc -c seguid_calculator_for_mac.zip
+pip install dropbox
+python send_to_dropbox.py
