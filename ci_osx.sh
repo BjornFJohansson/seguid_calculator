@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 wget -q http://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O Miniconda_latest.sh
-bash Miniconda_latest.sh
+bash Miniconda_latest.sh -b -p $HOME/miniconda
+export PATH="$HOME/miniconda/bin:$PATH"
+rm Miniconda_latest.sh
 conda config --set always_yes yes --set show_channel_urls yes
 conda update --yes -q conda
 conda config --prepend channels conda-forge 
