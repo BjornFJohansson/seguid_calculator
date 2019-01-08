@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Terminal=false
-Icon=seguid_calculator.png
-Exec=/usr/bin/seguid_calculator                                                                       
-Name=seguid calculator
-Categories=Science;
-Name[en_US]=seguid calculator
