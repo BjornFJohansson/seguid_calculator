@@ -10,5 +10,5 @@ python setup.py build
 cat build/lib/seguid_calculator/_version.py
 pyinstaller --onefile seguid_calculator.py
 ls dist/
-wc -c dist/seguid.exe
-appveyor PushArtifact dist/seguid.exe
+wc -c dist/seguid_calculator.exe
+appveyor PushArtifact dist/seguid_calculator.exe
