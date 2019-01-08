@@ -13,6 +13,6 @@ pyinstaller --onefile --windowed --icon=calc.ico seguid_calculator.py
 cd dist
 zip -r seguid_calculator_for_mac.zip seguid_calculator.app
 cd ..
-wc -c seguid_calculator_for_mac.zip
+wc -c dist/seguid_calculator_for_mac.zip
 pip install dropbox
 python send_to_dropbox.py
