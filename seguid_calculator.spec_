@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['build/lib/seguid_calculator/seguid.py'],
-             pathex=['build/lib/seguid_calculator/'],
+             pathex=['/home/bjorn/python_packages/seguid_calculator/seguid_calculator'],
              binaries=None,
              datas=None,
              hiddenimports=[],
@@ -26,8 +26,3 @@ exe = EXE(pyz,
           strip=False,
           upx=True,
           console=False , icon='calc.ico')
-
-app = BUNDLE(exe,
-         name='seguid_calculator.app',
-         icon='calc.ico',
-         bundle_identifier=None)
