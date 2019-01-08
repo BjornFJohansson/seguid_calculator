@@ -27,7 +27,9 @@ def upload(pth, parent=pathlib.Path("/Public")):
                 print(err)
                 sys.exit()
 
+
 dbx = dropbox.Dropbox( os.environ["DROPBOXTOKEN"] )
+
 
 try:
     dbx.users_get_current_account()
@@ -38,6 +40,6 @@ npths = (pathlib.Path(p) for p in ( "seguid_calculator_for_mac.zip" ))
     
 for pth in npths:
     try: 
-        upload(pth, pathlib.Path("/Public/hej"))
+        upload(pth))
     except FileNotFoundError:
         print(pth, "not found.")
