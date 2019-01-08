@@ -6,6 +6,6 @@ cache:
  - brew
  - conda
 script:
- - bash ci.sh
+ - bash ci_osx.sh
 notifications:
   email: false
