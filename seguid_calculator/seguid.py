@@ -445,6 +445,8 @@ class MyFrame(wx.Frame):
         self.text_ctrl_cseguid = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_size = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_characters = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
+
+        #self.text_ctrl_seguid.Disable()
         
         self.Calc       = wx.Button(self.panel_1, -1, "Calc")
         self.Rev        = wx.Button(self.panel_1, -1, "Reverse")
@@ -467,6 +469,8 @@ class MyFrame(wx.Frame):
         self.Bind(wx.EVT_BUTTON, self.OnClear,   self.Clear)
         
         self.text_ctrl_seguid.Bind(wx.EVT_SET_FOCUS, self.OnClick)
+
+        self.text_ctrl_seq.SetFocus()
 
         self.__set_properties()
         self.__do_layout()
