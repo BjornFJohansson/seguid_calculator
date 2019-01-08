@@ -10,7 +10,7 @@ conda config --append channels BjornFJohansson
 conda create -yq -n seguidcondabuild36 python=3.6 wxpython pyinstaller
 source activate seguidcondabuild36
 pyinstaller --onefile --windowed --icon=calc.ico seguid_calculator.py
-zip -r seguid_calculator_for_mac.zip dist/seguid_calculator.app 
+zip -jr seguid_calculator_for_mac.zip dist/seguid_calculator.app 
 wc -c seguid_calculator_for_mac.zip
 pip install dropbox
 python send_to_dropbox.py
