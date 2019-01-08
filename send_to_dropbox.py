@@ -40,6 +40,6 @@ npths = (pathlib.Path(p) for p in ( ["seguid_calculator_for_mac.zip",] ))
     
 for pth in npths:
     try: 
-        upload(pth))
+        upload(pth)
     except FileNotFoundError:
         print(pth, "not found.")
