@@ -1,4 +1,4 @@
-# seguid_calculator
+# Seguid_calculator
 
 Seguid calculator is a small GUI for calculating the SEGUID, lSEGUID and cSEGUID checksums for a 
 biological sequence (DNA, RNA or protein).
@@ -11,8 +11,9 @@ Executables are available from here: [releases](https://github.com/BjornFJohanss
 * Mac OSX app
 * A Linux DEB package is a future plan
 
-## Installation 
+These packages are build automatically, see the end of this page  for details.
 
+## Source installation 
 
 setuptools (pip) or conda packages can be installed like this:
 
@@ -20,15 +21,11 @@ setuptools (pip) or conda packages can be installed like this:
 
 This should work well on Windows and MacOSX. On Linux, wxpython has to be installed separately.
 
-Alternatively, there is a conda package that should install on all platforms:
+Alternatively, there is a conda package that should install on all platforms on python 3.5, 3.6 or 3.7:
 
     conda install -c bjornfjohansson seguid_calculator
- 
 
-
-
-
-Visit the website [Bjorn Johansson's group at CBMA](https://sites.google.com/site/metabolicengineeringgroup/) for more information.
+Visit the website [Bjorn Johansson's group at CBMA](https://metabolicengineeringgroupcbma.github.io/) for more information.
 
 ## What does it do ?
 
@@ -72,10 +69,8 @@ by their identical cSEGUIDs:
 
 ## Implementation
 
-Seguid_calculator is written in python with wxPython 4. 
+Seguid_calculator is written in python 3 with wxPython 4. 
 Development happens on [Github](https://github.com/BjornFJohansson/seguid_calculator).
-
-
 
 ## Automatic build status
 
