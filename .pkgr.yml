@@ -1,0 +1,4 @@
+dependencies:
+  - python3-wxgtk4.0
+targets:
+  ubuntu-16.04:

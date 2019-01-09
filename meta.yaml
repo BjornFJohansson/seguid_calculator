@@ -19,6 +19,7 @@ requirements:
     run:
         - python {{ python }}
         - wxpython
+        - PyPubSub
 
 about:
   home: https://github.com/BjornFJohansson/seguid_calculator
