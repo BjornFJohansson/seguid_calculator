@@ -34,14 +34,13 @@ then
     then
         echo "Tag indicate Final release"
         echo "deploy to pypi and anaconda.org with label 'main'."
-        TWINE_REPOSITORY_URL="pypi"
         condalabel="main"
     elif  [[ $tagname =~ $re_pre ]]
     then
         echo "Release tag indicate alpha release"
         echo "deploy sdist zip package to testpypi "
         echo "conda package to anaconda.org with label 'test'."
-        TWINE_REPOSITORY_URL="testpypi"
+        export TWINE_REPOSITORY_URL="https://test.pypi.org/legacy/"
         condalabel="test"
     else
         echo "Build cancelled because"
