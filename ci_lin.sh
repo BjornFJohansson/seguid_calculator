@@ -34,14 +34,14 @@ then
     then
         echo "Tag indicate Final release"
         echo "deploy to pypi and anaconda.org with label 'main'."
-        pypiserver="pypi"
+        TWINE_REPOSITORY_URL="pypi"
         condalabel="main"
     elif  [[ $tagname =~ $re_pre ]]
     then
         echo "Release tag indicate alpha release"
         echo "deploy sdist zip package to testpypi "
         echo "conda package to anaconda.org with label 'test'."
-        pypiserver="testpypi"
+        TWINE_REPOSITORY_URL="testpypi"
         condalabel="test"
     else
         echo "Build cancelled because"
@@ -69,25 +69,6 @@ echo "=============================================================="
 if [[ $CI = true ]]||[[ $CI = True ]]
 then
     echo "Running on CI server"
-    echo "Creating a .pypirc file for setuptools"
-    echo "[server-login]
-    username: $pypiusername
-    password: $pypipassword
-
-    [distutils]
-    index-servers=
-        pypi
-        testpypi
-
-    [testpypi]
-    repository = https://test.pypi.org/legacy/
-    username = $pypiusername
-    password = $pypipassword
-
-    [pypi]
-    username = $pypiusername
-    password = $pypipassword" > $HOME/.pypirc
-
     if [[ $TRAVIS = true ]]
     then
         echo "Running on TRAVIS, download Miniconda for MacOSX"
@@ -172,9 +153,9 @@ then
     if [[ $CI = true ]]||[[ $CI = True ]]
     then
         set +x
-        anaconda -t $TOKEN upload $pth1 --label $condalabel --force
-        anaconda -t $TOKEN upload $pth2 --label $condalabel --force
-        anaconda -t $TOKEN upload $pth3 --label $condalabel --force
+        anaconda -t $ANACONDATOKEN upload $pth1 --label $condalabel --force
+        anaconda -t $ANACONDATOKEN upload $pth2 --label $condalabel --force
+        anaconda -t $ANACONDATOKEN upload $pth3 --label $condalabel --force
         set -x
     else
         anaconda upload $pth1 --label $condalabel --force
@@ -182,7 +163,7 @@ then
         anaconda upload $pth3 --label $condalabel --force
     fi
     source activate twine       
-    twine upload -r $pypiserver dist/*.zip --skip-existing
+    twine upload dist/* --skip-existing
 else
-    echo "Do nothing."
+    echo "Not tagged commit, so no upload."
 fi
