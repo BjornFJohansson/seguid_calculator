@@ -1,4 +1,6 @@
+buildpack: https://github.com/heroku/heroku-buildpack-python
 dependencies:
   - python3-wxgtk4.0
 targets:
   ubuntu-16.04:
+

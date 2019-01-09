@@ -135,18 +135,13 @@ echo $pth2
 echo $pth3
 source activate build35
 conda build --python 3.5 --no-include-recipe --dirty .
-conda upgrade -yq pip
 python setup.py sdist --formats=zip
 source activate build36
 conda build --python 3.6 --no-include-recipe --dirty .
-conda upgrade -yq pip
 python setup.py sdist --formats=zip
 source activate build37
 conda build --python 3.7 --no-include-recipe --dirty .
-conda upgrade -yq pip
 python setup.py sdist --formats=zip
-
-
 if [[ $tagged_commit = true ]]
 then
     if [[ $CI = true ]]||[[ $CI = True ]]
