@@ -8,7 +8,7 @@ __license__     = "BSD"
 __maintainer__  = "Björn Johansson"
 __email__       = "bjorn_johansson@bio.uminho.pt"
 __status__      = "Production"
-__version__     = "1.1.0a04"
+__version__     = "1.1.0"
 
 import wx
 import hashlib
