@@ -139,14 +139,14 @@ conda install -yq -c anaconda conda-build
 conda install -yq -c anaconda conda-verify
 echo "conda-build version used:"
 conda-build -V
-conda create -yq -n build35 python=3.5 anaconda-client pypandoc pandoc nbval urllib3
-conda create -yq -n build36 python=3.6 anaconda-client pypandoc pandoc nbval
-conda create -yq -n build37 python=3.7 anaconda-client pypandoc pandoc nbval
-conda create -yq -n twine python=3.5 twine pyOpenSSL ndg-httpsclient pyasn1
-
+conda create -yq -n build35 python=3.5 anaconda-client pypandoc pandoc wxpython
+conda create -yq -n build36 python=3.6 anaconda-client pypandoc pandoc wxpython
+conda create -yq -n build37 python=3.7 anaconda-client pypandoc pandoc wxpython
+conda create -yq -n twine   python=3.5 twine pyOpenSSL ndg-httpsclient pyasn1
 rm -rf dist
 rm -rf build
 rm -rf tests/htmlcov
+conda info -e
 pth1="$(conda build . --output --py 3.5)"
 pth2="$(conda build . --output --py 3.6)"
 pth3="$(conda build . --output --py 3.7)"
