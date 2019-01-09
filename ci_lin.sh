@@ -147,9 +147,9 @@ then
     if [[ $CI = true ]]||[[ $CI = True ]]
     then
         set +x
-        anaconda -t $ANACONDATOKEN upload $pth1 --label $condalabel --force
-        anaconda -t $ANACONDATOKEN upload $pth2 --label $condalabel --force
-        anaconda -t $ANACONDATOKEN upload $pth3 --label $condalabel --force
+        anaconda -t $ANACONDATOKEN upload $pth1 --label $condalabel --force --all
+        anaconda -t $ANACONDATOKEN upload $pth2 --label $condalabel --force --all
+        anaconda -t $ANACONDATOKEN upload $pth3 --label $condalabel --force --all
         set -x
     else
         anaconda upload $pth1 --label $condalabel --force
