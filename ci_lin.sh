@@ -38,9 +38,9 @@ then
         condalabel="main"
     elif  [[ $tagname =~ $re_pre ]]
     then
-        echo "Release tag indicate pre release"
-        echo "deploy sdist zip package to pypi "
-        echo "conda package anaconda.org with label 'test'."
+        echo "Release tag indicate alpha release"
+        echo "deploy sdist zip package to testpypi "
+        echo "conda package to anaconda.org with label 'test'."
         pypiserver="testpypi"
         condalabel="test"
     else
@@ -165,6 +165,7 @@ source activate build37
 conda build --python 3.7 --no-include-recipe --dirty .
 conda upgrade -yq pip
 python setup.py sdist --formats=zip
+
 
 if [[ $tagged_commit = true ]]
 then

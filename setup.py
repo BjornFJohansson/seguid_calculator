@@ -7,6 +7,15 @@ for line in open('seguid_calculator.py'):
 
 from setuptools import setup
 
+try:
+    from pypandoc import convert_file
+except ImportError:
+    print("warning: pypandoc module not found, could not convert Markdown to RST")
+    with open("README.md", encoding="utf-8") as f:
+        long_description = f.read()
+else:
+    long_description = "\n"+convert_file("README.md", 'rst')
+
 setup(  name='seguid_calculator',
         version=__version__,
         author          =__author__,
@@ -17,7 +26,7 @@ setup(  name='seguid_calculator',
         url='http://pypi.python.org/pypi/seguid_calculator',
         license='LICENSE.txt',
         description='''Calculates seguid, lseguid & cseguid checksums for biological sequences''',
-        long_description=open('README.md').read(),
+        long_description=long_description,
         install_requires =["wxpython"],
         zip_safe = False,
         keywords = "bioinformatics",
