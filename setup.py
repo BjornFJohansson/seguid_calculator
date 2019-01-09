@@ -35,8 +35,8 @@ setup(  name='seguid_calculator',
                        'Intended Audience :: Education',
                        'Intended Audience :: Science/Research',
                        'License :: OSI Approved :: BSD License',
-                       'Programming Language :: Python :: 3.5
-                       'Programming Language :: Python :: 3.6
+                       'Programming Language :: Python :: 3.5',
+                       'Programming Language :: Python :: 3.6',
                        'Programming Language :: Python :: 3.7',
                        'Topic :: Education',
                        'Topic :: Scientific/Engineering :: Bio-Informatics',])
