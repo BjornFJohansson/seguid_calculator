@@ -9,7 +9,7 @@ Executables are available from here: [releases](https://github.com/BjornFJohanss
 
 * Windows 64 bit
 * Mac OSX app
-* A Linux DEB package is a future plan
+* Linux DEB and RPM packages are planned (see end of this page)
 
 These packages are build automatically, see the end of this page  for details.
 
@@ -85,4 +85,10 @@ using [pyinstaller](http://www.pyinstaller.org/) and [Miniconda](http://conda.py
 [![Codeship Status for BjornFJohansson/seguid_calculator](https://app.codeship.com/projects/4bccdc20-f595-0136-22fb-26920c14f333/status?branch=master)](https://app.codeship.com/projects/320884)
 Setuptools(pip) and conda packages are built on [Codeship](https://codeship.com/).
 
-[packager.io](https://packager.io/gh/BjornFJohansson/seguid_calculator) will be set up to build DEB packages for Linux (work in progress).
+I will try to set up [packager.io](https://packager.io/gh/BjornFJohansson/seguid_calculator) 
+to build DEB packages for Linux (work in progress).
+
+
+
+
+
