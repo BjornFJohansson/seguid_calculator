@@ -82,7 +82,7 @@ using [pyinstaller](http://www.pyinstaller.org/) and [Miniconda](http://conda.py
 Standalone executables (64 bit) for MacOSX are built on [TravisCI](https://travis-ci.org/BjornFJohansson/seguid_calculator) 
 using [pyinstaller](http://www.pyinstaller.org/) and [Miniconda](http://conda.pydata.org/miniconda.html).
 
-[![Codeship Status for BjornFJohansson/seguid_calculator](https://app.codeship.com/projects/4bccdc20-f595-0136-22fb-26920c14f333/status?branch=master)](/projects/320884)
+[![Codeship Status for BjornFJohansson/seguid_calculator](https://app.codeship.com/projects/4bccdc20-f595-0136-22fb-26920c14f333/status?branch=master)](https://app.codeship.com/projects/320884)
 Setuptools(pip) and conda packages are built on [Codeship](https://codeship.com/).
 
 [packager.io](https://packager.io/gh/BjornFJohansson/seguid_calculator) will be set up to build DEB packages for Linux (work in progress).
