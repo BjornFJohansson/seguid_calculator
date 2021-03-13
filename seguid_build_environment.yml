@@ -1,0 +1,16 @@
+name: seguid_build_environment
+channels:
+- conda-forge
+- defaults
+- BjornFJohansson
+dependencies:
+- python
+
+- wxpython>=4.1.0
+
+- setuptools
+- twine
+- pip
+- anaconda-client
+- conda-build
+- conda-verify
