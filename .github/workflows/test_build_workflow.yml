@@ -37,7 +37,7 @@ jobs:
         run: conda info --all
       - name: Build conda package
         shell: bash -l {0}
-        run: conda build --python ${{ matrix.python-version }} --no-include-recipe --dirty
+        run: conda build --python ${{ matrix.python-version }} --no-include-recipe --dirty .
       - name: Build pypi wheel package
         shell: bash -l {0}
         run: python setup.py build bdist_wheel
