@@ -19,7 +19,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(  name='seguid_calculator',
         use_scm_version={"write_to": "_version.py"},
-        setup_requires=["pytest-runner", "setuptools_scm"],
+        setup_requires=["setuptools_scm"],
         author          =__author__,
         author_email    =__email__,
         py_modules=['seguid_calculator'],
