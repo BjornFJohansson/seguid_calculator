@@ -6,7 +6,7 @@ build:
   number: {{ environ.get('GIT_DESCRIBE_NUMBER', 0) }}
   include_recipe: False
   script: python setup.py install --single-version-externally-managed --record=record.txt
-  entry_points:  
+  entry_points:
         - seguid_calculator = seguid_calculator:main
   osx_is_app: True
   preserve_egg_dir: False
@@ -20,6 +20,7 @@ requirements:
     build:
         - python {{ python }}
         - setuptools
+        - setuptools_scm
     run:
         - python {{ python }}
         - wxpython
