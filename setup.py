@@ -7,14 +7,10 @@ for line in open('seguid_calculator.py'):
 
 from setuptools import setup
 
-try:
-    from pypandoc import convert_file
-except ImportError:
-    print("warning: pypandoc module not found, could not convert Markdown to RST")
-    with open("README.md", encoding="utf-8") as f:
-        long_description = f.read()
-else:
-    long_description = "\n"+convert_file("README.md", 'rst')
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(  name='seguid_calculator',
         version=__version__,
@@ -27,6 +23,7 @@ setup(  name='seguid_calculator',
         license='LICENSE.txt',
         description='''Calculates seguid, lseguid & cseguid checksums for biological sequences''',
         long_description=long_description,
+        long_description_content_type='text/markdown',
         install_requires =["wxpython"],
         zip_safe = False,
         keywords = "bioinformatics",
@@ -35,7 +32,6 @@ setup(  name='seguid_calculator',
                        'Intended Audience :: Education',
                        'Intended Audience :: Science/Research',
                        'License :: OSI Approved :: BSD License',
-                       'Programming Language :: Python :: 3.5',
                        'Programming Language :: Python :: 3.6',
                        'Programming Language :: Python :: 3.7',
                        'Topic :: Education',

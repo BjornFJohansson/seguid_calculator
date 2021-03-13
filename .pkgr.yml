@@ -4,12 +4,10 @@ targets:
       - STACK=heroku-18
       - PYTHON_PIP_VERSION=9.0.3
       - PIPENV_VERSION=11.10.4
-      - AIRFLOW_GPL_UNIDECODE=yes
       - SLUGIFY_USES_TEXT_UNIDECODE=yes
     build_dependencies:
       - python3-dev
-      - default-libmysqlclient-dev
     dependencies:
       - python3-dev
       - python3-wxgtk4.0
-buildpack: https://github.com/pedrocarmona/heroku-buildpack-python
+buildpack: https://github.com/heroku/heroku-buildpack-python

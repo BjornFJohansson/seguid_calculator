@@ -437,7 +437,7 @@ class MyFrame(wx.Frame):
         self.characters = wx.StaticText(self.panel_1, -1, "Characters")
 
         font = wx.Font(18, wx.MODERN, wx.NORMAL, wx.NORMAL, False, u'Inconsolata')
-    
+
         self.text_ctrl_seguid  = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_lseguid = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
         self.text_ctrl_cseguid = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
@@ -445,7 +445,7 @@ class MyFrame(wx.Frame):
         self.text_ctrl_characters = wx.TextCtrl(self.panel_1, -1, "", style=wx.TE_READONLY)
 
         #self.text_ctrl_seguid.Disable()
-        
+
         self.Calc       = wx.Button(self.panel_1, -1, "Calc")
         self.Rev        = wx.Button(self.panel_1, -1, "Reverse")
         self.Complement = wx.Button(self.panel_1, -1, "Complement")
@@ -465,21 +465,21 @@ class MyFrame(wx.Frame):
         self.Bind(wx.EVT_BUTTON, self.OnCompl,   self.Complement)
         self.Bind(wx.EVT_BUTTON, self.OnRev,     self.Rev)
         self.Bind(wx.EVT_BUTTON, self.OnClear,   self.Clear)
-        
+
         self.text_ctrl_seguid.Bind(wx.EVT_SET_FOCUS, self.OnClick)
 
         self.text_ctrl_seq.SetFocus()
 
         self.__set_properties()
         self.__do_layout()
-        
-        
+
+
         # end wxGlade
-        
-    def OnClick(self,event):        
+
+    def OnClick(self,event):
         self.text_ctrl_seguid.SetSelection(-1,-1)
         self.text_ctrl_seguid.SetFocus()
-        
+
     def OnCalc(self, event):
         seq=self.text_ctrl_seq.GetValue()
         filtered_seq="".join( b for b in seq if b in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" )
@@ -490,7 +490,7 @@ class MyFrame(wx.Frame):
         self.text_ctrl_seq.Clear()
         if filtered_seq:
             self.text_ctrl_seguid.SetValue(  seguid( filtered_seq ))
-            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq ))            
+            self.text_ctrl_lseguid.SetValue( lseguid(filtered_seq ))
             self.text_ctrl_cseguid.SetValue( cseguid(filtered_seq ))
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
             self.text_ctrl_characters.SetValue(" ".join(sorted(set(filtered_seq.upper()))))
@@ -507,7 +507,7 @@ class MyFrame(wx.Frame):
         self.text_ctrl_seq.Clear()
         if filtered_seq:
             self.text_ctrl_seguid.SetValue( seguid(   filtered_seq  ))
-            self.text_ctrl_lseguid.SetValue( lseguid( filtered_seq  ))       
+            self.text_ctrl_lseguid.SetValue( lseguid( filtered_seq  ))
             self.text_ctrl_cseguid.SetValue( cseguid( filtered_seq  ))
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
             self.text_ctrl_characters.SetValue(" ".join(sorted(set(filtered_seq.upper()))))
@@ -519,7 +519,7 @@ class MyFrame(wx.Frame):
         filtered_seq="".join([b for b in seq if b in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
         filtered_seq= rc(filtered_seq )[::-1]
         self.text_ctrl_seguid.Clear()
-        self.text_ctrl_lseguid.Clear()        
+        self.text_ctrl_lseguid.Clear()
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
@@ -537,7 +537,7 @@ class MyFrame(wx.Frame):
         filtered_seq="".join([base for base in seq if base in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"])
         filtered_seq= filtered_seq[::-1]
         self.text_ctrl_seguid.Clear()
-        self.text_ctrl_lseguid.Clear()        
+        self.text_ctrl_lseguid.Clear()
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
@@ -576,17 +576,17 @@ class MyFrame(wx.Frame):
         sizer_5 = wx.BoxSizer(wx.VERTICAL)
         sizer_4 = wx.BoxSizer(wx.VERTICAL)
         sizer_2.Add(self.label_2, 0, wx.ALL, 5)
-        sizer_4.Add(self.seguid, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 10)
-        sizer_4.Add(self.lseguid, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 10)
-        sizer_4.Add(self.cseguid, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 10)
-        sizer_4.Add(self.size, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 10)
-        sizer_4.Add(self.characters, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 10)
+        sizer_4.Add(self.seguid, 0, wx.ALL, 10)
+        sizer_4.Add(self.lseguid, 0, wx.ALL, 10)
+        sizer_4.Add(self.cseguid, 0, wx.ALL, 10)
+        sizer_4.Add(self.size, 0, wx.ALL, 10)
+        sizer_4.Add(self.characters, 0, wx.ALL, 10)
         sizer_3.Add(sizer_4, 0, wx.EXPAND, 0)
-        sizer_5.Add(self.text_ctrl_seguid, 0, wx.ALL | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 5)
-        sizer_5.Add(self.text_ctrl_lseguid, 0, wx.ALL | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 5)
-        sizer_5.Add(self.text_ctrl_cseguid, 0, wx.ALL | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 5)
-        sizer_5.Add(self.text_ctrl_size, 0, wx.ALL | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 5)
-        sizer_5.Add(self.text_ctrl_characters, 0, wx.ALL | wx.EXPAND | wx.ALIGN_CENTER_VERTICAL, 5)
+        sizer_5.Add(self.text_ctrl_seguid, 0, wx.ALL | wx.EXPAND, 5)
+        sizer_5.Add(self.text_ctrl_lseguid, 0, wx.ALL | wx.EXPAND, 5)
+        sizer_5.Add(self.text_ctrl_cseguid, 0, wx.ALL | wx.EXPAND, 5)
+        sizer_5.Add(self.text_ctrl_size, 0, wx.ALL | wx.EXPAND, 5)
+        sizer_5.Add(self.text_ctrl_characters, 0, wx.ALL | wx.EXPAND, 5)
         sizer_3.Add(sizer_5, 1, wx.EXPAND, 0)
         sizer_2.Add(sizer_3, 0, wx.EXPAND, 0)
         sizer_6.Add(self.Calc, 0, wx.ALL, 5)
