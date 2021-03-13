@@ -5,6 +5,7 @@ on:
       - '**'
     tags-ignore:
       - '*.*'
+jobs:
   build:
     name: Build (${{ matrix.python-version }}, ${{ matrix.os }})
     strategy:
