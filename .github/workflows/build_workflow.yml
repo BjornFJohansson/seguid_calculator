@@ -45,6 +45,7 @@ jobs:
         shell: bash -l {0}
         run: conda build --python ${{ matrix.python-version }} --no-include-recipe --dirty --token ${{ secrets.ANACONDATOKEN }} .
       - name: Publish a Python distribution to PyPI
+        if: matrix.os == 'ubuntu-latest'
         uses: pypa/gh-action-pypi-publish@master
         with:
           user: __token__
