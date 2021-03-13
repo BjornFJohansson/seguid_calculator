@@ -1,19 +1,25 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""docstring."""
+from setuptools import setup
+from setuptools import Command
+from setuptools import find_packages
+from os import path
 
-for line in open('seguid_calculator.py'):
-    if line.startswith('__'):
+__author__ = "__author__"
+__email__ = "__email__"
+
+for line in open("seguid_calculator.py"):
+    if line.startswith("__author__") or line.startswith("__email__"):
         exec(line.strip())
 
-from setuptools import setup
-
-from os import path
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(  name='seguid_calculator',
-        version=__version__,
+        use_scm_version={"write_to": "_version.py"},
+        setup_requires=["pytest-runner", "setuptools_scm"],
         author          =__author__,
         author_email    =__email__,
         py_modules=['seguid_calculator'],
