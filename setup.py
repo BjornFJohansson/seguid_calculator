@@ -9,7 +9,7 @@ from os import path
 __author__ = "__author__"
 __email__ = "__email__"
 
-for line in open("seguid_calculator.py"):
+for line in open("src/seguid_calculator/seguid_calculator.py"):
     if line.startswith("__author__") or line.startswith("__email__"):
         exec(line.strip())
 
@@ -18,12 +18,12 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(  name='seguid_calculator',
-        use_scm_version={"write_to": "_version.py"},
+        use_scm_version={"write_to": "src/seguid_calculator/_version.py"},
         setup_requires=["setuptools_scm"],
         author          =__author__,
         author_email    =__email__,
         py_modules=['seguid_calculator'],
-        scripts=['seguid_calculator.py'],
+        packages=find_packages("src"),
         entry_points = { 'gui_scripts': [ 'seguid_calculator = seguid_calculator:main' ]},
         url='http://pypi.python.org/pypi/seguid_calculator',
         license='LICENSE.txt',
