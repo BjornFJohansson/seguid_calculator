@@ -44,10 +44,6 @@ jobs:
       - name: Build conda package
         shell: bash -l {0}
         run: conda build --python ${{ matrix.python-version }} --no-include-recipe --dirty --token ${{ secrets.ANACONDATOKEN }} .
-
-
-
-
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
