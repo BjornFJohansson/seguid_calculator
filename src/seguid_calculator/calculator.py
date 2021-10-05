@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""doctring."""
+"""docstring."""
 
 import wx
 import hashlib
 import base64
 from wx.lib.embeddedimage import PyEmbeddedImage
-from seguid_calculator import _version
+from . import _version
 
 __author__ = "Björn Johansson"
 __copyright__ = "Copyright 2013-2021 Björn Johansson"

@@ -8,7 +8,7 @@ from os import path
 __author__ = "__author__"
 __email__ = "__email__"
 
-for line in open("src/seguid_calculator/seguid_calculator.py"):
+for line in open("src/seguid_calculator/calculator.py"):
     if line.startswith("__author__") or line.startswith("__email__"):
         exec(line.strip())
 
@@ -31,7 +31,7 @@ setup(name='seguid_calculator',
       setup_requires=["setuptools_scm"],
       install_requires =["wxpython"],
       use_scm_version={"write_to": "src/seguid_calculator/_version.py"},
-      entry_points = { 'gui_scripts': ['seguid_calculator = seguid_calculator.seguid_calculator:main']},
+      entry_points = { 'gui_scripts': ['seguid_calculator = seguid_calculator.calculator:main']},
       keywords = "bioinformatics",
       classifiers = ['Development Status :: 4 - Beta',
                      'Environment :: Console',

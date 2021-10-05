@@ -1,5 +1,7 @@
 # Seguid_calculator
 
+![seguid_calculator_small.png](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/seguid_calculator_small.png "seguid_calculator")
+
 Seguid calculator is a small GUI for calculating the SEGUID, lSEGUID and cSEGUID checksums for a
 biological sequence (DNA, RNA or protein).
 

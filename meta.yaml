@@ -7,10 +7,8 @@ build:
   include_recipe: False
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
-        - seguid_calculator = seguid_calculator.seguid_calculator:main
+        - seguid_calculator = seguid_calculator.calculator:main
   osx_is_app: True
-  preserve_egg_dir: False
-  noarch: python
 
 source:
   git_url: .
