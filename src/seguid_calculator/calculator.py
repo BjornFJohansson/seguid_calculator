@@ -453,9 +453,10 @@ class MyFrame(wx.Frame):
         wx.Frame.__init__(self, *args, **kwds)
         self.panel_1 = wx.Panel(self, -1)
         self.label_2 = wx.StaticText(self.panel_1, -1,
-                                     "Biological sequences in raw format only."
-                                     "All except ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                                     "and lowercased will be ignored")
+                                     "Biological sequences in raw format "
+                                     "only. "
+                                     "All except ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                     "and lower cased will be ignored.")
         self.seguid = wx.StaticText(self.panel_1, -1, "SEGUID for sequence")
         self.lseguid = wx.StaticText(self.panel_1, -1, "lSEGUID for sequence")
         self.cseguid = wx.StaticText(self.panel_1, -1, "cSEGUID for sequence")
