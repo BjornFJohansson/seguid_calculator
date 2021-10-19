@@ -1,10 +1,7 @@
-name: Tests & Coverage
+name: Build Packages
 on:
-  push:
-    branches:
-      - '**'
-    tags-ignore:
-      - '*.*'
+  release:
+    types: [published]
 jobs:
   build:
     name: Build (${{ matrix.python-version }}, ${{ matrix.os }})
@@ -12,7 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
-        python-version: ["3.9", "3.8", "3.7", "3.6"]
+        python-version: ["3.9", "3.8", "3.7"]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -35,12 +32,22 @@ jobs:
       - name: conda info
         shell: bash -l {0}
         run: conda info --all
-      - name: Build conda package
-        shell: bash -l {0}
-        run: conda build --python ${{ matrix.python-version }} --no-include-recipe --dirty .
-      - name: Build pypi wheel package
-        shell: bash -l {0}
-        run: python setup.py build bdist_wheel
       - name: tags
         shell: bash -l {0}
         run: git tag
+      - name: Build pypi wheel package
+        shell: bash -l {0}
+        run: python setup.py build bdist_wheel
+      - name: conda config
+        shell: bash -l {0}
+        run: conda config --set anaconda_upload yes
+      - name: Build conda package
+        shell: bash -l {0}
+        run: conda build --python ${{ matrix.python-version }} --no-include-recipe --dirty --token ${{ secrets.ANACONDATOKEN }} .
+      - name: Publish a Python distribution to PyPI
+        if: matrix.os == 'ubuntu-latest'
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.SEGUID_CALCULATOR_TOKEN }}
+          skip_existing: true

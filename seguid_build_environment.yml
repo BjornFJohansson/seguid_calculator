@@ -6,7 +6,7 @@ channels:
 dependencies:
 - python
 
-- wxpython>=4.1.0
+- wxpython>=4.1.1
 
 - setuptools
 - twine
