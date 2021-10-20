@@ -15,8 +15,6 @@ def main():
         "--capture=no",
         "--durations=10",
         "--import-mode=importlib",
-        "--nbval",
-        "--current-env",
         "--doctest-modules",
         "--capture=no",
         "-vvv",
