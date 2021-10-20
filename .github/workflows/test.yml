@@ -32,15 +32,24 @@ jobs:
           activate-environment: seguid_build_environment
           python-version: ${{ matrix.python-version }}
           environment-file: seguid_build_environment.yml
+
       - name: conda info
         shell: bash -l {0}
         run: conda info --all
-      - name: Build conda package
+
+      - name: conda list
         shell: bash -l {0}
-        run: conda build --python ${{ matrix.python-version }} --no-include-recipe --dirty .
-      - name: Build pypi wheel package
+        run: conda list
+
+      - name: Install from source
         shell: bash -l {0}
-        run: python setup.py build bdist_wheel
-      - name: tags
+        run: pip install --editable . --no-deps
+
+      - name: set PY_IGNORE_IMPORTMISMATCH=1
+        uses: allenevans/set-env@v2.0.0
+        with:
+          PY_IGNORE_IMPORTMISMATCH: '1'
+
+      - name: python run_test.py
         shell: bash -l {0}
-        run: git tag
+        run: python run_test.py
