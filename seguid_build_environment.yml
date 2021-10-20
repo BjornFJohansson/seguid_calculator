@@ -8,6 +8,7 @@ dependencies:
 
 - wxpython>=4.1.1
 
+- pytest
 - setuptools
 - twine
 - pip
