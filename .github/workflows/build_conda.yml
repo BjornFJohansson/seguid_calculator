@@ -1,4 +1,4 @@
-name: Build Packages
+name: Conda Package
 on:
   release:
     types: [published]

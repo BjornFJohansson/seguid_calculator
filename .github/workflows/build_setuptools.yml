@@ -1,4 +1,4 @@
-name: Build Packages
+name: Setuptools Package
 on:
   release:
     types: [published]
