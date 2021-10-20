@@ -38,14 +38,7 @@ jobs:
         shell: bash -l {0}
         run: conda list
 
-	  - name: PyInstaller Windows
+      - name: PyInstaller Windows
         uses: JackMcKew/pyinstaller-action-windows@main
-		with:
+        with:
            path: src
-
-
-
-
-
-
-# pyinstaller --onefile --windowed --icon=calc.ico --name seguid-calculator src/gui.py
