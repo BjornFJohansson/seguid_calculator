@@ -29,25 +29,23 @@ jobs:
           activate-environment: seguid_build_environment
           python-version: ${{ matrix.python-version }}
           environment-file: seguid_build_environment.yml
+
       - name: conda info
         shell: bash -l {0}
         run: conda info --all
+
+      - name: conda list
+        shell: bash -l {0}
+        run: conda list
+
       - name: tags
         shell: bash -l {0}
         run: git tag
-      - name: Build pypi wheel package
-        shell: bash -l {0}
-        run: python setup.py build bdist_wheel
+
       - name: conda config
         shell: bash -l {0}
         run: conda config --set anaconda_upload yes
+
       - name: Build conda package
         shell: bash -l {0}
         run: conda build --python ${{ matrix.python-version }} --no-include-recipe --dirty --token ${{ secrets.ANACONDATOKEN }} .
-      - name: Publish a Python distribution to PyPI
-        if: matrix.os == 'ubuntu-latest'
-        uses: pypa/gh-action-pypi-publish@master
-        with:
-          user: __token__
-          password: ${{ secrets.SEGUID_CALCULATOR_TOKEN }}
-          skip_existing: true

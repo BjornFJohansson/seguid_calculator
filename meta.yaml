@@ -21,6 +21,15 @@ requirements:
     run:
         - python {{ python }}
         - wxpython
+test:
+  requires:
+    - pytest
+  imports:
+    - seguid_calculator
+  source_files:
+    - tests
+    - src
+    - src/seguid_calculator
 
 app:
     entry: seguid_calculator
