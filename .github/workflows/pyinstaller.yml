@@ -42,12 +42,13 @@ jobs:
         shell: bash -l {0}
         run: python setup.py --version
 
-      - name: Pyinstaller
+      - name: pyinstaller
         shell: bash -l {0}
         run: pyinstaller --onefile --windowed --icon=calc.ico --name seguid-calculator src/gui.py
 
-      - name: ls
+      - name: ls in dist folder
         shell: bash -l {0}
+        run: ls dist
 
       - name: zip the app for Mac
         shell: bash -l {0}
