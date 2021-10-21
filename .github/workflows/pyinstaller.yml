@@ -61,7 +61,3 @@ jobs:
             dist/seguid-calculator.exe
             dist/seguid_calculator_for_mac.zip
             dist/seguid-calculator
-
-
-zip -r seguid_calculator_for_mac.zip seguid_calculator.app
-wc -c seguid_calculator_for_mac.zip
