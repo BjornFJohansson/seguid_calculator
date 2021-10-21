@@ -48,12 +48,20 @@ jobs:
 
       - name: ls
         shell: bash -l {0}
-        run: ls dist
 
-      - name: Release
+      - name: zip the app for Mac
+        shell: bash -l {0}
+        if: matrix.os == 'macos-latest'
+        run: zip -r dist/seguid_calculator_for_mac.zip dist/seguid_calculator.app
+
+      - name: Upload
         uses: softprops/action-gh-release@v1
         with:
           files: |
             dist/seguid-calculator.exe
-            dist/seguid-calculator.app
+            dist/seguid_calculator_for_mac.zip
             dist/seguid-calculator
+
+
+zip -r seguid_calculator_for_mac.zip seguid_calculator.app
+wc -c seguid_calculator_for_mac.zip
