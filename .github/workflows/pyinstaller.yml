@@ -47,4 +47,4 @@ jobs:
 
       - name: ls
         shell: bash -l {0}
-        run: ls
+        run: ls dist
