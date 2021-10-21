@@ -49,4 +49,4 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: seguid-calculator.*
+          files: dist/seguid-calculator.*
