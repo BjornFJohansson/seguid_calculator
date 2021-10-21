@@ -38,6 +38,10 @@ jobs:
         shell: bash -l {0}
         run: conda list
 
+      - name: generate _version.py
+        shell: bash -l {0}
+        run: python setup.py --version
+
       - name: Pyinstaller
         shell: bash -l {0}
         run: pyinstaller --onefile --windowed --icon=calc.ico --name seguid-calculator src/gui.py
@@ -50,6 +54,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            seguid-calculator.exe
-            seguid-calculator.app
-            seguid-calculator
+            dist/seguid-calculator.exe
+            dist/seguid-calculator.app
+            dist/seguid-calculator

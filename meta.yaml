@@ -18,6 +18,7 @@ requirements:
         - python {{ python }}
         - setuptools
         - setuptools_scm
+        - pytest-runner
     run:
         - python {{ python }}
         - wxpython
