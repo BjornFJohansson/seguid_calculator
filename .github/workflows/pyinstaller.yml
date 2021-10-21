@@ -55,6 +55,11 @@ jobs:
         if: matrix.os == 'macos-latest'
         run: ls dist/seguid-calculator.app
 
+      - name: ls in dist/seguid_calculator.app folder
+        shell: bash -l {0}
+        if: matrix.os == 'macos-latest'
+        run: ls dist/seguid-calculator
+
       - name: zip the app for Mac
         shell: bash -l {0}
         if: matrix.os == 'macos-latest'
