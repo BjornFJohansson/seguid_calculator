@@ -1,7 +1,10 @@
 name: Pyinstaller
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '*.*'
 jobs:
   build:
     name: Build (${{ matrix.python-version }}, ${{ matrix.os }})
@@ -38,7 +41,10 @@ jobs:
         shell: bash -l {0}
         run: conda list
 
-      - name: PyInstaller Windows
-        uses: JackMcKew/pyinstaller-action-windows@main
-        with:
-           path: src
+      - name: Pyinstaller
+        shell: bash -l {0}
+        run: pyinstaller --onefile --windowed --icon=calc.ico --name seguid-calculator src/gui.py
+
+      - name: ls
+        shell: bash -l {0}
+        run: ls
