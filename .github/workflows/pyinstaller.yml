@@ -48,3 +48,9 @@ jobs:
       - name: ls
         shell: bash -l {0}
         run: ls dist
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: seguid-calculator.*
