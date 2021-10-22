@@ -11,7 +11,7 @@ Executables are available from here: [releases](https://github.com/BjornFJohanss
 
 - **seguid_calculator.exe** for Windows
 - **seguid_calculator_for_mac.zip** for MacOS
-- **seguid_calculator** is an executable for Linux 
+- **seguid_calculator** is an executable for Linux
 - No DEB or RPM packages yet (These are a planned feature)
 
 These packages are build automatically, see the end of this page  for details.
@@ -77,3 +77,9 @@ regardless of the form they are presented.
 
 Seguid_calculator is written in python 3 with wxPython 4 which is the only dependence.
 Development happens on [Github](https://github.com/BjornFJohansson/seguid_calculator).
+
+## Online version
+
+There is also an online version built with [flask](https://github.com/pallets/flask).
+
+[![seguid_calculator_flask](seguid_calculator_flask.png)](http://seguidcalculator.pythonanywhere.com/)
