@@ -2,9 +2,6 @@
 
 # interesting links:
 
-# https://launchpad.net/ubucompilator seems abandoned.
-# http://showmedo.com/videotutorials/video?name=linuxJensMakingDeb;fromSeriesID=37 dead
-# http://ubuntuforums.org/showthread.php?t=51003 needs login
 
 # https://pypi.python.org/pypi/stdeb last release in 2015
 
@@ -27,7 +24,11 @@
 # first install the python package containing wxpython:
 # http://askubuntu.com/questions/758774/how-to-install-wxpython-ubuntu-16-04
 
-# sudo apt-get install python-wxgtk3.0 devscripts pip --- Uncomment this line if needed!
+# http://showmedo.com/videotutorials/video?name=linuxJensMakingDeb;fromSeriesID=37 dead
+# https://launchpad.net/ubucompilator seems abandoned.
+# http://ubuntuforums.org/showthread.php?t=51003 needs login
+
+# sudo apt-get install python-wxgtk4.0 devscripts pip --- Uncomment this line if needed!
 
 # Upgrade pip
 
@@ -57,7 +58,7 @@ echo
 echo
 echo
 
-cd deb_dist/seguid-calculator-*
+cd deb_dist/seguid_calculator-*
 echo
 echo
 echo

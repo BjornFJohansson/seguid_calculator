@@ -1,0 +1,15 @@
+Seguid_calculator is a small GUI application for calculating the SEGUID, cSEGUID and lSEGUID checksums for biological
+sequences, DNA, RNA or protein.
+
+  The SEGUID checksum is defined as the SHA-1 cryptographic hash of a primary biological sequence in uppercase.
+
+SEGUID was first suggested by Babnigg and Giometti (1) as a way to provide stable
+identifiers of protein sequences in databases for cross referencing.
+
+The checksum produced from this software is an URL safe version of the SEGUID, which means that does not
+contain characters that can cause errors if the SEGUID is used as a filename or a part of a URL. The
+character - is used instead of + and _ instead of / in the standard Base64 alphabet.
+The SEGUID can still contain =.
+
+(1) Babnigg, G., and Giometti, C. S. (2006) A database of unique protein sequence identifiers for
+proteome studies. Proteomics 6, 4514–4522.

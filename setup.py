@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """docstring."""
+
+# for DEB build-essential:native python3-setuptools python3-all debhelper
+
 from setuptools import setup
 from setuptools import find_packages
 from os import path
