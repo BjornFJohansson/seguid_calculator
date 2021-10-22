@@ -9,9 +9,10 @@ biological sequence (DNA, RNA or protein).
 
 Executables are available from here: [releases](https://github.com/BjornFJohansson/seguid_calculator/releases):
 
-* Windows 64 bit
-* Mac OSX app
-* Linux DEB and RPM packages are planned (see end of this page)
+- **seguid_calculator.exe** for Windows
+- **seguid_calculator_for_mac.zip** for MacOS
+- **seguid_calculator** is an executable for Linux 
+- No DEB or RPM packages yet (These are a planned feature)
 
 These packages are build automatically, see the end of this page  for details.
 
@@ -21,9 +22,9 @@ setuptools (pip) or conda packages can be installed like this:
 
     pip install seguid_calculator
 
-This should work well on Windows and MacOSX. On Linux, wxpython has to be installed separately.
+This should work well on Windows and MacOSX. On Linux, wxpython may have to be installed separately.
 
-Alternatively, there is a conda package that should install on all platforms on python 3.5, 3.6 or 3.7:
+Alternatively, there is a conda package that should install on all platforms on python 3.7, 3.8 or 3.9:
 
     conda install -c bjornfjohansson seguid_calculator
 
@@ -37,21 +38,18 @@ as a way to provide stable identifiers of protein sequences in databases for cro
 
 There are several implementations of SEGUID calculation available, such as the one in [Biopython](http://biopython.org/wiki/Main_Page).
 [Bio.SeqUtils.CheckSum](http://biopython.org/DIST/docs/api/Bio.SeqUtils.CheckSum-module.html).
-See [slides](http://precedings.nature.com/documents/278/version/1) and the Biopython
-[wiki](http://www.biopython.org/wiki/SeqIO#Using_the_SEGUID_checksum).
+See [slides](https://www.nature.com/articles/npre.2007.278.1) and the Biopython
+[wiki](https://biopython.org/wiki/SeqIO#Using_the_SEGUID_checksum).
 See also this blog [post](http://wiki.christophchamp.com/index.php/SEGUID) on the subject.
 
-The lSEGUID is the SEGUID of the lexicographically smallest of the sense or anti-sense strands of a blunt double stranded DNA sequence. This means
-that if a sequence and its reverse compliment have the same lSEGUIDs. This can be useful to identify double stranded DNA sequences,
-regardless of the form they are presented.
+## cSEGUID
 
 Circular SEGUID or cSEGUID is the SEGUID checksum for circular (DNA) sequences. As there are many permutations
 of a circular sequence, the use of the SEGUID checksum directly is impractical as there would be many checksums for the
-same sequence.The cSEGUID is the SEGUID of the [lexicographically minimal string rotation](http://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation)
-of a sequence or its reverse complement (whichever is smaller).
-The cSEGUID provide a unique and stable identifier for circular sequences, such as [plasmids](http://en.wikipedia.org/wiki/Plasmid).
+same sequence. The cSEGUID is defined as the SEGUID of the [lexicographically minimal string rotation](http://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation)
+of a sequence or its reverse complement (whichever is lexicographically smaller). The cSEGUID provide a unique and stable identifier for circular sequences, such as [plasmids](http://en.wikipedia.org/wiki/Plasmid).
 
-## Example
+### Example
 
 The cSEGUID checksum can be useful to quickly determine if two sequences refer to the same vector.
 The sequence of the plasmid pFA6a-GFPS65T-kanMX6 is available from [Genbank](http://www.ncbi.nlm.nih.gov/nuccore/AJ002682)
@@ -69,13 +67,13 @@ by their identical cSEGUIDs:
 
 ![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/forsburg.png "seguid_calculator")
 
+## lSEGUID
+
+The lSEGUID is the SEGUID of the lexicographically smallest of the sense or anti-sense strands of a blunt double stranded DNA sequence. This means
+that if a sequence and its reverse compliment have the same lSEGUIDs. This can be useful to identify double stranded DNA sequences,
+regardless of the form they are presented.
+
 ## Implementation
 
-Seguid_calculator is written in python 3 with wxPython 4.
+Seguid_calculator is written in python 3 with wxPython 4 which is the only dependence.
 Development happens on [Github](https://github.com/BjornFJohansson/seguid_calculator).
-
-## Automatic build status
-
-
-I will try to set up [packager.io](https://packager.io/gh/BjornFJohansson/seguid_calculator)
-to build DEB packages for Linux (work in progress).
