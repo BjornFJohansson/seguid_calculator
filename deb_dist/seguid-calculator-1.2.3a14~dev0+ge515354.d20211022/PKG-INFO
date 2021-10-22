@@ -1,3 +1,26 @@
+Metadata-Version: 2.1
+Name: seguid_calculator
+Version: 1.2.3a14.dev0+ge515354.d20211022
+Summary: Calculates SEGUID, cSEGUID & lSEGUID checksums for biological sequences
+Home-page: https://github.com/BjornFJohansson/seguid_calculator#seguid_calculator
+Author: Björn Johansson
+Author-email: bjorn_johansson@bio.uminho.pt
+License: LICENSE.txt
+Keywords: bioinformatics
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Education
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
 # seguid_calculator
 
 ![seguid_calculator_small.png](seguid_calculator_small.png "seguid_calculator")
@@ -79,3 +102,5 @@ Development happens on [Github](https://github.com/BjornFJohansson/seguid_calcul
 
 I will try to set up [packager.io](https://packager.io/gh/BjornFJohansson/seguid_calculator)
 to build DEB packages for Linux (work in progress).
+
+

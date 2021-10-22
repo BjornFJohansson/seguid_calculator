@@ -1,7 +1,10 @@
-name: Pyinstaller
+name: Pytest
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '*.*'
 jobs:
   build:
     name: Build (${{ matrix.python-version }}, ${{ matrix.os }})
@@ -9,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
-        python-version: ["3.9"]
+        python-version: ["3.9", "3.8", "3.7"]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -26,9 +29,9 @@ jobs:
         with:
           auto-update-conda: true
           auto-activate-base: false
-          activate-environment: seguid_calculator_build_environment
+          activate-environment: seguid_build_environment
           python-version: ${{ matrix.python-version }}
-          environment-file: seguid_calculator_build_environment.yml
+          environment-file: seguid_build_environment.yml
 
       - name: conda info
         shell: bash -l {0}
@@ -38,27 +41,15 @@ jobs:
         shell: bash -l {0}
         run: conda list
 
-      - name: generate _version.py
+      - name: Install from source
         shell: bash -l {0}
-        run: python setup.py --version
+        run: pip install --editable . --no-deps
 
-      - name: pyinstaller
-        shell: bash -l {0}
-        run: pyinstaller --onefile --windowed --icon=calc.ico --name seguid_calculator src/gui.py
-
-      - name: ls in dist folder
-        shell: bash -l {0}
-        run: ls dist
-
-      - name: zip the app for Mac
-        shell: bash -l {0}
-        if: matrix.os == 'macos-latest'
-        run: zip -r dist/seguid_calculator_for_mac.zip dist/seguid_calculator.app
-
-      - name: Upload
-        uses: softprops/action-gh-release@v1
+      - name: set PY_IGNORE_IMPORTMISMATCH=1
+        uses: allenevans/set-env@v2.0.0
         with:
-          files: |
-            dist/seguid_calculator.exe
-            dist/seguid_calculator_for_mac.zip
-            dist/seguid_calculator
+          PY_IGNORE_IMPORTMISMATCH: '1'
+
+      - name: python run_test.py
+        shell: bash -l {0}
+        run: python run_test.py

@@ -1,4 +1,4 @@
-name: seguid_build_environment
+name: seguid_calculator_build_environment
 channels:
 - conda-forge
 - defaults
