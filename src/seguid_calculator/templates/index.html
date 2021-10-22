@@ -10,59 +10,59 @@
         <title>SEGUID CALCULATOR</title>
     </head>
     <body>
-    
+
         <div class="container">
-            <div class="row font-monospace"> 
+            <div class="row font-monospace">
                 <div class="col fs-1">
-                 SEGUID CALCULATOR                         
+                 seguid calculator
                 </div>
             </div>
-            <div class="row font-monospace"> 
+            <div class="row font-monospace">
                <div class="col">
-                Biological sequences in raw format only. All except ABCDEFGHIJKLMNOPQRSTUVWXYZ and lower cased will be ignored.                          
-               </div> 
-            </div>    
-                                     
-            <div class="row fs-4 font-monospace">                       
+                Biological sequences in raw format only. All except ABCDEFGHIJKLMNOPQRSTUVWXYZ and lower cased will be ignored.
+               </div>
+            </div>
+
+            <div class="row fs-4 font-monospace">
                 <div class="col-md-2">
                   SEGUID
-                </div>        
+                </div>
                 <div class="col-md-5">
                   {{seguid}}
                 </div>
             </div>
-            <div class="row fs-4 font-monospace">    
+            <div class="row fs-4 font-monospace">
                 <div class="col-md-2">
                   lSEGUID
-                </div>        
+                </div>
                 <div class="col-md-5">
                   {{lseguid}}
                 </div>
             </div>
-            <div class="row fs-4 font-monospace">  
+            <div class="row fs-4 font-monospace">
                 <div class="col-md-2">
                   cSEGUID
-                </div>        
+                </div>
                 <div class="col-md-5">
                   {{cseguid}}
-                </div>              
+                </div>
             </div>
-            <div class="row fs-4 font-monospace">  
+            <div class="row fs-4 font-monospace">
                 <div class="col-md-2">
                   Length
-                </div>        
+                </div>
                 <div class="col-md-5">
                   {{length}}
-                </div>              
-            </div>  
-            <div class="row fs-4 font-monospace">  
+                </div>
+            </div>
+            <div class="row fs-4 font-monospace">
                 <div class="col-md-2">
                   Characters
-                </div>        
+                </div>
                 <div class="col-md-5">
                   {{characters}}
-                </div>              
-            </div>    
+                </div>
+            </div>
             <div class="row">
                 <form action="{{ url_for('index') }}" method="POST">
                     <textarea class="form-control" name="sequence" rows="10" cols="120">{{sequence}}</textarea>

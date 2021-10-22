@@ -26,9 +26,9 @@ jobs:
         with:
           auto-update-conda: true
           auto-activate-base: false
-          activate-environment: seguid_build_environment
+          activate-environment: seguid_calculator_build_environment
           python-version: ${{ matrix.python-version }}
-          environment-file: seguid_build_environment.yml
+          environment-file: seguid_calculator_build_environment.yml
 
       - name: conda info
         shell: bash -l {0}
