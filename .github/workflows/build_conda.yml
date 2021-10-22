@@ -4,7 +4,7 @@ on:
     types: [published]
 jobs:
   build:
-    name: Build (${{ matrix.python-version }}, ${{ matrix.os }})
+    name: Conda (${{ matrix.python-version }}, ${{ matrix.os }})
     strategy:
       fail-fast: false
       matrix:

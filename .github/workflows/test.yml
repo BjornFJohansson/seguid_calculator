@@ -7,7 +7,7 @@ on:
       - '*.*'
 jobs:
   build:
-    name: Build (${{ matrix.python-version }}, ${{ matrix.os }})
+    name: Pytest (${{ matrix.python-version }}, ${{ matrix.os }})
     strategy:
       fail-fast: false
       matrix:
