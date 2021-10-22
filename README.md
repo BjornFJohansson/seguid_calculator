@@ -80,6 +80,8 @@ Development happens on [Github](https://github.com/BjornFJohansson/seguid_calcul
 
 ## Online version
 
-There is also an online version built with [flask](https://github.com/pallets/flask).
+There is also an online version built with [flask](https://github.com/pallets/flask) and hosted on [pythonanywhere](https://www.pythonanywhere.com/).
 
 [![seguid_calculator_flask](seguid_calculator_flask.png)](http://seguidcalculator.pythonanywhere.com/)
+
+Click [here](http://seguidcalculator.pythonanywhere.com/) or on the image above to take you to the website.
