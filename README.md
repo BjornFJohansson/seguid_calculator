@@ -12,14 +12,14 @@ biological sequence (DNA, RNA or protein).
 
 ## Installation
 
-Executables are available from here: [releases](https://github.com/BjornFJohansson/seguid_calculator/releases):
+The quickest way to use seguid_calculator is by downloading one of the executables, there requre no installation at all. Executables are available from here: [releases](https://github.com/BjornFJohansson/seguid_calculator/releases):
 
 - **seguid_calculator.exe** for Windows
 - **seguid_calculator_for_mac.zip** for MacOS
 - **seguid_calculator** is an executable for Linux
 - No DEB or RPM packages yet (these are a planned feature for when I figure out how to make them)
 
-These packages are built automatically using Github actions.
+These packages are built automatically using Github actions. There is also an online version (see links at the end of this page.
 
 ## Source installation
 
