@@ -1,5 +1,10 @@
 # seguid_calculator
 
+[![Conda Package](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/build_conda.yml/badge.svg)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/build_conda.yml)
+[![Setuptools Package](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/build_setuptools.yml/badge.svg)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/build_setuptools.yml)
+[![Pytest](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/test.yml/badge.svg)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/test.yml)
+[![Pyinstaller](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/pyinstaller.yml/badge.svg)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/pyinstaller.yml)
+
 ![seguid_calculator_small.png](seguid_calculator_small.png "seguid_calculator")
 
 Seguid_calculator is a small GUI for calculating the SEGUID, lSEGUID and cSEGUID checksums for a
