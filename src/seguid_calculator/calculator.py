@@ -359,9 +359,6 @@ calcicon = PyEmbeddedImage(
     "efXVp054G/8H47hlMPNtUfAAAAAASUVORK5CYII=")
 
 
-
-
-
 class MyFrame(wx.Frame):
     """doctring."""
 
@@ -515,7 +512,7 @@ class MyFrame(wx.Frame):
 
     def __set_properties(self):
         # begin wxGlade: MyFrame.__set_properties
-        self.SetTitle("SEGUID checksum calculator {}".format(_version.version))
+        self.SetTitle("seguid calculator {}".format(_version.version))
         _icon = calcicon.GetIcon()
         # _icon = wx.EmptyIcon()
         # _icon.CopyFromBitmap(wx.Bitmap(os.path.join(
