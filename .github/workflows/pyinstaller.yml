@@ -38,6 +38,11 @@ jobs:
         shell: bash -l {0}
         run: conda list
 
+      - name: Install upx on Linux # https://stackoverflow.com/questions/57982945/how-to-apt-get-install-in-a-github-actions-workflow
+        shell: bash -l {0}
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo apt-get install -y upx
+
       - name: generate _version.py
         shell: bash -l {0}
         run: python setup.py --version
@@ -55,14 +60,14 @@ jobs:
         if: matrix.os == 'macos-latest'
         run: zip -r dist/seguid_calculator_for_mac.zip dist/seguid_calculator.app
 
-      - name: Upload
+      - name: Upload Mac
         uses: softprops/action-gh-release@v1
         if: matrix.os == 'macos-latest'
         with:
           files: |
             dist/seguid_calculator_for_mac.zip
 
-      - name: Upload
+      - name: Upload Win Lin
         uses: softprops/action-gh-release@v1
         if: matrix.os != 'macos-latest'
         with:
