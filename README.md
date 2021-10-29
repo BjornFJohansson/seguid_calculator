@@ -17,8 +17,8 @@ The quickest way to use seguid_calculator is by downloading one of the executabl
 - **seguid_calculator.exe** for Windows
 - **seguid_calculator_for_mac.zip** for MacOS
 - **seguid_calculator** is an executable for Linux
-- No DEB or RPM packages yet (these are a planned feature for when I figure out how to make them)
 
+Unfortunately no DEB or RPM packages yet (these are a planned feature for when I figure out how to make them).
 These packages are built automatically using Github actions. There is also an online version (see links at the end of this page.
 
 ## Source installation
