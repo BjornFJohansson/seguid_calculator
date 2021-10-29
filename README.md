@@ -12,7 +12,7 @@ biological sequence (DNA, RNA or protein).
 
 ## Installation
 
-The quickest way to use seguid_calculator is by downloading one of the executables, there requre no installation at all. Executables are available from here: [releases](https://github.com/BjornFJohansson/seguid_calculator/releases):
+The quickest way to use seguid_calculator is by downloading one of the executables, they requre no installation at all. Executables are available from here: [releases](https://github.com/BjornFJohansson/seguid_calculator/releases):
 
 - **seguid_calculator.exe** for Windows
 - **seguid_calculator_for_mac.zip** for MacOS
