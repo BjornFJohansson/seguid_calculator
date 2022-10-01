@@ -9,7 +9,7 @@ from flask import request
 from flask import url_for
 
 from .functions import seqfilter
-from .functions import seguid
+from .functions import useguid
 from .functions import rc
 from .functions import cseguid
 from .functions import lseguid
@@ -41,20 +41,21 @@ def index():
         return redirect(url_for('index'))
 
     if sequence:
-        segu = seguid(sequence)
+        useg = useguid(sequence)
         lseg = lseguid(sequence)
         cseg = cseguid(sequence)
     else:
-        segu = ""
+        useg = ""
         lseg = ""
         cseg = ""
     return render_template("index.html",
-                           seguid=segu,
+                           seguid=useg,
                            lseguid=lseg,
                            cseguid=cseg,
                            length=len(sequence) or "",
                            characters=" ".join(sorted(set(sequence.upper()))),
                            sequence=sequence)
+
 
 if __name__ == '__main__':
     from webui import WebUI
