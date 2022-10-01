@@ -4,7 +4,7 @@
 import pytest
 
 from seguid_calculator.functions import seqfilter
-from seguid_calculator.functions import seguid
+from seguid_calculator.functions import useguid
 from seguid_calculator.functions import rc
 from seguid_calculator.functions import SmallestRotation
 from seguid_calculator.functions import cseguid
@@ -22,7 +22,7 @@ def test_seqfilter():
 
 
 def test_seguid():
-    assert seguid("A") == seguid("a") == "bc1M4j2I4u6VaLpUbAB8Y9kTHBs"
+    assert useguid("A") == useguid("a") == "bc1M4j2I4u6VaLpUbAB8Y9kTHBs"
 
 
 def test_rc():
@@ -34,11 +34,11 @@ def test_SmallestRotation():
 
 
 def test_cseguid():
-    assert cseguid("gattc") == seguid("aatcg")
+    assert cseguid("gattc") == useguid("aatcg")
 
 
 def test_lseguid():
-    assert lseguid("gattc") == seguid("gaatc")
+    assert lseguid("gattc") == useguid("gaatc")
 
 
 if __name__ == "__main__":

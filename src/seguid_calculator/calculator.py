@@ -4,16 +4,24 @@
 
 import wx
 from wx.lib.embeddedimage import PyEmbeddedImage
-from . import _version
 
+from . import _version
 from .functions import seqfilter
-from .functions import seguid
+from .functions import useguid
 from .functions import rc
 from .functions import cseguid
 from .functions import lseguid
 
+# import _version
+# from functions import seqfilter
+# from functions import useguid
+# from functions import rc
+# from functions import cseguid
+# from functions import lseguid
+
+
 __author__ = "Björn Johansson"
-__copyright__ = "Copyright 2013-2021 Björn Johansson"
+__copyright__ = "Copyright 2013-2022 Björn Johansson"
 __credits__ = ["Björn Johansson"]
 __license__ = "BSD"
 __maintainer__ = "Björn Johansson"
@@ -368,20 +376,18 @@ class MyFrame(wx.Frame):
         wx.Frame.__init__(self, *args, **kwds)
         self.panel_1 = wx.Panel(self, -1)
         self.label_2 = wx.StaticText(self.panel_1, -1,
-                                     "Biological sequences in raw format "
-                                     "only. "
-                                     "All except ABCDEFGHIJKLMNOPQRSTUVWXYZ "
-                                     "and lower cased will be ignored.")
-        self.seguid = wx.StaticText(self.panel_1, -1, "SEGUID for sequence")
-        self.lseguid = wx.StaticText(self.panel_1, -1, "lSEGUID for sequence")
-        self.cseguid = wx.StaticText(self.panel_1, -1, "cSEGUID for sequence")
-        self.size = wx.StaticText(self.panel_1, -1, "Size (nucleotides or aa)")
+                                     "Raw format only. "
+                                     "All characters except A-Z and a-z will be removed.")
+        self.useguid = wx.StaticText(self.panel_1, -1, "uSEGUID")
+        self.lseguid = wx.StaticText(self.panel_1, -1, "lSEGUID")
+        self.cseguid = wx.StaticText(self.panel_1, -1, "cSEGUID")
+        self.size = wx.StaticText(self.panel_1, -1, "Size")
         self.characters = wx.StaticText(self.panel_1, -1, "Characters")
 
         font = wx.Font(18, wx.MODERN, wx.NORMAL, wx.NORMAL, False,
                        u'Inconsolata')
 
-        self.text_ctrl_seguid = wx.TextCtrl(self.panel_1, -1, "",
+        self.text_ctrl_useguid = wx.TextCtrl(self.panel_1, -1, "",
                                             style=wx.TE_READONLY)
         self.text_ctrl_lseguid = wx.TextCtrl(self.panel_1, -1, "",
                                              style=wx.TE_READONLY)
@@ -392,7 +398,7 @@ class MyFrame(wx.Frame):
         self.text_ctrl_characters = wx.TextCtrl(self.panel_1, -1, "",
                                                 style=wx.TE_READONLY)
 
-        # self.text_ctrl_seguid.Disable()
+        # self.text_ctrl_useguid.Disable()
 
         self.Calc = wx.Button(self.panel_1, -1, "Calc")
         self.Rev = wx.Button(self.panel_1, -1, "Reverse")
@@ -402,7 +408,7 @@ class MyFrame(wx.Frame):
         self.text_ctrl_seq = wx.TextCtrl(self.panel_1, -1, "",
                                          style=wx.TE_MULTILINE)
 
-        self.text_ctrl_seguid.SetFont(font)
+        self.text_ctrl_useguid.SetFont(font)
         self.text_ctrl_lseguid.SetFont(font)
         self.text_ctrl_cseguid.SetFont(font)
         self.text_ctrl_size.SetFont(font)
@@ -415,7 +421,7 @@ class MyFrame(wx.Frame):
         self.Bind(wx.EVT_BUTTON, self.OnRev,     self.Rev)
         self.Bind(wx.EVT_BUTTON, self.OnClear,   self.Clear)
 
-        self.text_ctrl_seguid.Bind(wx.EVT_SET_FOCUS, self.OnClick)
+        self.text_ctrl_useguid.Bind(wx.EVT_SET_FOCUS, self.OnClick)
 
         self.text_ctrl_seq.SetFocus()
 
@@ -426,20 +432,20 @@ class MyFrame(wx.Frame):
 
     def OnClick(self, event):
         """docstring."""
-        self.text_ctrl_seguid.SetSelection(-1, -1)
-        self.text_ctrl_seguid.SetFocus()
+        self.text_ctrl_useguid.SetSelection(-1, -1)
+        self.text_ctrl_useguid.SetFocus()
 
     def OnCalc(self, event):
         """docstring."""
         seq = self.text_ctrl_seq.GetValue()
         filtered_seq = seqfilter(seq)
-        self.text_ctrl_seguid.Clear()
+        self.text_ctrl_useguid.Clear()
         self.text_ctrl_lseguid.Clear()
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue(seguid(filtered_seq))
+            self.text_ctrl_useguid.SetValue(useguid(filtered_seq))
             self.text_ctrl_lseguid.SetValue(lseguid(filtered_seq))
             self.text_ctrl_cseguid.SetValue(cseguid(filtered_seq))
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
@@ -451,13 +457,13 @@ class MyFrame(wx.Frame):
         """docstring."""
         seq = self.text_ctrl_seq.GetValue()
         filtered_seq = rc(seqfilter(seq))
-        self.text_ctrl_seguid.Clear()
+        self.text_ctrl_useguid.Clear()
         self.text_ctrl_lseguid.Clear()
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue(seguid(filtered_seq))
+            self.text_ctrl_useguid.SetValue(useguid(filtered_seq))
             self.text_ctrl_lseguid.SetValue(lseguid(filtered_seq))
             self.text_ctrl_cseguid.SetValue(cseguid(filtered_seq))
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
@@ -470,13 +476,13 @@ class MyFrame(wx.Frame):
         """doctstring."""
         seq = self.text_ctrl_seq.GetValue()
         filtered_seq = rc(seqfilter(seq))[::-1]
-        self.text_ctrl_seguid.Clear()
+        self.text_ctrl_useguid.Clear()
         self.text_ctrl_lseguid.Clear()
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue(seguid(filtered_seq))
+            self.text_ctrl_useguid.SetValue(useguid(filtered_seq))
             self.text_ctrl_lseguid.SetValue(lseguid(filtered_seq))
             self.text_ctrl_cseguid.SetValue(cseguid(filtered_seq))
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
@@ -489,13 +495,13 @@ class MyFrame(wx.Frame):
         """doctstring."""
         seq = self.text_ctrl_seq.GetValue()
         filtered_seq = seqfilter(seq)[::-1]
-        self.text_ctrl_seguid.Clear()
+        self.text_ctrl_useguid.Clear()
         self.text_ctrl_lseguid.Clear()
         self.text_ctrl_cseguid.Clear()
         self.text_ctrl_size.Clear()
         self.text_ctrl_seq.Clear()
         if filtered_seq:
-            self.text_ctrl_seguid.SetValue(seguid(filtered_seq))
+            self.text_ctrl_useguid.SetValue(useguid(filtered_seq))
             self.text_ctrl_lseguid.SetValue(lseguid(filtered_seq))
             self.text_ctrl_cseguid.SetValue(cseguid(filtered_seq))
             self.text_ctrl_size.SetValue(str(len(filtered_seq)))
@@ -530,13 +536,13 @@ class MyFrame(wx.Frame):
         sizer_5 = wx.BoxSizer(wx.VERTICAL)
         sizer_4 = wx.BoxSizer(wx.VERTICAL)
         sizer_2.Add(self.label_2, 0, wx.ALL, 5)
-        sizer_4.Add(self.seguid, 0, wx.ALL, 10)
+        sizer_4.Add(self.useguid, 0, wx.ALL, 10)
         sizer_4.Add(self.lseguid, 0, wx.ALL, 10)
         sizer_4.Add(self.cseguid, 0, wx.ALL, 10)
         sizer_4.Add(self.size, 0, wx.ALL, 10)
         sizer_4.Add(self.characters, 0, wx.ALL, 10)
         sizer_3.Add(sizer_4, 0, wx.EXPAND, 0)
-        sizer_5.Add(self.text_ctrl_seguid, 0, wx.ALL | wx.EXPAND, 5)
+        sizer_5.Add(self.text_ctrl_useguid, 0, wx.ALL | wx.EXPAND, 5)
         sizer_5.Add(self.text_ctrl_lseguid, 0, wx.ALL | wx.EXPAND, 5)
         sizer_5.Add(self.text_ctrl_cseguid, 0, wx.ALL | wx.EXPAND, 5)
         sizer_5.Add(self.text_ctrl_size, 0, wx.ALL | wx.EXPAND, 5)
