@@ -51,8 +51,8 @@ See also this blog [post](http://wiki.christophchamp.com/index.php/SEGUID) on th
 
 ## uSEGUID
 
-uSEGUID is an [base64url](https://en.wikipedia.org/wiki/Base64#URL_applications) encoded version
-of SEGUID where forward slash and plus ("/" , "+") characters of standard base64 are 
+uSEGUID is a [base64url](https://en.wikipedia.org/wiki/Base64#URL_applications) encoded version
+of SHA-1 where forward slash and plus ("/" , "+") characters of standard base64 are 
 replaced by '-' and '_'. This makes it possible to use the checksum as a part of a url.
 
 
