@@ -36,5 +36,5 @@ exe = EXE(pyz,
           console=False,
           disable_windowed_traceback=False,
           target_arch=None,
-          codesign_identity=None,
+          codesign_identity=seguid_calculator.key,
           entitlements_file=None , icon='calc.ico')

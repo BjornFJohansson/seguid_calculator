@@ -9,7 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
-        python-version: ["3.9"]
+        python-version: ["3.11"]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -49,7 +49,7 @@ jobs:
 
       - name: pyinstaller
         shell: bash -l {0}
-        run: pyinstaller --onefile --windowed --icon=calc.ico --name seguid_calculator src/gui.py
+        run: pyinstaller --onefile --disable-windowed-traceback --windowed --icon=calc.ico --name seguid_calculator src/gui.py
 
       - name: ls in dist folder
         shell: bash -l {0}
