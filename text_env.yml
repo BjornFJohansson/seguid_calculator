@@ -1,0 +1,9 @@
+name: pyinstaller_env
+channels:
+- conda-forge
+dependencies:
+- python
+- wxpython>=4.1.1
+- pyinstaller>=5.8.0
+- setuptools
+- setuptools_scm

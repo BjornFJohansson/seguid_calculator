@@ -45,7 +45,7 @@ See also this blog [post](http://wiki.christophchamp.com/index.php/SEGUID) on th
 
 uSEGUID is a [base64url](https://en.wikipedia.org/wiki/Base64#URL_applications) encoded version
 of SHA-1 where forward slash and plus ("/" , "+") characters of standard base64 are 
-replaced by '-' and '_'. This makes it possible to use the checksum as a part of a url.
+replaced by '-' and '_'. This makes it possible to use the checksum as a part of a URL.
 
 ## cSEGUID
 
@@ -56,7 +56,7 @@ of a sequence or its reverse complement (whichever is lexicographically smaller)
 
 ### Example
 
-The cSEGUID checksum can be useful to quickly determine if two sequences refer to the same vector.
+The cSEGUID checksum can be useful to quickly determine if two sequences refer to the same plasmid vector.
 The sequence of the plasmid pFA6a-GFPS65T-kanMX6 is available from [Genbank](http://www.ncbi.nlm.nih.gov/nuccore/AJ002682)
 and from other sources such as the [Forsburg lab](http://www-bcf.usc.edu/~forsburg/), sequence [here](http://www-bcf.usc.edu/~forsburg/GFPS65T.html), a copy of which was saved [here](https://gist.github.com/BjornFJohansson/d394362134338d5f1ff0).
 

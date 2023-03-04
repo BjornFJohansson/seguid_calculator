@@ -1,0 +1,9 @@
+name: test_env
+channels:
+- conda-forge
+dependencies:
+- python
+- wxpython>=4.1.1
+- setuptools
+- setuptools_scm
+- pytest
