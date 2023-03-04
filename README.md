@@ -11,22 +11,21 @@ Seguid_calculator is a GUI for calculating the uSEGUID, lSEGUID and cSEGUID chec
 
 ## Installation
 
-The quickest way to use seguid_calculator is by downloading one of the executables, they requre no installation at all. Executables are available from here: [releases](https://github.com/BjornFJohansson/seguid_calculator/releases):
+The quickest way to use seguid_calculator is by downloading one of the apps, they requre no installation at all. They are available [here](https://github.com/BjornFJohansson/seguid_calculator/releases/latest). Pick the correct file for your system:
 
-- **seguid_calculator.exe** for Windows
-- **seguid_calculator_for_mac.zip** for MacOS
-- **seguid_calculator** is an executable for Linux
+| OS            |         | File                              |
+|---------------|---------|-----------------------------------|
+| ![](win2.png) | Windows | **seguid_calculator.exe**         |
+| ![](mac2.png) | macOS   | **seguid_calculator_for_mac.zip** |
+| ![](tux2.png) | Linux   | **seguid_calculator**             |
 
-Unfortunately no DEB or RPM packages yet (these are a planned feature for when I figure out how to make them). 
-These apps and packages are built automatically using Github actions. There is also an online version (see links at the end of this page.
+No DEB or RPM packages yet. Please let me know if they are needed. These apps and packages are built automatically using Github actions. There is also an online version (see links at the end of this page.
 
 ## Source installation
 
-setuptools (pip) can be installed like this:
+Installation from pypi:
 
     pip install seguid_calculator
-
-This should work well on Windows and MacOSX. On Linux, wxpython may have to be installed separately.
 
 ## What does it do ?
 
