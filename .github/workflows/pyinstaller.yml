@@ -2,6 +2,7 @@ name: Pyinstaller
 on:
   release:
     types: [published]
+  workflow_dispatch:
 jobs:
   build:
     name: Pyinstaller (${{ matrix.python-version }}, ${{ matrix.os }})
