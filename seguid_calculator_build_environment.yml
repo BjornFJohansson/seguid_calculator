@@ -1,18 +1,10 @@
-name: seguid_calculator_build_environment
+name: build_environment
 channels:
 - conda-forge
-- defaults
-- BjornFJohansson
 dependencies:
 - python
-
 - wxpython>=4.1.1
-
 - pytest
 - setuptools
-- twine
 - pip
-- anaconda-client
-- conda-build
-- conda-verify
 - pyinstaller
