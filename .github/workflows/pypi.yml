@@ -37,9 +37,9 @@ jobs:
         shell: bash -l {0}
         run: micromamba list
 
-      - name: Build pypi wheel package
+      - name: Build pypi source dist and wheel package
         shell: bash -l {0}
-        run: python setup.py build bdist_wheel
+        run: python setup.py build sdist bdist_wheel
 
       - name: Publish a Python distribution to PyPI
         if: matrix.os == 'ubuntu-latest'
