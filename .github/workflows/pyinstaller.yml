@@ -2,6 +2,8 @@ name: Pyinstaller
 on:
   release:
     types: [published]
+    branches:
+      - master
   workflow_dispatch:
 jobs:
   build:

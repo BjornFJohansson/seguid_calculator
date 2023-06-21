@@ -1,9 +1,7 @@
 # seguid_calculator
 
-[![Conda Package](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/build_conda.yml/badge.svg)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/build_conda.yml)
-[![Setuptools Package](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/build_setuptools.yml/badge.svg)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/build_setuptools.yml)
 [![Pytest](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/test.yml/badge.svg)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/test.yml)
-[![Pyinstaller](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/pyinstaller.yml/badge.svg?branch=master)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/pyinstaller.yml)
+[![Pyinstaller](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/pyinstaller.yml/badge.svg?branch=master)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/pyinstaller.yml) [![PyPI version](https://badge.fury.io/py/seguid-calculator.svg)](https://badge.fury.io/py/seguid-calculator)
 
 ![seguid_calculator_small.png](seguid_calculator_small.png "seguid_calculator")
 
@@ -21,18 +19,18 @@ The quickest way to use seguid_calculator is by downloading one of the apps, the
 
 No DEB or RPM packages yet. Please let me know if they are needed. These apps and packages are built automatically using Github actions. There is also an online version (see links at the end of this page.
 
-## Source installation
+## Source Python installation
 
-Installation from pypi:
+Installation from PyPi:
 
     pip install seguid_calculator
 
 ## What does it do ?
 
-The SEGUID checksum is defined as the [base64](https://en.wikipedia.org/wiki/Base64#URL_applications) encoded 
+The SEGUID checksum was defined as the [base64](https://en.wikipedia.org/wiki/Base64#URL_applications) encoded 
 [SHA-1](http://en.wikipedia.org/wiki/SHA-1) cryptographic hash of a 
 primary biological sequence in uppercase. SEGUID was suggested by [Babnigg and Giometti ](http://www.ncbi.nlm.nih.gov/pubmed/16858731)
-as a way to provide stable identifiers of protein sequences in databases for cross referencing.
+as a stable identifier for cross referencing protein sequences in databases.
 
 There are several implementations of SEGUID calculation available, such as the one in [Biopython](http://biopython.org/wiki/Main_Page).
 [Bio.SeqUtils.CheckSum](http://biopython.org/DIST/docs/api/Bio.SeqUtils.CheckSum-module.html).
@@ -44,21 +42,17 @@ See also this blog [post](http://wiki.christophchamp.com/index.php/SEGUID) on th
 ## uSEGUID
 
 uSEGUID is a [base64url](https://en.wikipedia.org/wiki/Base64#URL_applications) encoded version
-of SHA-1 where forward slash and plus ("/" , "+") characters of standard base64 are 
+of SEGUID where forward slash and plus ("/" , "+") characters of standard base64 are 
 replaced by '-' and '_'. This makes it possible to use the checksum as a part of a URL.
 
 ## cSEGUID
 
-Circular uSEGUID or cSEGUID is the uSEGUID checksum for circular (DNA) sequences. As there are many permutations
-of a circular sequence, the use of the uSEGUID checksum directly is impractical as there would be many checksums for the
-same sequence. The cSEGUID is defined as the SEGUID of the [lexicographically minimal string rotation](http://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation)
+Circular uSEGUID or **cSEGUID** is the uSEGUID checksum for a circular (DNA) sequence. As there are many permutations of a circular sequence, using the uSEGUID checksum directly is impractical as there would be many checksums for the same sequence. The cSEGUID is defined as the uSEGUID of the [lexicographically minimal string rotation](http://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation)
 of a sequence or its reverse complement (whichever is lexicographically smaller). The cSEGUID provide a unique and stable identifier for circular sequences, such as [plasmids](http://en.wikipedia.org/wiki/Plasmid).
 
 ### Example
 
-The cSEGUID checksum can be useful to quickly determine if two sequences refer to the same plasmid vector.
-The sequence of the plasmid pFA6a-GFPS65T-kanMX6 is available from [Genbank](http://www.ncbi.nlm.nih.gov/nuccore/AJ002682)
-and from other sources such as the [Forsburg lab](http://www-bcf.usc.edu/~forsburg/), sequence [here](http://www-bcf.usc.edu/~forsburg/GFPS65T.html), a copy of which was saved [here](https://gist.github.com/BjornFJohansson/d394362134338d5f1ff0).
+The cSEGUID checksum can be useful to quickly determine if two sequences refer to the same plasmid vector. The sequence of the plasmid pFA6a-GFPS65T-kanMX6 is available from [Genbank](http://www.ncbi.nlm.nih.gov/nuccore/AJ002682) and from other sources such as the [Forsburg lab](http://www-bcf.usc.edu/~forsburg/), sequence [here](http://www-bcf.usc.edu/~forsburg/GFPS65T.html), a copy of which was saved [here](https://gist.github.com/BjornFJohansson/d394362134338d5f1ff0).
 
 Both sequences are the same size and claim to describe the same vector. Analysis of both sequences in seguid_calculator proves that both sequences are in fact representations of the same sequence by their identical cSEGUIDs:
 
@@ -72,24 +66,19 @@ Both sequences are the same size and claim to describe the same vector. Analysis
 
 ## lSEGUID
 
-The lSEGUID is the uSEGUID of the lexicographically smallest of the sense or anti-sense strands of a blunt double stranded DNA sequence. This means
-that if a sequence and its reverse compliment have the same lSEGUIDs. This can be useful to identify double stranded DNA sequences,
-regardless of the form they are presented.
+The lSEGUID is the uSEGUID of the lexicographically smallest of the sense or anti-sense strands of a blunt double stranded DNA sequence. This means that if a sequence and its reverse compliment have the same lSEGUIDs. This can be useful to identify double stranded DNA sequences, regardless of the form they are presented.
 
 ## Implementation
 
-Seguid_calculator is written in python 3 with wxPython 4 which is the only dependence. Development happens on [Github](https://github.com/BjornFJohansson/seguid_calculator).
+Seguid_calculator is written in Python3 and only dependent on wxPython. Development happens on [Github](https://github.com/BjornFJohansson/seguid_calculator).
 
 ## Online version
 
-There is also an online version built with [flask](https://github.com/pallets/flask) and hosted on [pythonanywhere](https://www.pythonanywhere.com/).
-
 [![seguid_calculator_flask](seguid_calculator_flask.png)](http://seguidcalculator.pythonanywhere.com/)
 
-Click [here](http://seguidcalculator.pythonanywhere.com/) or on the image above to take you to the website.
+Click [here](http://seguidcalculator.pythonanywhere.com/) or on the image above to take you to the website. The online version was built with [flask](https://github.com/pallets/flask) and hosted on [pythonanywhere](https://www.pythonanywhere.com/).
 
-
-### How to install on pythonanywhere:
+### How to install Online version on pythonanywhere:
 ```
 16:33 ~ $ mkvirtualenv --python=python3.9 MyVirtualenv                                                                 
 created virtual environment CPython3.9.5.final.0-64 in 13108ms                                                         

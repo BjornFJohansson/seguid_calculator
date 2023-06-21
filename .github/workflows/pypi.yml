@@ -2,7 +2,8 @@ name: Pypi Package
 on:
   release:
     types: [published]
-  workflow_dispatch:
+    branches:
+      - master
 jobs:
   build:
     name: Pypi (${{ matrix.python-version }}, ${{ matrix.os }})

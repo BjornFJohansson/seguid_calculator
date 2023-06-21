@@ -3,10 +3,10 @@ on:
   push:
     branches:
       - '**'
+      - '!master'   # excludes master
     tags-ignore:
       - '*.*'
   pull_request: {}
-  workflow_dispatch:
 jobs:
   build:
     name: Pytest (${{ matrix.python-version }}, ${{ matrix.os }})
