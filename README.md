@@ -39,7 +39,7 @@ Installation from PyPi:
 
 The SEGUID checksum was defined as the [base64](https://en.wikipedia.org/wiki/Base64#URL_applications) encoded
 [SHA-1](http://en.wikipedia.org/wiki/SHA-1) cryptographic chacksum of a
-primary biological sequence in uppercase. 
+primary biological sequence in uppercase.
 
 SEGUID was suggested by [Babnigg and Giometti ](http://www.ncbi.nlm.nih.gov/pubmed/16858731)
 as a stable identifier for cross referencing protein sequences in databases.
@@ -51,17 +51,17 @@ See [slides](https://www.nature.com/articles/npre.2007.278.1) and the Biopython
 
 See also this blog [post](http://wiki.christophchamp.com/index.php/SEGUID) on the subject.
 
-## slSEGUID 
+## slSEGUID
 ![](images/slDNA.png)
 
 The **s**ingle-strand **l**inear SEGUID or **slSEGUID** is meant for single stranded DNA
-or protein sequence which share basic topology, i.e. The sequence has a beginning and an end and 
+or protein sequence which share basic topology, i.e. The sequence has a beginning and an end and
 there is only one strand.
 
 slSEGUID is fundamentally a [base64url](https://en.wikipedia.org/wiki/Base64#URL_applications) encoded version
 of the original SEGUID checksum where forward slash and plus ("/" , "+") characters of standard base64 encoding are replaced by '-' and '_'. This makes it possible to use the checksum as a part of a URL.
 
-## scSEGUID 
+## scSEGUID
 ![](images/scDNA.png)
 
 The **s**ingle-strand **c**ircular SEGUID or **scSEGUID** is useful for single-stranded circular DNA sequences and other molecules sharing the same properties. A circular sequence of this type has no identifiable beginning or end and also no complementary strand. A real world example of this kind of molecule is the M13 phage that maintains its genome as a circular single stranded molecule.
@@ -74,7 +74,7 @@ As there are many permutations of a circular sequence, using the slSEGUID checks
 ## dlSEGUID
 ![](images/dlDNA-blunt.png)
 
-The **d**ouble-strand **l**inear SEGUID or **dlSEGUID** is useful for double-stranded DNA sequences as the one depicted below. The two representations are equivalen representations of the same DNA molecule 
+The **d**ouble-strand **l**inear SEGUID or **dlSEGUID** is useful for double-stranded DNA sequences as the one depicted below. The two representations are equivalen representations of the same DNA molecule
 ```
             5'-GATTACA-3'
                |||||||
@@ -88,14 +88,14 @@ The **d**ouble-strand **l**inear SEGUID or **dlSEGUID** is useful for double-str
 These molecules have a beginning and an end and two antiparalell complementary strands. As the strands are complementary, each strand completely identify the other strand in the case of a blunt molecule as the one depicted above.
 
 Most databases store one of the strands as the other one is easy to infer.
-The dlSEGUID algorithm compares two top strands `GATTACA` and `TGTAATC` and chooses the smallest one (`GATTACA`). 
+The dlSEGUID algorithm compares two top strands `GATTACA` and `TGTAATC` and chooses the smallest one (`GATTACA`).
 
 A string containing the `GATTACA` string is concatenated with a linebreak character and the reverse of the complementary strand `GATTACA\nCTAATGT` and further porcessed as for the slSEGUID checksum.
 
 ## dcSEGUID
 ![](images/dcDNA.png)
 
-The dcSEGUID (**d**ouble-strand **c**ircular SEGUID) checksum is defined for circular dsDNA molecules such as most [plasmids](http://en.wikipedia.org/wiki/Plasmid) and bacterial chromosomes. 
+The dcSEGUID (**d**ouble-strand **c**ircular SEGUID) checksum is defined for circular dsDNA molecules such as most [plasmids](http://en.wikipedia.org/wiki/Plasmid) and bacterial chromosomes.
 
 The smallest rotation is found for each of the two strands in a manner similar to that of the scSEGUID checksum. A string in uppercase letters is constructed from the watson sequence starting at its minimum point, a line break and the complementary sequence in 3'-5' order. Another string is constructed from the crick sequence at its minimum point a line break and a the watson string in 3'-5' order. The two strings are compared and the checksum is calculated from the string.
 
@@ -103,6 +103,7 @@ The dcSEGUID checksum can be useful to determine if two sequences refer to the s
 
 Both sequences are understood to describe the same vector. The sequences are both, 4882 bp, but the GenBank sequence starts and ends with `GAAC...TATA` and the Forsburg lab sequence with `ACGC...TAGA`.
 
+The two screenshots below show that the dcSEGUID checksums are identical, which proves that the two sequences descibe the same double stranded circular DNA molcule.
 
 #### Genbank
 
@@ -112,20 +113,19 @@ Both sequences are understood to describe the same vector. The sequences are bot
 
 ![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/forsburg.png "seguid_calculator")
 
-## lSEGUID
-
-The lSEGUID is the uSEGUID of the lexicographically smallest of the sense or anti-sense strands of a blunt double stranded DNA sequence. This means that if a sequence and its reverse compliment have the same lSEGUIDs. This can be useful to identify double stranded DNA sequences, regardless of the form they are presented.
-
 ## Implementation
 
-Seguid_calculator is written in Python and depends on wxPython and [](https://pypi.org/project/seguid). 
+Seguid_calculator is written in Python and depends on [wxPython](https://pypi.org/project/wxPython)
+and [seguid](https://pypi.org/project/seguid).
 
 
 ## Online version
 
 [![seguid_calculator_flask](images/seguid_calculator_flask.png)](http://seguidcalculator.pythonanywhere.com/)
 
-Click [here](http://seguidcalculator.pythonanywhere.com/) or on the image above to take you to the website. The online version was built with [flask](https://github.com/pallets/flask) and hosted on [pythonanywhere](https://www.pythonanywhere.com/).
+Click on the image above to take you to the website.
+The online version was built with [flask](https://github.com/pallets/flask) and hosted
+on [pythonanywhere](https://www.pythonanywhere.com/).
 
 
 
