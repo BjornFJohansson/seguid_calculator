@@ -127,11 +127,11 @@ stranded circular DNA molecule.
 
 #### Genbank
 
-![alt text](images/genbank.png "GenBank")
+![Genbank](images/genbank.png "GenBank")
 
 #### Forsburg
 
-![alt text](https://raw.githubusercontent.com/BjornFJohansson/seguid_calculator/master/forsburg.png "seguid_calculator")
+![Forsburg](images/forsburg.png "seguid_calculator")
 
 ## Implementation
 
