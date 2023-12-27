@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """docstring."""
+from string import ascii_letters
 
 from flask import Flask
 from flask import redirect
@@ -8,18 +9,19 @@ from flask import render_template
 from flask import request
 from flask import url_for
 
-from .functions import seqfilter
-from .functions import useguid
-from .functions import rc
-from .functions import cseguid
-from .functions import lseguid
+from seguid_calculator2.functions import seqfilter
+from seguid_calculator2.functions import rc
+from seguid_calculator2.functions import slseguid
+from seguid_calculator2.functions import scseguid
+from seguid_calculator2.functions import dlseguid
+from seguid_calculator2.functions import dcseguid
+from seguid_calculator2.functions import calcicon
 
 app = Flask(__name__)
 
 app.config.update(dict(
     SECRET_KEY="powerful_secretkey",
     WTF_CSRF_SECRET_KEY="a_csrf_secret_key"))
-
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -41,17 +43,20 @@ def index():
         return redirect(url_for('index'))
 
     if sequence:
-        useg = useguid(sequence)
-        lseg = lseguid(sequence)
-        cseg = cseguid(sequence)
+        slseg = slseguid(sequence)
+        scseg = scseguid(sequence)
+        dlseg = dlseguid(sequence)
+        dcseg = dcseguid(sequence)
     else:
-        useg = ""
-        lseg = ""
-        cseg = ""
+        slseg = ""
+        scseg = ""
+        dlseg = ""
+        dcseg = ""
     return render_template("index.html",
-                           seguid=useg,
-                           lseguid=lseg,
-                           cseguid=cseg,
+                           slseguid=slseg,
+                           scseguid=scseg,
+                           dlseguid=dlseg,
+                           dcseguid=dcseg,
                            length=len(sequence) or "",
                            characters=" ".join(sorted(set(sequence.upper()))),
                            sequence=sequence)
