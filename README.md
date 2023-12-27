@@ -60,8 +60,9 @@ The **s**ingle-strand **l**inear SEGUID or **slSEGUID** is meant for single stra
 or protein sequence which share basic topology, i.e. The sequence has a beginning and an end and only one strand.
 
 slSEGUID is fundamentally a [base64url](https://en.wikipedia.org/wiki/Base64#URL_applications) encoded version
-of the original SEGUID checksum where forward slash and plus ("/" , "+") characters of  the
-standard base64 encoding are replaced by '-' and '_'. This makes it possible to use the checksum directly as a part of a URL.
+of the original SEGUID checksum where forward slash and plus (`/` , `+`) characters of  the
+standard base64 encoding are replaced by `-` and `_`.
+This makes the checksum directly useful as a part of a URL.
 
 ## scSEGUID
 ![](images/scDNA.png)
@@ -125,11 +126,11 @@ ends with `GAAC...TATA` and the Forsburg lab sequence with `ACGC...TAGA`.
 The two screenshots below show that the dcSEGUID checksums are identical, which proves that the two sequences describe the same double
 stranded circular DNA molecule.
 
-#### Genbank
+#### Genbank sequence for `pFA6a-GFPS65T-kanMX6`
 
 ![Genbank](images/genbank.png "GenBank")
 
-#### Forsburg
+#### Forsburg lab sequence for `pFA6a-GFPS65T-kanMX6`
 
 ![Forsburg](images/forsburg.png "seguid_calculator")
 
