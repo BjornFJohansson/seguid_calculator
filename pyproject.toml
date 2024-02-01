@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "seguid-calculator2"
+name = "seguid_calculator"
 version = "2.0.0a1"
 description = "hejhej"
 authors = ["BjornFJohansson <bjornjobb@gmail.com>"]
@@ -8,10 +8,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10,<3.12"
-wxPython = "^4.0.0"
-seguid = "^0.0.1.post9004"
-
-
+wxPython = ">=4.0.0, <=4.2.1"
+seguid = ">=0.0.3"
 
 [tool.poetry-dynamic-versioning]
 enable = true

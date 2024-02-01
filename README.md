@@ -18,16 +18,16 @@ Four checksums are defined in the table below with their respective use case.
 
 ## Installation
 
-The quickest way to use seguid_calculator2 is by downloading one of the apps in the table below, they require
+The quickest way to use seguid_calculator is by downloading one of the apps in the table below, they require
 no installation at all.
 
  Pick the adequate file for your operating system:
 
 | OS                             | File                              |
 |--------------------------------|-----------------------------------|
-| ![](images/win2.png "Windows") | [seguid_calculator2.exe]()         |
-| ![](images/mac2.png "macOS")   | [seguid_calculator2_for_mac.zip]() |
-| ![](images/tux2.png "Linux")   | [seguid_calculator2]()             |
+| ![](images/win2.png "Windows") | [seguid_calculator.exe]()         |
+| ![](images/mac2.png "macOS")   | [seguid_calculator_for_mac.zip]() |
+| ![](images/tux2.png "Linux")   | [seguid_calculator]()             |
 
 There is also an online version (see links at the end of this page).
 
@@ -35,7 +35,7 @@ There is also an online version (see links at the end of this page).
 
 Installation from PyPi:
 
-    pip install seguid_calculator2
+    pip install seguid_calculator
 
 ## What does it do ?
 

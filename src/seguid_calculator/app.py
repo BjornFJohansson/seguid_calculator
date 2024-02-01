@@ -9,13 +9,13 @@ from flask import render_template
 from flask import request
 from flask import url_for
 
-from seguid_calculator2.functions import seqfilter
-from seguid_calculator2.functions import rc
-from seguid_calculator2.functions import slseguid
-from seguid_calculator2.functions import scseguid
-from seguid_calculator2.functions import dlseguid
-from seguid_calculator2.functions import dcseguid
-from seguid_calculator2.functions import calcicon
+from seguid_calculator.functions import seqfilter
+from seguid_calculator.functions import rc
+from seguid_calculator.functions import lsseguid
+from seguid_calculator.functions import csseguid
+from seguid_calculator.functions import ldseguid
+from seguid_calculator.functions import cdseguid
+from seguid_calculator.functions import calcicon
 
 app = Flask(__name__)
 
@@ -43,20 +43,20 @@ def index():
         return redirect(url_for('index'))
 
     if sequence:
-        slseg = slseguid(sequence)
-        scseg = scseguid(sequence)
-        dlseg = dlseguid(sequence)
-        dcseg = dcseguid(sequence)
+        slseg = lsseguid(sequence)
+        scseg = csseguid(sequence)
+        dlseg = ldseguid(sequence)
+        dcseg = cdseguid(sequence)
     else:
         slseg = ""
         scseg = ""
         dlseg = ""
         dcseg = ""
     return render_template("index.html",
-                           slseguid=slseg,
-                           scseguid=scseg,
-                           dlseguid=dlseg,
-                           dcseguid=dcseg,
+                           lsseguid=slseg,
+                           csseguid=scseg,
+                           ldseguid=dlseg,
+                           cdseguid=dcseg,
                            length=len(sequence) or "",
                            characters=" ".join(sorted(set(sequence.upper()))),
                            sequence=sequence)

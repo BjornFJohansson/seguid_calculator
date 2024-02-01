@@ -1,17 +1,15 @@
 # #!/usr/bin/env python3
 # # -*- coding: utf-8 -*-
 
-import hashlib
-import base64
-from string import ascii_letters
-
-from seguid import slseguid as _slseguid
-from seguid import scseguid as _scseguid
-from seguid import dlseguid as _dlseguid
-from seguid import dcseguid as _dcseguid
+from seguid import lsseguid as _lsseguid
+from seguid import csseguid as _csseguid
+from seguid import ldseguid as _ldseguid
+from seguid import cdseguid as _cdseguid
 
 tab = str.maketrans("GATCRYWSMKHBVDNgatcrywsmkhbvdn",
                     "CTAGYRWSKMDVBHNctagyrwskmdvbhn")
+
+table = "GC,AT,TA,CG,RY,YR,WW,SS,MK,KM,HD,BV,VB,DH,NN"
 
 def rc(s):
     """doctring."""
@@ -20,23 +18,23 @@ def rc(s):
 
 def seqfilter(seq):
     """doctring."""
-    return "".join(b for b in seq if b in ascii_letters)
+    return "".join(b for b in seq.upper() if b in "GATCRYWSMKHBVDN")
 
 
-def slseguid(s):
-    return _slseguid(s.upper())
+def lsseguid(s):
+    return _lsseguid(s.upper(), table = table)
 
 
-def scseguid(s):
-    return _scseguid(s.upper())
+def csseguid(s):
+    return _csseguid(s.upper(), table = table)
 
 
-def dlseguid(s):
-    return _dlseguid(s.upper(), rc(s.upper()), 0)
+def ldseguid(s):
+    return _ldseguid(s.upper(), rc(s.upper()), 0, table = table)
 
 
-def dcseguid(s):
-    return _dcseguid(s.upper(), rc(s.upper()))
+def cdseguid(s):
+    return _cdseguid(s.upper(), rc(s.upper()), table = table)
 
 def calcicon():
     from wx.lib.embeddedimage import PyEmbeddedImage
