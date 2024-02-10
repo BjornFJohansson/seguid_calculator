@@ -9,7 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10,<3.12"
 wxPython = ">=4.0.0, <=4.2.1"
-seguid = ">=0.0.3"
+seguid = ">=0.0.4"
 
 [tool.poetry-dynamic-versioning]
 enable = true
