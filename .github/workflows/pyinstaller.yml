@@ -2,69 +2,66 @@ name: Pyinstaller
 on:
   release:
     types: [published]
-    branches:
-      - master
-  workflow_dispatch:
 
-    jobs:
-      build:
-        name: Test (${{ matrix.os }})
-        strategy:
-          fail-fast: false
-          matrix:
-            os: [ 'macos-latest', 'windows-latest' ]
-            python-version:  "3.10"
+jobs:
+  build:
+    name: Test (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ 'macos-latest', 'windows-latest' ]
+        python-version:  "3.10"
 
-        runs-on: ${{ matrix.os }}
-        steps:
+    runs-on: ${{ matrix.os }}
+    steps:
 
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.11.0
+  - name: 🛑 Cancel Previous Runs
+    uses: styfle/cancel-workflow-action@0.11.0
 
-      - name: ⬇️ Checkout
-        uses: actions/checkout@v3
+  - name: ⬇️ Checkout
+    uses: actions/checkout@v3
 
-      - name: 🔩 Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
+  - name: 🔩 Set up Python ${{ matrix.python-version }}
+    uses: actions/setup-python@v4
+    with:
+      python-version: ${{ matrix.python-version }}
 
-      - name: 🐍 Display Python version
-        run: python -c "import sys; print(sys.version)"
+  - name: 🐍 Display Python version
+    run: python -c "import sys; print(sys.version)"
 
-      - name: Install upx on Linux # https://stackoverflow.com/questions/57982945/how-to-apt-get-install-in-a-github-actions-workflow
-        shell: bash -l {0}
-        if: matrix.os == 'ubuntu-latest'
-        run: sudo apt-get install -y upx
+  - name: Install upx on Linux # https://stackoverflow.com/questions/57982945/how-to-apt-get-install-in-a-github-actions-workflow
+    shell: bash -l {0}
+    if: matrix.os == 'ubuntu-latest'
+    run: sudo apt-get install -y upx
 
-      - name: pip install pyinstaller
-        shell: bash -l {0}
-        run: pip install pyinstaller
+  - name: pip install pyinstaller
+    shell: bash -l {0}
+    run: pip install pyinstaller
 
-      - name: pyinstaller
-        shell: bash -l {0}
-        run: pyinstaller --copy-metadata seguid_calculator --onefile --disable-windowed-traceback --windowed --icon=calc.ico --name seguid_calculator2 src/seguid_calculator/calculator.py
+  - name: pyinstaller
+    shell: bash -l {0}
+    run: pyinstaller --copy-metadata seguid_calculator --onefile --disable-windowed-traceback --windowed --icon=calc.ico --name seguid_calculator2 src/seguid_calculator/calculator.py
 
-      - name: ls in dist folder
-        shell: bash -l {0}
-        run: ls dist
+  - name: ls in dist folder
+    shell: bash -l {0}
+    run: ls dist
 
-      - name: zip the app for Mac
-        shell: bash -l {0}
-        if: matrix.os == 'macos-latest'
-        run: zip -r dist/seguid_calculator_for_mac.zip dist/seguid_calculator.app
+  - name: zip the app for Mac
+    shell: bash -l {0}
+    if: matrix.os == 'macos-latest'
+    run: zip -r dist/seguid_calculator_for_mac.zip dist/seguid_calculator.app
 
-      - name: Upload Mac
-        uses: softprops/action-gh-release@v1
-        if: matrix.os == 'macos-latest'
-        with:
-          files: |
-            dist/seguid_calculator_for_mac.zip
+  - name: Upload Mac
+    uses: softprops/action-gh-release@v1
+    if: matrix.os == 'macos-latest'
+    with:
+      files: |
+        dist/seguid_calculator_for_mac.zip
 
-      - name: Upload Win Lin
-        uses: softprops/action-gh-release@v1
-        if: matrix.os != 'macos-latest'
-        with:
-          files: |
-            dist/seguid_calculator.exe
-            dist/seguid_calculator
+  - name: Upload Win Lin
+    uses: softprops/action-gh-release@v1
+    if: matrix.os != 'macos-latest'
+    with:
+      files: |
+        dist/seguid_calculator.exe
+        dist/seguid_calculator
