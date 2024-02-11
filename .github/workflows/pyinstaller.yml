@@ -1,13 +1,17 @@
 name: Pyinstaller
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - '**'
+      - '!master'   # excludes master branch
 jobs:
   build:
     strategy:
       matrix:
         os: [ 'macos-latest', 'windows-latest' ]
-        python-version:  "3.10"
+        python-version:  ["3.10"]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }} ${{ python-version.os }}
     steps:
 
       - name: 🛑 Cancel Previous Runs
