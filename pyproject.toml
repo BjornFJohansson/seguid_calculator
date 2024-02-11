@@ -14,4 +14,5 @@ seguid = ">=0.0.4"
 [tool.poetry-dynamic-versioning]
 enable = true
 [build-system]
-requires = "poetry-core"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
