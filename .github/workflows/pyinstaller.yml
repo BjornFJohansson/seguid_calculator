@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [ 'macos-latest', 'windows-latest' ]
-        python-version:  ["3.10"]
+        python-version:  ["3.11"]
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -33,6 +33,10 @@ jobs:
         shell: bash -l {0}
         if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get install -y upx
+
+      - name: python -m pip install --upgrade pip
+        shell: bash -l {0}
+        run: python -m pip install --upgrade pip
 
       - name: editable install
         shell: bash -l {0}
