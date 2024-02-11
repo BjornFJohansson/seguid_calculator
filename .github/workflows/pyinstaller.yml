@@ -34,6 +34,10 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get install -y upx
 
+      - name: editable install
+        shell: bash -l {0}
+        run: pip install --editable .
+
       - name: pip install pyinstaller
         shell: bash -l {0}
         run: pip install pyinstaller
