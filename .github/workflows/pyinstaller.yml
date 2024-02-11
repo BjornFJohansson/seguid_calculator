@@ -6,12 +6,13 @@ on:
       - '!master'   # excludes master branch
 jobs:
   build:
+    name: Pyinstaller (${{ matrix.python-version }}, ${{ matrix.os }})
     strategy:
       matrix:
         os: [ 'macos-latest', 'windows-latest' ]
         python-version:  ["3.10"]
 
-    runs-on: ${{ matrix.os }} ${{ python-version.os }}
+    runs-on: ${{ matrix.os }}
     steps:
 
       - name: 🛑 Cancel Previous Runs
