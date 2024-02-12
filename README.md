@@ -1,7 +1,6 @@
 # seguid_calculator
 
-[![Pytest](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/test.yml/badge.svg)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/test.yml)
-[![Pyinstaller](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/pyinstaller.yml/badge.svg?branch=master)](https://github.com/BjornFJohansson/seguid_calculator/actions/workflows/pyinstaller.yml) [![PyPI version](https://badge.fury.io/py/seguid-calculator.svg)](https://badge.fury.io/py/seguid-calculator)
+[![PyPI version](https://badge.fury.io/py/seguid-calculator.svg)](https://badge.fury.io/py/seguid-calculator)
 
 ![seguid_calculator_small.png](images/seguid_calculator_small.png "seguid_calculator")
 

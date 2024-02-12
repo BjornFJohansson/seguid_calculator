@@ -1,9 +1,7 @@
 name: Pyinstaller
 on:
-  push:
-    branches:
-      - '**'
-      - '!master'   # excludes master branch
+  release:
+    types: [published]
 jobs:
   build:
     name: Pyinstaller (${{ matrix.python-version }}, ${{ matrix.os }})
