@@ -224,7 +224,7 @@ class MyFrame(wx.Frame):
 
 
 def main():
-    """doctring."""
+    """docstring."""
     app = wx.App(0)
     frame_1 = MyFrame(None, -1, "")
     app.SetTopWindow(frame_1)
