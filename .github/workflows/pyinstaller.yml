@@ -41,7 +41,7 @@ jobs:
 
       - name: pyinstaller
         shell: bash
-        run: build_with_pyinstaller.sh
+        run: bash build_with_pyinstaller.sh
 
       - name: ls in dist folder
         run: ls dist
