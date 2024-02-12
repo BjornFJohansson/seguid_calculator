@@ -15,9 +15,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
 
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.11.0
-
       - name: ⬇️ Checkout
         uses: actions/checkout@v3
 
@@ -30,32 +27,25 @@ jobs:
         run: python -c "import sys; print(sys.version)"
 
       - name: Install upx on Linux # https://stackoverflow.com/questions/57982945/how-to-apt-get-install-in-a-github-actions-workflow
-        shell: bash -l {0}
         if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get install -y upx
 
       - name: python -m pip install --upgrade pip
-        shell: bash -l {0}
         run: python -m pip install --upgrade pip
 
-      - name: editable install
-        shell: bash -l {0}
-        run: pip install --editable .
-
       - name: pip install pyinstaller
-        shell: bash -l {0}
-        run: pip install pyinstaller
+        run: python -m pip install pyinstaller
+
+      - name: editable install
+        run: python -m pip install --editable .
 
       - name: pyinstaller
-        shell: bash -l {0}
         run: pyinstaller --copy-metadata seguid_calculator --onefile --disable-windowed-traceback --windowed --icon=calc.ico --name seguid_calculator2 src/seguid_calculator/calculator.py
 
       - name: ls in dist folder
-        shell: bash -l {0}
         run: ls dist
 
       - name: zip the app for Mac
-        shell: bash -l {0}
         if: matrix.os == 'macos-latest'
         run: zip -r dist/seguid_calculator_for_mac.zip dist/seguid_calculator.app
 
