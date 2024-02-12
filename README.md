@@ -1,18 +1,18 @@
 # seguid_calculator
 
-[![PyPI version](https://badge.fury.io/py/seguid-calculator.svg)](https://badge.fury.io/py/seguid-calculator)
-
 ![seguid_calculator_small.png](images/seguid_calculator_small.png "seguid_calculator")
 
-Seguid_calculator is a GUI for calculating checksums for DNA or RNA sequences.
+Seguid_calculator is a GUI for calculating seguid checksums for DNA or RNA sequences.
 Four checksums are defined in the table below with their respective use case.
 
-|          | ssDNA        | dsDNA     |
-|----------|--------------|-----------|
-| linear   | slSEGUID(*)  | dlSEGUID  |
-| circular | scSEGUID     | dcSEGUID  |
+| name     | topology | strandedness    | 
+| -------- | -------- | --------------- |
+| cdseguid | circular | double-stranded |
+| csseguid | circular | single-stranded |
+| ldseguid | linear   | double-stranded |
+| lsseguid | linear   | single-stranded |
 
-(*) The slSEGUID checksum is also useful for protein sequences.
+(*) The lsseguid checksum is also useful for protein sequences.
 
 
 ## Installation
