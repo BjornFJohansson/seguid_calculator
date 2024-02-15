@@ -22,11 +22,10 @@ no installation at all.
 
  Pick the adequate file for your operating system:
 
-| OS                             | File                              |
-|--------------------------------|-----------------------------------|
-| ![](images/win2.png "Windows") | [seguid_calculator.exe]()         |
-| ![](images/mac2.png "macOS")   | [seguid_calculator_for_mac.zip]() |
-| ![](images/tux2.png "Linux")   | [seguid_calculator]()             |
+| OS                             | File                          |
+|--------------------------------|-------------------------------|
+| ![](images/win2.png "Windows") | seguid_calculator2.exe        |
+| ![](images/mac2.png "macOS")   | seguid_calculator2_for_mac.zip|
 
 There is also an online version (see links at the end of this page).
 
