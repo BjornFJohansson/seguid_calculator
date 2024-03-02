@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """docstring."""
-from flaskwebgui import FlaskUI
-
 from flask import Flask
 from flask import redirect
 from flask import render_template
@@ -63,6 +61,7 @@ def index():
 
 
 if __name__ == "__main__":
+    from flaskwebgui import FlaskUI
     # https://github.com/ClimenteA/flaskwebgui
     # If you are debugging you can do that in the browser:
     # app.run()
