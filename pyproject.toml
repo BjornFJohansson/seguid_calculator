@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9,<3.12"
 seguid = "=0.0.4"
+flask = ">=3.0.2"
 flaskwebgui = ">=1.0.9"
 [build-system]
 requires = ["poetry-core"]
