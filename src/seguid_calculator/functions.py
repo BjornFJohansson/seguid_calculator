@@ -23,19 +23,19 @@ def seqfilter(seq):
 
 
 def lsseguid(s):
-    return _lsseguid(s.upper(), alphabet = "{DNA}")
+    return _lsseguid(s.upper(), table = table)
 
 
 def csseguid(s):
-    return _csseguid(s.upper(), alphabet = "{DNA}")
+    return _csseguid(s.upper(), table = table)
 
 
 def ldseguid(s):
-    return _ldseguid(s.upper(), rc(s.upper()), alphabet = "{DNA}")
+    return _ldseguid(s.upper(), rc(s.upper()), overhang=0, table = table)
 
 
 def cdseguid(s):
-    return _cdseguid(s.upper(), rc(s.upper()), alphabet = "{DNA}")
+    return _cdseguid(s.upper(), rc(s.upper()), table = table)
 
 
 def calcicon():

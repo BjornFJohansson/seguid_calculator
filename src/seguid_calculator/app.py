@@ -15,6 +15,8 @@ from seguid_calculator.functions import ldseguid
 from seguid_calculator.functions import cdseguid
 from seguid_calculator.functions import calcicon
 
+import seguid
+
 app = Flask(__name__)
 
 app.config.update(dict(
@@ -25,7 +27,8 @@ app.config.update(dict(
 def index():
     """docstring."""
     if request.method == "GET":
-        return render_template("index.html")
+        return render_template("index.html",
+                               version=seguid.__version__)
 
     sequence = seqfilter(request.form.get("sequence") or "")
 
@@ -50,7 +53,9 @@ def index():
         scseg = ""
         dlseg = ""
         dcseg = ""
+
     return render_template("index.html",
+                           version=seguid.__version__,
                            lsseguid=slseg,
                            csseguid=scseg,
                            ldseguid=dlseg,
