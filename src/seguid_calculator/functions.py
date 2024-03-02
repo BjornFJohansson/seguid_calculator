@@ -11,6 +11,7 @@ tab = str.maketrans("GATCRYWSMKHBVDNgatcrywsmkhbvdn",
 
 table = "GC,AT,TA,CG,RY,YR,WW,SS,MK,KM,HD,BV,VB,DH,NN"
 
+
 def rc(s):
     """doctring."""
     return s.translate(tab)[::-1]
@@ -22,19 +23,20 @@ def seqfilter(seq):
 
 
 def lsseguid(s):
-    return _lsseguid(s.upper(), table = table)
+    return _lsseguid(s.upper(), alphabet = "{DNA}")
 
 
 def csseguid(s):
-    return _csseguid(s.upper(), table = table)
+    return _csseguid(s.upper(), alphabet = "{DNA}")
 
 
 def ldseguid(s):
-    return _ldseguid(s.upper(), rc(s.upper()), 0, table = table)
+    return _ldseguid(s.upper(), rc(s.upper()), alphabet = "{DNA}")
 
 
 def cdseguid(s):
-    return _cdseguid(s.upper(), rc(s.upper()), table = table)
+    return _cdseguid(s.upper(), rc(s.upper()), alphabet = "{DNA}")
+
 
 def calcicon():
     from wx.lib.embeddedimage import PyEmbeddedImage

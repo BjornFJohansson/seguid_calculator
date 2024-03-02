@@ -1,16 +1,14 @@
 [tool.poetry]
 name = "seguid_calculator"
-version = "2.0.0a3"
+version = "2.0.0"
 description = "GUI for calculating seguid checksums for biological sequences."
 authors = ["BjornFJohansson <bjornjobb@gmail.com>"]
 license = "BSD"
 readme = "README.md"
-
 [tool.poetry.dependencies]
 python = "^3.9,<3.12"
-wxPython = ">=4.0.0, <=4.2.1"
-seguid = ">=0.0.4"
-
+seguid = ">=0.0.5"
+flaskwebgui
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

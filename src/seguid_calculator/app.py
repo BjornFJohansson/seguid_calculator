@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """docstring."""
-from string import ascii_letters
+from flaskwebgui import FlaskUI
 
 from flask import Flask
 from flask import redirect
@@ -62,7 +62,9 @@ def index():
                            sequence=sequence)
 
 
-if __name__ == '__main__':
-    from webui import WebUI
-    ui = WebUI(app, debug=True)
-    ui.run()
+if __name__ == "__main__":
+    # https://github.com/ClimenteA/flaskwebgui
+    # If you are debugging you can do that in the browser:
+    # app.run()
+    # If you want to view the flaskwebgui window:
+    FlaskUI(app=app, server="flask").run()
