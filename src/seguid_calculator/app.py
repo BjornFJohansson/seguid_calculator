@@ -14,7 +14,6 @@ from seguid_calculator.functions import lsseguid
 from seguid_calculator.functions import csseguid
 from seguid_calculator.functions import ldseguid
 from seguid_calculator.functions import cdseguid
-from seguid_calculator.functions import calcicon
 
 app = Flask(__name__)
 
@@ -52,6 +51,53 @@ def index():
         dlseg = ""
         dcseg = ""
     return render_template("index.html",
+                           lsseguid=slseg,
+                           csseguid=scseg,
+                           ldseguid=dlseg,
+                           cdseguid=dcseg,
+                           length=len(sequence) or "",
+                           characters=" ".join(sorted(set(sequence.upper()))),
+                           sequence=sequence)
+
+@app.route("/legacy", methods=["GET", "POST"])
+def legacy():
+    """docstring."""
+
+    from seguid_calculator.functions_legacy import seqfilter
+    from seguid_calculator.functions_legacy import rc
+    from seguid_calculator.functions_legacy import lsseguid
+    from seguid_calculator.functions_legacy import csseguid
+    from seguid_calculator.functions_legacy import ldseguid
+    from seguid_calculator.functions_legacy import cdseguid
+
+
+    if request.method == "GET":
+        return render_template("legacy.html")
+
+    sequence = seqfilter(request.form.get("sequence") or "")
+
+    if 'calc' in request.form:
+        pass
+    elif 'reverse' in request.form:
+        sequence = sequence[::-1]
+    elif 'complement' in request.form:
+        sequence = rc(sequence)[::-1]
+    elif 'reverse_complement' in request.form:
+        sequence = rc(sequence)
+    elif 'clear' in request.form:
+        return redirect(url_for('legacy'))
+
+    if sequence:
+        slseg = lsseguid(sequence)
+        scseg = csseguid(sequence)
+        dlseg = ldseguid(sequence)
+        dcseg = cdseguid(sequence)
+    else:
+        slseg = ""
+        scseg = ""
+        dlseg = ""
+        dcseg = ""
+    return render_template("legacy.html",
                            lsseguid=slseg,
                            csseguid=scseg,
                            ldseguid=dlseg,

@@ -1,10 +1,10 @@
 # #!/usr/bin/env python3
 # # -*- coding: utf-8 -*-
 
-from seguid import lsseguid as _lsseguid
-from seguid import csseguid as _csseguid
-from seguid import ldseguid as _ldseguid
-from seguid import cdseguid as _cdseguid
+from .seguid_legacy.chksum import lsseguid as _lsseguid
+from .seguid_legacy.chksum import csseguid as _csseguid
+from .seguid_legacy.chksum import ldseguid as _ldseguid
+from .seguid_legacy.chksum import cdseguid as _cdseguid
 
 tab = str.maketrans("GATCRYWSMKHBVDNgatcrywsmkhbvdn",
                     "CTAGYRWSKMDVBHNctagyrwskmdvbhn")
@@ -24,19 +24,19 @@ def seqfilter(seq):
 
 def lsseguid(s):
     """doctring."""
-    return _lsseguid(s.upper(), alphabet="{DNA}")
+    return _lsseguid(s.upper(), table="{DNA}")
 
 
 def csseguid(s):
     """doctring."""
-    return _csseguid(s.upper(), alphabet="{DNA}")
+    return _csseguid(s.upper(), table="{DNA}")
 
 
 def ldseguid(s):
     """doctring."""
-    return _ldseguid(s.upper(), rc(s.upper()), alphabet="{DNA}")
+    return _ldseguid(s.upper(), rc(s.upper()), 0,table="{DNA}")
 
 
 def cdseguid(s):
     """doctring."""
-    return _cdseguid(s.upper(), rc(s.upper()), alphabet="{DNA}")
+    return _cdseguid(s.upper(), rc(s.upper()), table="{DNA}")

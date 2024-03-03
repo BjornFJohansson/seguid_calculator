@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{url_for('static', filename='stylesheet.css')}}">
+        <link rel="shortcut icon" href="https://seguidcalculator.pythonanywhere.com/static/favicon.ico">
+        <title>SEGUID CALCULATOR (legacy)</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row font-monospace">
+                <div class="col fs-1">
+                 SEGUID CALCULATOR (legacy)
+                </div>
+            </div>
+            <div class="row font-monospace">
+               <div class="col">
+                Raw format only.
+               </div>
+            </div>
+
+            <div class="row fs-4 font-monospace">
+                <div class="col-md-3">
+                  linear single-strand
+                </div>
+                <div class="col-md-5">
+                  {{lsseguid}}
+                </div>
+            </div>
+            <div class="row fs-4 font-monospace">
+                <div class="col-md-3">
+                  circular single-strand
+                </div>
+                <div class="col-md-5">
+                  {{csseguid}}
+                </div>
+            </div>
+            <div class="row fs-4 font-monospace">
+                <div class="col-md-3">
+                  linear double-strand
+                </div>
+                <div class="col-md-5">
+                  {{ldseguid}}
+                </div>
+            </div>
+            <div class="row fs-4 font-monospace">
+                <div class="col-md-3">
+                  circular double-strand
+                </div>
+                <div class="col-md-5">
+                  {{cdseguid}}
+                </div>
+            </div>
+
+            <div class="row fs-4 font-monospace">
+                <div class="col-md-3">
+                  Length
+                </div>
+                <div class="col-md-5">
+                  {{length}}
+                </div>
+            </div>
+
+            <div class="row fs-4 font-monospace">
+                <div class="col-md-3">
+                  Characters
+                </div>
+                <div class="col-md-5">
+                  {{characters}}
+                </div>
+            </div>
+
+            <div class="row">
+                <form action="{{ url_for('legacy') }}" method="POST">
+                    <textarea class="form-control" name="sequence" rows="10" cols="120">{{sequence}}</textarea>
+                    <input type="submit" name="calc"   class="btn btn-success" value="calc">
+                    <input type="submit" name="reverse"   class="btn btn-success" value="reverse">
+                    <input type="submit" name="complement"   class="btn btn-success" value="complement">
+                    <input type="submit" name="reverse_complement"   class="btn btn-success" value="reverse complement">
+                    <input type="submit" name="clear" class="btn btn-danger" value="clear">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
