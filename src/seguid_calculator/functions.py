@@ -9,8 +9,8 @@ from seguid import cdseguid as _cdseguid
 tab = str.maketrans("GATCRYWSMKHBVDNgatcrywsmkhbvdn",
                     "CTAGYRWSKMDVBHNctagyrwskmdvbhn")
 
-table = "GC,AT,TA,CG,RY,YR,WW,SS,MK,KM,HD,BV,VB,DH,NN"
-
+# table = "GC,AT,TA,CG,RY,YR,WW,SS,MK,KM,HD,BV,VB,DH,NN"
+alphabet = "GC,AT,BV,DH,KM,SS,RY,WW,NN"
 
 def rc(s):
     """doctring."""
@@ -24,19 +24,19 @@ def seqfilter(seq):
 
 def lsseguid(s):
     """doctring."""
-    return _lsseguid(s.upper(), alphabet="{DNA}")
+    return _lsseguid(s.upper(), alphabet=alphabet)
 
 
 def csseguid(s):
     """doctring."""
-    return _csseguid(s.upper(), alphabet="{DNA}")
+    return _csseguid(s.upper(), alphabet=alphabet)
 
 
 def ldseguid(s):
     """doctring."""
-    return _ldseguid(s.upper(), rc(s.upper()), alphabet="{DNA}")
+    return _ldseguid(s.upper(), rc(s.upper()), alphabet=alphabet)
 
 
 def cdseguid(s):
     """doctring."""
-    return _cdseguid(s.upper(), rc(s.upper()), alphabet="{DNA}")
+    return _cdseguid(s.upper(), rc(s.upper()), alphabet=alphabet)

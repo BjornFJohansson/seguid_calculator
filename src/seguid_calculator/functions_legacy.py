@@ -24,19 +24,19 @@ def seqfilter(seq):
 
 def lsseguid(s):
     """doctring."""
-    return _lsseguid(s.upper(), table="{DNA}")
+    return _lsseguid(s.upper(), table=table)
 
 
 def csseguid(s):
     """doctring."""
-    return _csseguid(s.upper(), table="{DNA}")
+    return _csseguid(s.upper(), table=table)
 
 
 def ldseguid(s):
     """doctring."""
-    return _ldseguid(s.upper(), rc(s.upper()), 0,table="{DNA}")
+    return _ldseguid(s.upper(), rc(s.upper()), 0,table=table)
 
 
 def cdseguid(s):
     """doctring."""
-    return _cdseguid(s.upper(), rc(s.upper()), table="{DNA}")
+    return _cdseguid(s.upper(), rc(s.upper()), table=table)
