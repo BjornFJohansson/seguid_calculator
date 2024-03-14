@@ -59,7 +59,7 @@ there could be several checksums for the same sequence. The csSEGUID algorithm f
 the [lexicographically minimal string rotation](http://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation)
 and then applies the same checksum algorithm as for the lsSEGUID.
 
-**N.B.** Plasmids are usually **not** this kind of molecule, see **dcSEGUID** below.
+**N.B.** Plasmids are usually **not** this kind of molecule, see **cdSEGUID** below.
 
 
 ## ldSEGUID
@@ -86,10 +86,10 @@ The ldSEGUID algorithm compares two top strands `GATTACA` and `TGTAATC` and choo
 A string, `GATTACA` concatenated with a semicolon `;` character and complementary strand which in most cases is the
 reverse complement `GATTACA;CTAATGT` and further processed as for the lsSEGUID checksum.
 
-## dcSEGUID
+## cdSEGUID
 ![](images/dcDNA.png)
 
-The dcSEGUID (**c**ircular **d**ouble-strand SEGUID) checksum is defined for circular dsDNA molecules such as
+The cdSEGUID (**c**ircular **d**ouble-strand SEGUID) checksum is defined for circular dsDNA molecules such as
 most [plasmids](http://en.wikipedia.org/wiki/Plasmid) and bacterial chromosomes.
 
 The smallest rotation is found for each of the two strands in a manner similar to that of the csSEGUID checksum.
@@ -98,7 +98,7 @@ and the complementary sequence. Another string is constructed from the crick seq
 break and a the watson string in 5'-3' order. The two strings are compared and the checksum is calculated from the
 string.
 
-The dcSEGUID checksum can be useful to determine if two sequences refer to the same plasmid vector.
+The cdSEGUID checksum can be useful to determine if two sequences refer to the same plasmid vector.
 The sequence of the plasmid pFA6a-GFPS65T-kanMX6 is available from [Genbank](http://www.ncbi.nlm.nih.gov/nuccore/AJ002682) and
 from other sources on the web such as the [Forsburg lab](https://dornsife.usc.edu/pombenet/), sequence [here](https://dornsife.usc.edu/pombenet/vectors/),
 a copy of the Forsburg lab sequence was saved [here](https://gist.github.com/BjornFJohansson/d394362134338d5f1ff0).
@@ -106,7 +106,7 @@ a copy of the Forsburg lab sequence was saved [here](https://gist.github.com/Bjo
 Both sequences are understood to describe the same vector. The sequences are both, 4882 bp, but the GenBank sequence starts and
 ends with `GAAC...TATA` and the Forsburg lab sequence with `ACGC...TAGA`.
 
-The two screenshots below show that the dcSEGUID checksums are identical, which proves that the two sequences describe the same double
+The two screenshots below show that the cdSEGUID checksums are identical, which proves that the two sequences describe the same double
 stranded circular DNA molecule.
 
 #### Genbank sequence for `pFA6a-GFPS65T-kanMX6`
