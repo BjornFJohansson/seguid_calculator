@@ -18,73 +18,15 @@
             </div>
             <div class="row font-monospace">
                <div class="col">
-                <span class="badge bg-warning text-dark">Warning</span>
-                Use this only if you are a student of University of Minho and attending
-                either EGB24 or BMA24. This interface will be replaced at the end of the two courses
-                no later than July 2024, maybe earlier.
-                Raw format only. Characters except GATCRYWSMKHBVDN will be removed.
+                The legacy calculator has been removed.
+               <div>
+                Use the updated version
+                <a href="/">here</a>.
+               </div>
                </div>
             </div>
 
-            <div class="row fs-4 font-monospace">
-                <div class="col-md-3">
-                  linear single-strand
-                </div>
-                <div class="col-md-5">
-                  {{lsseguid}}
-                </div>
-            </div>
-            <div class="row fs-4 font-monospace">
-                <div class="col-md-3">
-                  circular single-strand
-                </div>
-                <div class="col-md-5">
-                  {{csseguid}}
-                </div>
-            </div>
-            <div class="row fs-4 font-monospace">
-                <div class="col-md-3">
-                  linear double-strand
-                </div>
-                <div class="col-md-5">
-                  {{ldseguid}}
-                </div>
-            </div>
-            <div class="row fs-4 font-monospace">
-                <div class="col-md-3">
-                  circular double-strand
-                </div>
-                <div class="col-md-5">
-                  {{cdseguid}}
-                </div>
-            </div>
 
-            <div class="row fs-4 font-monospace">
-                <div class="col-md-3">
-                  Length
-                </div>
-                <div class="col-md-5">
-                  {{length}}
-                </div>
-            </div>
-
-            <div class="row fs-4 font-monospace">
-                <div class="col-md-3">
-                  Characters
-                </div>
-                <div class="col-md-5">
-                  {{characters}}
-                </div>
-            </div>
-
-            <div class="row">
-                <form action="{{ url_for('legacy') }}" method="POST">
-                    <textarea class="form-control" name="sequence" rows="10" cols="120">{{sequence}}</textarea>
-                    <input type="submit" name="calc"   class="btn btn-success" value="calc">
-                    <input type="submit" name="reverse"   class="btn btn-success" value="reverse">
-                    <input type="submit" name="complement"   class="btn btn-success" value="complement">
-                    <input type="submit" name="reverse_complement"   class="btn btn-success" value="reverse complement">
-                    <input type="submit" name="clear" class="btn btn-danger" value="clear">
                 </form>
             </div>
         </div>
