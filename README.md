@@ -10,14 +10,7 @@ for DNA or RNA sequences. Four checksums are defined in the table below with the
 | csseguid | circular | single-stranded |
 | cdseguid | circular | double-stranded |
 
-
 The lsseguid checksum is also useful for protein sequences.
-
-## Source Python installation
-
-Installation from PyPi:
-
-    pip install seguid_calculator
 
 ## What does it do ?
 
@@ -34,6 +27,36 @@ Other implementations of the SEGUID checksum can be found in BioPython.
 For more information, see these [slides](https://www.nature.com/articles/npre.2007.278.1) and the Biopython
 [wiki](https://biopython.org/wiki/SeqIO#Using_the_SEGUID_checksum) (scroll down to the "Using the SEGUID checksum" header)
 as well as this blog [post](http://wiki.christophchamp.com/index.php/SEGUID).
+
+## Use case
+
+The cdSEGUID checksum can be useful to determine if two sequences refer to the same plasmid vector.
+The sequence of the plasmid pFA6a-GFPS65T-kanMX6 is available from [Genbank](http://www.ncbi.nlm.nih.gov/nuccore/AJ002682) and
+from other sources on the web such as the [Forsburg lab](https://dornsife.usc.edu/pombenet/), sequence [here](https://dornsife.usc.edu/pombenet/vectors/),
+a copy of the Forsburg lab sequence was saved [here](https://gist.github.com/BjornFJohansson/d394362134338d5f1ff0).
+
+Both sequences are understood to describe the same vector. The sequences are both, 4882 bp, but the GenBank sequence starts and
+ends with `GAAC...TATA` and the Forsburg lab sequence with `ACGC...TAGA`.
+
+The two screenshots below show that the cdSEGUID checksums are identical, which proves that the two sequences describe the same double
+stranded circular DNA molecule.
+
+#### Genbank sequence for `pFA6a-GFPS65T-kanMX6`
+
+![Genbank](images/genbank.png "GenBank")
+
+#### Forsburg lab sequence for `pFA6a-GFPS65T-kanMX6`
+
+![Forsburg](images/forsburg.png "seguid_calculator")
+
+
+## Availability
+
+Seguid-calculator is hosted [here](http://seguidcalculator.pythonanywhere.com/)
+
+The online version was built with [flask](https://github.com/pallets/flask) and hosted
+on [pythonanywhere](https://www.pythonanywhere.com/).
+
 
 ## lsSEGUID
 ![](images/slDNA.png)
@@ -97,36 +120,6 @@ A string in uppercase letters is constructed from the watson sequence starting a
 and the complementary sequence. Another string is constructed from the crick sequence at its minimum point a line
 break and a the watson string in 5'-3' order. The two strings are compared and the checksum is calculated from the
 string.
-
-The cdSEGUID checksum can be useful to determine if two sequences refer to the same plasmid vector.
-The sequence of the plasmid pFA6a-GFPS65T-kanMX6 is available from [Genbank](http://www.ncbi.nlm.nih.gov/nuccore/AJ002682) and
-from other sources on the web such as the [Forsburg lab](https://dornsife.usc.edu/pombenet/), sequence [here](https://dornsife.usc.edu/pombenet/vectors/),
-a copy of the Forsburg lab sequence was saved [here](https://gist.github.com/BjornFJohansson/d394362134338d5f1ff0).
-
-Both sequences are understood to describe the same vector. The sequences are both, 4882 bp, but the GenBank sequence starts and
-ends with `GAAC...TATA` and the Forsburg lab sequence with `ACGC...TAGA`.
-
-The two screenshots below show that the cdSEGUID checksums are identical, which proves that the two sequences describe the same double
-stranded circular DNA molecule.
-
-#### Genbank sequence for `pFA6a-GFPS65T-kanMX6`
-
-![Genbank](images/genbank.png "GenBank")
-
-#### Forsburg lab sequence for `pFA6a-GFPS65T-kanMX6`
-
-![Forsburg](images/forsburg.png "seguid_calculator")
-
-
-## Online version
-
-[![seguid_calculator_flask](images/seguid_calculator_flask.png)](http://seguidcalculator.pythonanywhere.com/)
-
-Click on the image above to take you to the website.
-The online version was built with [flask](https://github.com/pallets/flask) and hosted
-on [pythonanywhere](https://www.pythonanywhere.com/).
-
-
 
 ### How to install on pythonanywhere:
 ```
