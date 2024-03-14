@@ -17,25 +17,14 @@ The lsseguid checksum is also useful for protein sequences.
 SEGUID was suggested by [Babnigg and Giometti ](http://www.ncbi.nlm.nih.gov/pubmed/16858731)
 as a stable identifier for cross referencing protein sequences in databases.
 
-The SEGUID checksum was defined as the [base64](https://en.wikipedia.org/wiki/Base64#URL_applications) encoded
-[SHA-1](http://en.wikipedia.org/wiki/SHA-1) cryptographic checksum of a
-primary biological sequence in uppercase.
-
-Other implementations of the SEGUID checksum can be found in BioPython.
-[Bio.SeqUtils.CheckSum](http://biopython.org/DIST/docs/api/Bio.SeqUtils.CheckSum-module.html).
-
-For more information, see these [slides](https://www.nature.com/articles/npre.2007.278.1) and the Biopython
-[wiki](https://biopython.org/wiki/SeqIO#Using_the_SEGUID_checksum) (scroll down to the "Using the SEGUID checksum" header)
-as well as this blog [post](http://wiki.christophchamp.com/index.php/SEGUID).
-
 ## Use case
 
-The cdSEGUID checksum can be useful to determine if two sequences refer to the same plasmid vector.
+The cdSEGUID checksum can be useful to determine if two sequences refer to the same circular plasmid vector.
 The sequence of the plasmid pFA6a-GFPS65T-kanMX6 is available from [Genbank](http://www.ncbi.nlm.nih.gov/nuccore/AJ002682) and
 from other sources on the web such as the [Forsburg lab](https://dornsife.usc.edu/pombenet/), sequence [here](https://dornsife.usc.edu/pombenet/vectors/),
-a copy of the Forsburg lab sequence was saved [here](https://gist.github.com/BjornFJohansson/d394362134338d5f1ff0).
+and [here](https://gist.github.com/BjornFJohansson/d394362134338d5f1ff0).
 
-Both sequences are understood to describe the same vector. The sequences are both, 4882 bp, but the GenBank sequence starts and
+Both sequences are meant to describe the same vector. The sequences are both, 4882 bp, but the GenBank sequence starts and
 ends with `GAAC...TATA` and the Forsburg lab sequence with `ACGC...TAGA`.
 
 The two screenshots below show that the cdSEGUID checksums are identical, which proves that the two sequences describe the same double
